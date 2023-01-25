@@ -7,7 +7,6 @@
   "dependencies": {
     "gatsby": "^5.4.2",
     "gatsby-plugin-image": "^3.4.0",
-    "gatsby-plugin-manifest": "^5.4.0",
     "gatsby-plugin-sharp": "^5.4.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-transformer-sharp": "^5.4.0",
