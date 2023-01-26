@@ -1,14 +1,25 @@
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
+import Footer from './Footer';
+import Header from './Header';
 
-const Layout = ({ children }: { children: ReactNode }) => {
-  return <Container>{children}</Container>;
+interface Props {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
+  return (
+    <Container>
+      <Header />
+      {children}
+      <Footer />
+    </Container>
+  );
 };
 
 export default Layout;
 
-const Container = styled.div`
+const Container = styled.main`
   display: flex;
   flex-direction: column;
-  height: 100%;
 `;
