@@ -1,7 +1,7 @@
 import Layout from 'components/common/Layout';
 
-const Home = () => {
-  return <Layout>Home</Layout>;
+const Index = () => {
+  return <Layout>Index</Layout>;
 };
 
-export default Home;
+export default Index;
