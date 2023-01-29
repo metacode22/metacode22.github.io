@@ -13,7 +13,7 @@ const Layout = ({ children }: Props) => {
     <Container>
       <GlobalStyle />
       <Header />
-      {children}
+      <ContentContainer>{children}</ContentContainer>
       <Footer />
     </Container>
   );
@@ -24,4 +24,8 @@ export default Layout;
 const Container = styled.main`
   display: flex;
   flex-direction: column;
+`;
+
+const ContentContainer = styled.div`
+  /* media 분기 */
 `;
