@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 import Footer from './Footer';
-import GlobalStyle from './GlobalStyle';
 import Header from './Header';
 
 interface Props {
@@ -11,7 +10,6 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <Container>
-      <GlobalStyle />
       <Header />
       <ContentContainer>{children}</ContentContainer>
       <Footer />
@@ -26,6 +24,8 @@ const Container = styled.main`
   flex-direction: column;
 `;
 
-const ContentContainer = styled.div`
-  /* media 분기 */
-`;
+/**
+ * To Do
+ * media, 반응형 디자인 작성
+ */
+const ContentContainer = styled.main``;

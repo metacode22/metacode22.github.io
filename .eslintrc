@@ -21,5 +21,7 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "ignorePatterns": ["dist/", "node_modules/"],
-  "rules": {}
+  "rules": {
+    "prettier/prettier": [{ "jsxSingleQuote": true }]
+  }
 }

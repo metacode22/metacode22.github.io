@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import GlobalStyle from 'components/common/GlobalStyle';
+import { Link } from 'gatsby';
 
 const NotFound = () => {
   return (
     <Container>
-      <GlobalStyle />
       <h1>Not Found. 404 Error.</h1>
+      <GoHomeButton to='/'>Home</GoHomeButton>
     </Container>
   );
 };
@@ -18,3 +18,5 @@ const Container = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 `;
+
+const GoHomeButton = styled(Link)``;
