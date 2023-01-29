@@ -7,7 +7,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "emotion-normalize": "^11.0.1",
     "gatsby": "^5.4.2",
     "gatsby-plugin-image": "^3.4.0",
     "gatsby-plugin-sharp": "^5.4.0",
