@@ -6,7 +6,8 @@ const COLORS = {
   MAIN: '#f5f5f8',
   SUB: '#F99B0F',
   WHITE: '#ffffff',
-  BLACK: '#000000'
+  BLACK: '#000000',
+  SHADOW: 'rgba(82,82,82,0.75)',
 };
 
 export default COLORS;

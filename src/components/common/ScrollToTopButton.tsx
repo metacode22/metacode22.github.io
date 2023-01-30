@@ -45,8 +45,9 @@ const Container = styled(FaArrowUp)<{ isShow: boolean }>`
   right: 3rem;
   background-color: ${COLORS.SUB};
   border-radius: 50%;
-  padding: 1rem;
+  padding: 0.75rem;
   width: 3rem;
   height: 3rem;
+  box-shadow: 3px 3px 5px 0px ${COLORS.SHADOW};
   transition: all 0.2s ease-out;
 `;
