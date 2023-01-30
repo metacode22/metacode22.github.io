@@ -15,6 +15,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
