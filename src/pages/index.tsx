@@ -1,7 +1,12 @@
 import Layout from 'components/common/Layout';
+import Introduction from 'components/Home/Introduction';
 
-const Index = () => {
-  return <Layout>Index</Layout>;
+const Home = () => {
+  return (
+    <Layout>
+      <Introduction />
+    </Layout>
+  );
 };
 
-export default Index;
+export default Home;
