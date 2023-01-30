@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import ScrollToTopButton from './ScrollToTopButton';
 
 interface Props {
   children: ReactNode;
@@ -13,6 +14,7 @@ const Layout = ({ children }: Props) => {
       <Header />
       <ContentContainer>{children}</ContentContainer>
       <Footer />
+      <ScrollToTopButton />
     </Container>
   );
 };
@@ -28,4 +30,6 @@ const Container = styled.main`
  * To Do
  * media, 반응형 디자인 작성
  */
-const ContentContainer = styled.main``;
+const ContentContainer = styled.main`
+  height: 500vh;
+`;
