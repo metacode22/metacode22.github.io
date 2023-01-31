@@ -57,8 +57,12 @@ const Container = styled.div<{ isShow: boolean }>`
   align-items: center;
   justify-content: center;
   box-shadow: 3px 3px 5px 0px ${COLORS.SHADOW};
-  transition: all 0.2s ease-out;
+  transition: all 0.15s ease-out;
   cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const CustomFaArrowUp = styled(FaArrowUp)`
