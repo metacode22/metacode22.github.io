@@ -1,16 +1,21 @@
 import styled from '@emotion/styled';
 import COLORS from 'utils/constants/colors';
+import IntroductionAvatar from './IntroductionAvatar';
 
 /**
  * To Do
  * 모바일에서는 안 보이게 해버리자. about 페이지가 있으니까.
+ * Links 컴포넌트
  */
 const Introduction = () => {
-  return <Container>
-    <div>아바타</div>
-    <div>description</div>
-    <div>링크드인, 벨로그, 깃헙, 지메일</div>
-  </Container>;
+  return (
+    <Container>
+      <IntroductionAvatar />
+      <Title></Title>
+      <Description></Description>
+      {/* <Links /> */}
+    </Container>
+  );
 };
 
 export default Introduction;
@@ -22,3 +27,7 @@ const Container = styled.div`
 
   display: flex;
 `;
+
+const Title = styled.div``;
+
+const Description = styled.div``;

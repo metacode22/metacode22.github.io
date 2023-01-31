@@ -7,6 +7,7 @@ const COLORS = {
   SUB: '#F99B0F',
   WHITE: '#ffffff',
   BLACK: '#000000',
+  GRAY: '#e2e5e6',
   SHADOW: 'rgba(82,82,82,0.75)',
 };
 
