@@ -1,7 +1,9 @@
 import Layout from 'components/common/Layout';
 import Introduction from 'components/Home/Introduction';
+import { graphql } from 'gatsby';
 
-const Home = () => {
+const Home = ({ data }) => {
+  console.log(data);
   return (
     <Layout>
       <Introduction />
@@ -10,3 +12,24 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getPostList = graphql`
+  query getPostList {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            date
+            title
+            summary
+            thumbnail {
+              publicURL
+            }
+            categories
+          }
+        }
+      }
+    }
+  }
+`;
