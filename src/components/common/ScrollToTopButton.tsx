@@ -32,22 +32,34 @@ const ScrollToTopButton = () => {
     };
   }, []);
 
-  return <Container onClick={handleClick} isShow={isShow} />;
+  return (
+    <Container onClick={handleClick} isShow={isShow}>
+      <CustomFaArrowUp />
+    </Container>
+  );
 };
 
 export default ScrollToTopButton;
 
-const Container = styled(FaArrowUp)<{ isShow: boolean }>`
+const Container = styled.div<{ isShow: boolean }>`
   visibility: ${({ isShow }) => (isShow ? 'visible' : 'hidden')};
   opacity: ${({ isShow }) => (isShow ? 1 : 0)};
   position: fixed;
   bottom: 3rem;
   right: 3rem;
-  background-color: ${COLORS.SUB};
   border-radius: 50%;
-  padding: 0.75rem;
   width: 3rem;
   height: 3rem;
+  background-color: ${COLORS.SUB};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 3px 3px 5px 0px ${COLORS.SHADOW};
   transition: all 0.2s ease-out;
+  cursor: pointer;
+`;
+
+const CustomFaArrowUp = styled(FaArrowUp)`
+  width: 1.5rem;
+  height: 1.5rem;
 `;
