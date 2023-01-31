@@ -1,6 +1,6 @@
 import Layout from 'components/common/Layout';
 import Introduction from 'components/Home/Introduction';
-import PostList from 'components/Home/PostList';
+import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
 import { PostItem } from 'types/Post.types';
 
