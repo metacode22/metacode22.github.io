@@ -1,5 +1,7 @@
+import { Link } from 'gatsby';
+
 const Logo = () => {
-  return <div>Logo</div>;
+  return <Link to='/'>Logo</Link>;
 };
 
 export default Logo;
