@@ -5,6 +5,7 @@ import COLORS from 'utils/constants/colors';
 type Props = {
   image: IGatsbyImageData;
 };
+
 /**
  * To Do
  * 모바일에서는 안 보이게 해버리자. about 페이지가 있으니까.

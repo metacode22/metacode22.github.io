@@ -25,6 +25,65 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
   });
 };
 
+// 이건 데이터 계층(graphql)이 생겨날 때 서버에서 1번만 실행해서 넣는다고 한다.
+// next에서 getStaticProps를 사용할 때 revalide였나? 그거 안 했을 때랑 동일한 경우라고 생각이 된다.
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
+
+  // 모든 slug들을 가지고 온다.
+  const allSlugs = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          sort: {
+            order: DESC
+            fields: [frontmatter___date, frontmatter___title]
+          }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
+  // 에러 처리
+  if (allSlugs.errors) {
+    reporter.panicOnBuild('Error while running query');
+    return;
+  }
+
+  // 해당 slug를 바탕으로 어떤 페이지에 데이터를 넣어 그릴 건지, 템플릿을 가지고 온다.
+  const PostTemplate = path.resolve(
+    __dirname,
+    'src/templates/PostTemplate.tsx',
+  );
+
+  // 가져온 slug를 바탕으로 페이지들을 만든다.
+  allSlugs.data.allMarkdownRemark.edges.forEach(
+    ({
+      node: {
+        fields: { slug },
+      },
+    }) => {
+      createPage({
+        // 강의에서는 그냥 slug로 해주던데 그러면 구별하기 애매하다고 생각해서 posts를 붙였다.
+        // 따라서 포스트로 이동하는 Link에서도 to에 posts를 붙여줬다.
+        // slug가 /post-1/ 형태라서 다음과 같이 작성
+        path: `/posts${slug}`,
+        component: PostTemplate,
+        // 이제 PostTemplate에서 graphql로 query를 보낼 때 slug 인자를 사용할 수 있다.
+        context: { slug },
+      });
+    },
+  );
+};
+
 const { createFilePath } = require('gatsby-source-filesystem');
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
