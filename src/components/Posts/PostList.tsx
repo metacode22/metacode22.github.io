@@ -11,9 +11,17 @@ const PostList = ({ posts }: Props) => {
     <Container>
       <Title>Featured</Title>
       <PostsContainer>
-        {posts.map(({ node: { id, frontmatter } }) => (
-          <PostListItem key={id} {...frontmatter} />
-        ))}
+        {posts.map(
+          ({
+            node: {
+              id,
+              fields: { slug },
+              frontmatter,
+            },
+          }) => (
+            <PostListItem key={id} link={slug} {...frontmatter} />
+          ),
+        )}
       </PostsContainer>
     </Container>
   );
@@ -21,18 +29,15 @@ const PostList = ({ posts }: Props) => {
 
 export default PostList;
 
+/**
+ * To Do
+ * media, 반응형 디자인 작성
+ */
 const Container = styled.div`
   width: 1200px;
   margin: 0 auto;
-
-  @media (max-width: 1200px) {
-    width: 100%;
-    padding: 0 1rem;
-  }
 `;
 
-const Title = styled.h1`
-  padding-left: 1rem;
-`;
+const Title = styled.h1``;
 
 const PostsContainer = styled.div``;

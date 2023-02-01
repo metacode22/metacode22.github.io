@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Frontmatter } from 'types/Post.types';
 import COLORS from 'utils/constants/colors';
 
-type Props = Frontmatter;
+type Props = Frontmatter & { link: string };
 
 const PostListItem = ({
   categories,
@@ -13,9 +14,10 @@ const PostListItem = ({
     childImageSharp: { gatsbyImageData },
   },
   title,
+  link
 }: Props) => {
   return (
-    <Container>
+    <Container to={link}>
       <TextInfoContainer>
         <CategoriesContainer>
           {categories
@@ -35,9 +37,8 @@ const PostListItem = ({
 
 export default PostListItem;
 
-const Container = styled.div`
+const Container = styled(Link)`
   border-radius: 1rem;
-  padding: 1rem;
   cursor: pointer;
   transition: all 0.1s ease-out;
 

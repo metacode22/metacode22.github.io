@@ -1,7 +1,9 @@
 import Layout from 'components/common/Layout';
 import Introduction from 'components/Home/Introduction';
+import ProjectList from 'components/Home/ProjectList';
 import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { PostItem } from 'types/Post.types';
 
 type Props = {
@@ -9,18 +11,27 @@ type Props = {
     allMarkdownRemark: {
       edges: PostItem[];
     };
+    file: {
+      childImageSharp: { gatsbyImageData: IGatsbyImageData };
+      publicURL: string;
+    };
   };
 };
 
 const Home = ({
   data: {
     allMarkdownRemark: { edges: posts },
+    file: {
+      childImageSharp: { gatsbyImageData },
+      publicURL,
+    },
   },
 }: Props) => {
   return (
     <Layout>
-      <Introduction />
+      <Introduction image={gatsbyImageData} />
       <PostList posts={posts} />
+      <ProjectList />
     </Layout>
   );
 };
@@ -36,6 +47,9 @@ export const getPostList = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             summary
@@ -43,12 +57,18 @@ export const getPostList = graphql`
             categories
             thumbnail {
               childImageSharp {
-                gatsbyImageData(width: 768)
+                gatsbyImageData
               }
             }
           }
         }
       }
+    }
+    file(name: { eq: "introduction-avatar-image" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
+      publicURL
     }
   }
 `;

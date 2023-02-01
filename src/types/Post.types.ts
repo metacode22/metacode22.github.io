@@ -16,6 +16,9 @@ export type Frontmatter = {
 export type PostItem = {
   node: {
     id: string;
+    fields: {
+      slug: string;
+    };
     frontmatter: Frontmatter;
   };
 };

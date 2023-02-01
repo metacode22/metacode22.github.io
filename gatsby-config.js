@@ -39,11 +39,21 @@ module.exports = {
         allExtensions: true,
       },
     },
+    // 여기 안의 image들은 포스팅에 사용됨.
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contents`,
         path: `${__dirname}/contents`,
+      },
+    },
+    // 여기 안의 image들은 포스팅 이 외에 쓰이는 이미지들.
+    // 그냥 내가 이렇게 나눔.
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `static_images`,
+        path: `${__dirname}/static`,
       },
     },
     {
