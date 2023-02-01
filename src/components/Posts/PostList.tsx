@@ -34,7 +34,8 @@ export default PostList;
  * media, 반응형 디자인 작성
  */
 const Container = styled.div`
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 

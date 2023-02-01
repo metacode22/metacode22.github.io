@@ -59,6 +59,7 @@ export const getPostList = graphql`
               childImageSharp {
                 gatsbyImageData
               }
+              publicURL
             }
           }
         }
