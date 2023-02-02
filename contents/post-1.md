@@ -6,6 +6,6 @@ thumbnail: './images/logo_bigtoria.png'
 categories: ['featured', '프로젝트', '프론트엔드']
 ---
 
-### 비끄또리아
+# 비끄또리아
 
 프로그래머스 데브코스 3기 프론트엔드 1차 팀 프로젝트

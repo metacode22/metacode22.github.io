@@ -10,5 +10,6 @@ import 'prismjs/themes/prism.css';
 import Layout from 'components/common/Layout.tsx';
 
 export const wrapPageElement = ({ element, props }) => {
+  if (element.key === '/404.html') return;
   return <Layout {...props}>{element}</Layout>;
 };

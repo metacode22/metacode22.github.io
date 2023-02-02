@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import PostContent from 'components/PostDetail/PostContent';
 import PostHead from 'components/PostDetail/PostHead';
 import { graphql } from 'gatsby';
 import { PostDetail } from 'types/Post.types';
@@ -39,6 +40,7 @@ const PostTemplate = ({
         categories={categories}
         thumbnail={gatsbyImageData}
       />
+      <PostContent html={html} />
     </Container>
   );
 };
