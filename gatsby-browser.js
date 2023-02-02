@@ -9,6 +9,6 @@ import 'assets/styles/global.css';
 import 'prismjs/themes/prism.css';
 import Layout from 'components/common/Layout.tsx';
 
-export const wrapRootElement = ({ element, props }) => {
+export const wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>;
 };
