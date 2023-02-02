@@ -10,6 +10,7 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.footer`
+  margin-top: 8rem;
   width: 100%;
   height: 3rem;
   background-color: ${COLORS.SUB};
