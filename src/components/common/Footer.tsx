@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 import COLORS from 'utils/constants/colors';
 
 const Footer = () => {
-  return <Container>© 2022 Developer Jun, Powered By Gatsby.</Container>;
+  return (
+    <Container>© 2023 Developer Shin Seung Jun, Powered By Gatsby.</Container>
+  );
 };
 
 export default Footer;

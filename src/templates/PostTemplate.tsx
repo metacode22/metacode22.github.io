@@ -1,7 +1,46 @@
+import styled from '@emotion/styled';
+import PostHead from 'components/PostDetail/PostHead';
 import { graphql } from 'gatsby';
+import { PostDetail } from 'types/Post.types';
 
-const PostTemplate = ({ data: {} }) => {
-  return <div>PostTemplate</div>;
+type Props = {
+  data: {
+    allMarkdownRemark: {
+      edges: PostDetail[];
+    };
+  };
+};
+
+const PostTemplate = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}: Props) => {
+  const {
+    node: {
+      frontmatter: {
+        title,
+        summary,
+        date,
+        categories,
+        thumbnail: {
+          childImageSharp: { gatsbyImageData },
+          publicURL,
+        },
+      },
+      html,
+    },
+  } = edges[0];
+  return (
+    <Container>
+      <PostHead
+        title={title}
+        date={date}
+        categories={categories}
+        thumbnail={gatsbyImageData}
+      />
+    </Container>
+  );
 };
 
 export default PostTemplate;
@@ -28,4 +67,10 @@ export const getMarkdownDataBySlug = graphql`
       }
     }
   }
+`;
+
+const Container = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 `;

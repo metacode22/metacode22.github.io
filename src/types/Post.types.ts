@@ -22,3 +22,10 @@ export type PostItem = {
     frontmatter: Frontmatter;
   };
 };
+
+export type PostDetail = {
+  node: {
+    html: string;
+    frontmatter: Frontmatter;
+  };
+};
