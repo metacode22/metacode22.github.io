@@ -30,6 +30,4 @@ const Container = styled.main`
  * To Do
  * media, 반응형 디자인 작성
  */
-const ContentContainer = styled.main`
-  height: 500vh;
-`;
+const ContentContainer = styled.main``;

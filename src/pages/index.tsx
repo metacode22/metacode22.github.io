@@ -1,6 +1,5 @@
 import Layout from 'components/common/Layout';
 import Introduction from 'components/Home/Introduction';
-import ProjectList from 'components/Home/ProjectList';
 import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
@@ -31,7 +30,6 @@ const Home = ({
     <Layout>
       <Introduction image={gatsbyImageData} />
       <PostList posts={posts} />
-      <ProjectList />
     </Layout>
   );
 };
