@@ -1,7 +1,5 @@
-import Layout from "components/common/Layout";
-
 const About = () => {
-  return <Layout>열띠미 만드는 즁</Layout>;
+  return <div>열띠미 만드는 중</div>;
 };
 
 export default About;

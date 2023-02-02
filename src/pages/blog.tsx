@@ -1,7 +1,5 @@
-import Layout from "components/common/Layout";
-
 const Posts = () => {
-  return <Layout>Posts</Layout>;
+  return <div>Posts</div>;
 };
 
 export default Posts;

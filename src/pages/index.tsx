@@ -1,4 +1,3 @@
-import Layout from 'components/common/Layout';
 import Introduction from 'components/Home/Introduction';
 import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
@@ -27,10 +26,10 @@ const Home = ({
   },
 }: Props) => {
   return (
-    <Layout>
+    <>
       <Introduction image={gatsbyImageData} />
       <PostList posts={posts} />
-    </Layout>
+    </>
   );
 };
 

@@ -1,8 +1,7 @@
-import Layout from 'components/common/Layout';
 import { graphql } from 'gatsby';
 
 const PostTemplate = ({ data: {} }) => {
-  return <Layout>PostTemplate</Layout>;
+  return <div>PostTemplate</div>;
 };
 
 export default PostTemplate;
