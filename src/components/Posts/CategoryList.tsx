@@ -17,7 +17,7 @@ const CategoryList = ({
     <Container>
       {Object.entries(categoryList).map(([name, count]) => (
         <CategoryListItem category={name} key={name}>
-          #{name}({count})
+          {name} {count}
         </CategoryListItem>
       ))}
     </Container>
@@ -26,4 +26,10 @@ const CategoryList = ({
 
 export default CategoryList;
 
-const Container = styled.nav``;
+const Container = styled.nav`
+  margin: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+`;

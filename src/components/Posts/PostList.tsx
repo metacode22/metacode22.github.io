@@ -42,7 +42,12 @@ const PostList = ({
               frontmatter,
             },
           }) => (
-            <PostListItem key={id} link={slug} {...frontmatter} />
+            <PostListItem
+              key={id}
+              link={slug}
+              {...frontmatter}
+              isFeatured={isFeatured}
+            />
           ),
         )}
       </PostsContainer>

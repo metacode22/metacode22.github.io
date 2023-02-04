@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import PostList from 'components/common/Posts/PostList';
 import CategoryList, { CategoryListProps } from 'components/Posts/CategoryList';
+import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
 import { useMemo } from 'react';

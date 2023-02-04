@@ -1,5 +1,5 @@
-import PostList from 'components/common/Posts/PostList';
 import Introduction from 'components/Home/Introduction';
+import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { PostItem } from 'types/Post';

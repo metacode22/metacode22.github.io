@@ -4,7 +4,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { Frontmatter } from 'types/Post';
 import COLORS from 'utils/constants/colors';
 
-type Props = Frontmatter & { link: string };
+import CategoryListItem from './CategoryListItem';
+
+type Props = Frontmatter & { link: string; isFeatured: boolean };
 
 const PostListItem = ({
   categories,
@@ -15,15 +17,18 @@ const PostListItem = ({
   },
   title,
   link,
+  isFeatured,
 }: Props) => {
   return (
     <Container to={link}>
       <TextInfoContainer>
         <CategoriesContainer>
           {categories
-            .filter(category => category !== 'Featured')
+            .filter(category => (isFeatured ? category !== 'Featured' : true))
             .map(category => (
-              <Category key={category}>{category}</Category>
+              <CategoryListItem key={category} category={category}>
+                {category}
+              </CategoryListItem>
             ))}
         </CategoriesContainer>
         <Title>{title}</Title>
@@ -43,12 +48,8 @@ const Container = styled(Link)`
   transition: all 0.1s ease-out;
   display: flex;
 
-  &:hover {
-    background-color: ${COLORS.GRAY};
-  }
-
   &:not(:first-of-type) {
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 `;
 
@@ -60,17 +61,6 @@ const TextInfoContainer = styled.div`
 `;
 
 const CategoriesContainer = styled.div``;
-
-const Category = styled.div`
-  display: inline-block;
-  padding: 0.2rem 0.25rem 0;
-  border: 1px solid;
-  border-radius: 1rem;
-
-  &:not(:first-of-type) {
-    margin-left: 0.5rem;
-  }
-`;
 
 const Title = styled.h2`
   margin-top: 0;
