@@ -44,8 +44,8 @@ const ScrollToTopButton = () => {
 export default ScrollToTopButton;
 
 const Container = styled.div<{ isShow: boolean }>`
-  visibility: ${({ isshow }) => (isshow ? 'visible' : 'hidden')};
-  opacity: ${({ isshow }) => (isshow ? 1 : 0)};
+  visibility: ${({ isShow }) => (isShow ? 'visible' : 'hidden')};
+  opacity: ${({ isShow }) => (isShow ? 1 : 0)};
   position: fixed;
   bottom: 3rem;
   right: 3rem;
