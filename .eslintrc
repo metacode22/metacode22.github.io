@@ -24,6 +24,7 @@
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "prettier/prettier": ["error", { "jsxSingleQuote": true }]
+    "prettier/prettier": ["error", { "jsxSingleQuote": true }],
+    "@typescript-eslint/no-floating-promises": "off"
   }
 }

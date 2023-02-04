@@ -19,7 +19,7 @@ const PostListItem = ({
   isFeatured,
 }: Props) => {
   const handleClick = () => {
-    void navigate(link);
+    navigate(link);
   };
 
   return (
