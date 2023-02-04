@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { PostItem } from 'types/Post.types';
+import { PostItem } from 'types/Post';
 
 import PostListItem from './PostListItem';
 

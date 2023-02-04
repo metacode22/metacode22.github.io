@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Frontmatter } from 'types/Post.types';
+import { Frontmatter } from 'types/Post';
 import COLORS from 'utils/constants/colors';
 
 type Props = Frontmatter & { link: string };

@@ -1,8 +1,8 @@
+import PostList from 'components/common/Posts/PostList';
 import Introduction from 'components/Home/Introduction';
-import PostList from 'components/Post/PostList';
 import { graphql } from 'gatsby';
 import { IGatsbyImageData } from 'gatsby-plugin-image';
-import { PostItem } from 'types/Post.types';
+import { PostItem } from 'types/Post';
 
 type Props = {
   data: {
