@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import ROUTES from 'utils/constants/routes';
 
 const NotFound = () => {
   return (
     <Container>
       <h1>Not Found. 404 Error.</h1>
-      <GoHomeButton to='/'>Home</GoHomeButton>
+      <GoHomeButton to={ROUTES.HOME}>Home</GoHomeButton>
     </Container>
   );
 };

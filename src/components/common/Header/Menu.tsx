@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import ROUTES from 'utils/constants/routes';
 
 import DarkModeSwitch from '../DarkModeSwitch';
 
@@ -11,9 +12,9 @@ const Menu = () => {
   return (
     <Container>
       <DarkModeSwitch />
-      <Link to='/'>Home</Link>
-      <Link to='/posts'>Posts</Link>
-      <Link to='/about'>About</Link>
+      <Link to={ROUTES.HOME}>Home</Link>
+      <Link to={ROUTES.POSTS}>Posts</Link>
+      <Link to={ROUTES.ABOUT}>About</Link>
     </Container>
   );
 };
