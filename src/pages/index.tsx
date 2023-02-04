@@ -28,7 +28,7 @@ const Home = ({
   return (
     <>
       <Introduction image={gatsbyImageData} />
-      <PostList posts={posts} />
+      <PostList posts={posts} isFeatured />
     </>
   );
 };
@@ -39,7 +39,7 @@ export const getPostList = graphql`
   query getPostList {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
-      filter: { frontmatter: { categories: { eq: "featured" } } }
+      filter: { frontmatter: { categories: { eq: "Featured" } } }
     ) {
       edges {
         node {

@@ -10,7 +10,8 @@ type Props = {
 
 const CategoryListItem = ({ category, children }: Props) => {
   return (
-    <Container to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${category}`}>
+    <Container
+      to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${encodeURI(category)}`}>
       {children}
     </Container>
   );

@@ -1,18 +1,40 @@
 import styled from '@emotion/styled';
+import { useMemo } from 'react';
 import { PostItem } from 'types/Post';
 
 import PostListItem from './PostListItem';
 
 type Props = {
   posts: PostItem[];
+  isFeatured?: boolean;
+  selectedCategory?: string;
 };
 
-const PostList = ({ posts }: Props) => {
+const PostList = ({
+  posts,
+  isFeatured = false,
+  selectedCategory = 'All',
+}: Props) => {
+  const postListFilteredBySelectedCategory = useMemo(
+    () =>
+      posts.filter(
+        ({
+          node: {
+            frontmatter: { categories },
+          },
+        }: PostItem) =>
+          selectedCategory !== 'All'
+            ? categories.includes(selectedCategory)
+            : true,
+      ),
+    [selectedCategory],
+  );
+
   return (
     <Container>
-      <Title>Featured</Title>
+      {isFeatured && <Title>Featured</Title>}
       <PostsContainer>
-        {posts.map(
+        {postListFilteredBySelectedCategory.map(
           ({
             node: {
               id,

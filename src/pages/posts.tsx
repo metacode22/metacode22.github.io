@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
+import PostList from 'components/common/Posts/PostList';
 import CategoryList, { CategoryListProps } from 'components/Posts/CategoryList';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
 import { useMemo } from 'react';
-import { Category } from 'types/Post';
+import { PostItem } from 'types/Post';
 
 type Props = {
   location: {
@@ -11,7 +12,7 @@ type Props = {
   };
   data: {
     allMarkdownRemark: {
-      edges: Category[];
+      edges: PostItem[];
     };
   };
 };
@@ -36,7 +37,7 @@ const Posts = ({
             node: {
               frontmatter: { categories },
             },
-          },
+          }: PostItem,
         ) => {
           categories.forEach(category => {
             list[category] ??= 0;
@@ -60,19 +61,35 @@ const Posts = ({
         selectedCategory={selectedCategory}
         categoryList={categoryList}
       />
+      <PostList selectedCategory={selectedCategory} posts={edges} />
     </Container>
   );
 };
 
 export default Posts;
 
-export const getCategoryList = graphql`
-  query getCategoryList {
-    allMarkdownRemark {
+export const getPostList = graphql`
+  query getPostList {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+    ) {
       edges {
         node {
+          id
+          fields {
+            slug
+          }
           frontmatter {
+            title
+            summary
+            date(formatString: "YYYY-MM-DD")
             categories
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData
+              }
+              publicURL
+            }
           }
         }
       }
