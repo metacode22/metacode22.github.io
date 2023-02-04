@@ -2,7 +2,7 @@
 date: '2023-01-01'
 title: '빅토리아'
 summary: '팀 프로젝트 해봤음.'
-thumbnail: '../images/logo_bigtoria.png'
+thumbnail: './logo_bigtoria.png'
 categories: ['featured', '프로젝트', '프론트엔드']
 ---
 
@@ -10,7 +10,7 @@ categories: ['featured', '프로젝트', '프론트엔드']
 
 프로그래머스 데브코스 3기 프론트엔드 1차 팀 프로젝트
 
-![test](../images/test.png)
+![test](./test.png)
 
 ```typescript
 const a: number = 1;

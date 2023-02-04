@@ -12,8 +12,8 @@ const Menu = () => {
     <Container>
       <DarkModeSwitch />
       <Link to='/'>Home</Link>
+      <Link to='/posts'>Posts</Link>
       <Link to='/about'>About</Link>
-      <Link to='/blog'>Blog</Link>
     </Container>
   );
 };
