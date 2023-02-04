@@ -32,7 +32,7 @@ const PostHead = ({ title, date, categories, thumbnail }: Props) => {
       <CategoriesCreatedAtContainer>
         <Categories>
           {categoriesWithOutFeatured.map(category => (
-            <Category>{category}</Category>
+            <Category key={category}>{category}</Category>
           ))}
         </Categories>
         <CreatedAt>{date}</CreatedAt>
