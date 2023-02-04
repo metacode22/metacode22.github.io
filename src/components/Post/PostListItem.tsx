@@ -41,7 +41,6 @@ const Container = styled(Link)`
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.1s ease-out;
-
   display: flex;
 
   &:hover {
@@ -55,7 +54,6 @@ const Container = styled(Link)`
 
 const TextInfoContainer = styled.div`
   flex: 3;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;

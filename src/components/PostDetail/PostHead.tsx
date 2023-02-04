@@ -71,7 +71,6 @@ const Category = styled.span`
   background-color: ${COLORS.SUB};
   color: ${COLORS.SUB_BOLD};
   font-size: 0.9rem;
-
   display: inline-block;
 
   &:not(:first-of-type) {

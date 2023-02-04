@@ -15,7 +15,6 @@ const Container = styled.footer`
   height: 3rem;
   background-color: ${COLORS.SUB};
   color: ${COLORS.SUB_BOLD};
-
   display: flex;
   align-items: center;
   justify-content: center;

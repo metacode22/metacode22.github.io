@@ -53,11 +53,10 @@ const Container = styled.header<{ isScrolled: boolean }>`
   top: 0;
   width: 100%;
   height: 3rem;
-  box-shadow: ${({ isScrolled }) =>
-    isScrolled && `1px 1px 3px 0px ${COLORS.SHADOW}`};
+  box-shadow: ${({ isscrolled }) =>
+    isscrolled && `1px 1px 3px 0 ${COLORS.SHADOW}`};
   transition: all 0.15s ease-out;
   background-color: ${COLORS.WHITE};
-
   display: flex;
   align-items: center;
 `;
@@ -65,7 +64,6 @@ const Container = styled.header<{ isScrolled: boolean }>`
 const ButtonsContainer = styled.div`
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;

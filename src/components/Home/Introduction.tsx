@@ -32,7 +32,6 @@ const Container = styled.div`
   width: 100%;
   height: 25rem;
   background-color: ${COLORS.SUB};
-
   display: flex;
   align-items: center;
 `;
