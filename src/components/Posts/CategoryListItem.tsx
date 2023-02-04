@@ -41,6 +41,8 @@ const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
   color: ${COLORS.SUB_BOLD};
   font-size: 0.9rem;
   display: inline-block;
+  transform: scale(${({ active }) => (active ? 1.15 : 1)});
+  transition: all 0.1s ease-out;
 
   &:not(:first-of-type) {
     margin-left: 1rem;

@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Frontmatter } from 'types/Post';
-import COLORS from 'utils/constants/colors';
 
 import CategoryListItem from './CategoryListItem';
 
@@ -19,8 +18,12 @@ const PostListItem = ({
   link,
   isFeatured,
 }: Props) => {
+  const handleClick = () => {
+    void navigate(link);
+  };
+
   return (
-    <Container to={link}>
+    <Container>
       <TextInfoContainer>
         <CategoriesContainer>
           {categories
@@ -31,20 +34,23 @@ const PostListItem = ({
               </CategoryListItem>
             ))}
         </CategoriesContainer>
-        <Title>{title}</Title>
+        <TitleContainer>
+          <Title onClick={handleClick}>{title}</Title>
+        </TitleContainer>
         <Description>{summary}</Description>
         <CreatedAt>{date}</CreatedAt>
       </TextInfoContainer>
-      <Thumbnail image={gatsbyImageData} alt='해당 포스트 썸네일 이미지' />
+      <ThumbnailContainer onClick={handleClick}>
+        <Thumbnail image={gatsbyImageData} alt='해당 포스트 썸네일 이미지' />
+      </ThumbnailContainer>
     </Container>
   );
 };
 
 export default PostListItem;
 
-const Container = styled(Link)`
+const Container = styled.div`
   border-radius: 1rem;
-  cursor: pointer;
   transition: all 0.1s ease-out;
   display: flex;
 
@@ -62,14 +68,25 @@ const TextInfoContainer = styled.div`
 
 const CategoriesContainer = styled.div``;
 
-const Title = styled.h2`
+const TitleContainer = styled.h2``;
+
+const Title = styled.span`
+  cursor: pointer;
   margin-top: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Description = styled.div``;
 
-const Thumbnail = styled(GatsbyImage)`
+const ThumbnailContainer = styled.div`
+  cursor: pointer;
   flex: 1;
+`;
+
+const Thumbnail = styled(GatsbyImage)`
   width: 100%;
   aspect-ratio: 3 / 2;
 `;
