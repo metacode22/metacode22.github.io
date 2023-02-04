@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 import 'assets/styles/global.css';
-import 'prismjs/themes/prism.css';
+import 'prismjs/themes/prism-okaidia.css';
 import Layout from 'components/common/Layout.tsx';
 
 export const wrapPageElement = ({ element, props }) => {

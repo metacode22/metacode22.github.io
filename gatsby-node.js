@@ -72,10 +72,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     }) => {
       createPage({
-        // 강의에서는 그냥 slug로 해주던데 그러면 구별하기 애매하다고 생각해서 posts를 붙였다.
-        // 따라서 포스트로 이동하는 Link에서도 to에 posts를 붙여줬다.
-        // slug가 /post-1/ 형태라서 다음과 같이 작성
-        path: `/posts${slug}`,
+        path: slug,
         component: PostTemplate,
         // 이제 PostTemplate에서 graphql로 query를 보낼 때 slug 인자를 사용할 수 있다.
         context: { slug },

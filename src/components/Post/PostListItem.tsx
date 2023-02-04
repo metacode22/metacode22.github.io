@@ -17,7 +17,7 @@ const PostListItem = ({
   link,
 }: Props) => {
   return (
-    <Container to={`/posts${link}`}>
+    <Container to={link}>
       <TextInfoContainer>
         <CategoriesContainer>
           {categories
