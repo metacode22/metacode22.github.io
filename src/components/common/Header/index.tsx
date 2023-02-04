@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { useEffect, useRef } from 'react';
 import { useState } from 'react';
 import COLORS from 'utils/constants/colors';
+
 import Logo from './Logo';
 import Menu from './Menu';
 import SearchBar from './SearchBar';

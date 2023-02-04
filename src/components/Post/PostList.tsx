@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { PostItem } from 'types/Post.types';
+
 import PostListItem from './PostListItem';
 
 type Props = {

@@ -14,7 +14,7 @@ const PostListItem = ({
     childImageSharp: { gatsbyImageData },
   },
   title,
-  link
+  link,
 }: Props) => {
   return (
     <Container to={`/posts${link}`}>

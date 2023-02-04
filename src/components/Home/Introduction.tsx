@@ -17,7 +17,9 @@ const Introduction = ({ image }: Props) => {
       <ContentContainer>
         <IntroductionAvatar image={image} alt='내 얼굴' />
         <Title>안녕하세요, 메타몽 닮은 개발자입니다.</Title>
-        <Description>프론트엔드 개발자 되고 싶습니다. 나름 열심히 하는 중입니다.</Description>
+        <Description>
+          프론트엔드 개발자 되고 싶습니다. 나름 열심히 하는 중입니다.
+        </Description>
         {/* <Links /> */}
       </ContentContainer>
     </Container>

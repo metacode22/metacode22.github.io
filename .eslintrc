@@ -19,9 +19,11 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
   "ignorePatterns": ["dist/", "node_modules/"],
   "rules": {
-    "prettier/prettier": [{ "jsxSingleQuote": true }]
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "prettier/prettier": ["error", { "jsxSingleQuote": true }]
   }
 }
