@@ -18,7 +18,7 @@ type Props = {
  */
 const PostHead = ({ title, date, categories, thumbnail }: Props) => {
   const categoriesWithOutFeatured = categories.filter(
-    category => category !== 'featured',
+    category => category !== 'Featured',
   );
 
   return (

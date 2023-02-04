@@ -21,7 +21,7 @@ const PostListItem = ({
       <TextInfoContainer>
         <CategoriesContainer>
           {categories
-            .filter(category => category !== 'featured')
+            .filter(category => category !== 'Featured')
             .map(category => (
               <Category key={category}>{category}</Category>
             ))}

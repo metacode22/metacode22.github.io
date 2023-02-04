@@ -3,7 +3,7 @@ date: '2023-01-31'
 title: '귀여운 승두니'
 summary: '뀨잉뀨잉'
 thumbnail: './KakaoTalk_Photo_2023-01-21-15-50-15.jpeg'
-categories: ['featured', '일상']
+categories: ['Featured', '일상']
 ---
 
 작업량이 워낙 빠르게 늘어나서 나중에 회고하기엔 불편하겠다는 생각이 들었다. 생각나는대로 간단하게 남겨놔야겠다.

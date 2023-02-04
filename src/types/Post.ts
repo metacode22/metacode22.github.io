@@ -29,3 +29,11 @@ export type PostDetail = {
     frontmatter: Frontmatter;
   };
 };
+
+export type Category = {
+  node: {
+    frontmatter: {
+      categories: string[];
+    };
+  };
+};
