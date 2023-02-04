@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import CategoryListItem from 'components/Posts/CategoryListItem';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import COLORS from 'utils/constants/colors';
 
 type Props = {
   title: string;
