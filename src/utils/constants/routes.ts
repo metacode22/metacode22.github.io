@@ -1,7 +1,9 @@
-const ROUTES = {
+export const ROUTES = {
   HOME: '/',
   POSTS: '/posts',
   ABOUT: '/about',
 };
 
-export default ROUTES;
+export const QUERIES = {
+  CATEGORY: 'category',
+};

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { ReactNode } from 'react';
+import { QUERIES, ROUTES } from 'utils/constants/routes';
 
 type Props = {
   category: string;
@@ -8,7 +9,11 @@ type Props = {
 };
 
 const CategoryListItem = ({ category, children }: Props) => {
-  return <Container to={`/posts/?category=${category}`}>{children}</Container>;
+  return (
+    <Container to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${category}`}>
+      {children}
+    </Container>
+  );
 };
 
 export default CategoryListItem;

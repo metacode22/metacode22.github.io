@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import ROUTES from 'utils/constants/routes';
+import { ROUTES } from 'utils/constants/routes';
 
 const NotFound = () => {
   return (
