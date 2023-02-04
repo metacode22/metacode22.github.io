@@ -31,4 +31,6 @@ const Container = styled.main`
  * To Do
  * media, 반응형 디자인 작성
  */
-const ContentContainer = styled.main``;
+const ContentContainer = styled.main`
+  margin-top: 4rem;
+`;

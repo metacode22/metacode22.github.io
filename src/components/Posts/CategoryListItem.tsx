@@ -5,13 +5,21 @@ import COLORS from 'utils/constants/colors';
 import { QUERIES, ROUTES } from 'utils/constants/routes';
 
 type Props = {
+  active?: boolean;
   category: string;
   children: ReactNode;
 };
 
-const CategoryListItem = ({ category, children }: Props) => {
+type GatsbyLinkProps = {
+  to: string;
+  active: boolean;
+  children: ReactNode;
+};
+
+const CategoryListItem = ({ active = false, category, children }: Props) => {
   return (
     <Container
+      active={active}
       to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${encodeURI(category)}`}>
       {children}
     </Container>
@@ -20,12 +28,16 @@ const CategoryListItem = ({ category, children }: Props) => {
 
 export default CategoryListItem;
 
-const Container = styled(Link)`
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
+  <Link {...props} />
+))<{ active: boolean }>`
   z-index: 9;
   border-radius: 1rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   cursor: pointer;
-  background-color: ${COLORS.SUB};
+  background-color: ${({ active }) =>
+    active ? COLORS.SUB_MIDDLE_BOLD : COLORS.SUB};
   color: ${COLORS.SUB_BOLD};
   font-size: 0.9rem;
   display: inline-block;
@@ -36,5 +48,6 @@ const Container = styled(Link)`
 
   &:hover {
     background-color: ${COLORS.SUB_MIDDLE_BOLD};
+    color: ${COLORS.SUB_BOLD};
   }
 `;

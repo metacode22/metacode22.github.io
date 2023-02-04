@@ -49,10 +49,10 @@ export default Header;
 
 const Container = styled.header<{ isScrolled: boolean }>`
   z-index: 10;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   box-shadow: ${({ isScrolled }) =>
     isScrolled && `1px 1px 3px 0 ${COLORS.SHADOW}`};
   transition: all 0.15s ease-out;

@@ -16,7 +16,10 @@ const CategoryList = ({
   return (
     <Container>
       {Object.entries(categoryList).map(([name, count]) => (
-        <CategoryListItem category={name} key={name}>
+        <CategoryListItem
+          active={selectedCategory === name}
+          category={name}
+          key={name}>
           {name} {count}
         </CategoryListItem>
       ))}
