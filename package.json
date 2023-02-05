@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Developer Shin Seung Jun's personal blog.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Shin Seung Jun alohajune22@gmail.com>",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
