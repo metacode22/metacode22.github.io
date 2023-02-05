@@ -13,17 +13,17 @@ module.exports = {
    * 배포 후 siteUrl 등 수정
    */
   siteMetadata: {
-    title: `Dev-Log`,
-    description: `프론트엔드 개발자 승두니의 이야기`,
-    author: `Shin Seung Jun`,
-    // siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: 'Dev-Log',
+    description: '프론트엔드 개발자 승두니의 이야기',
+    author: 'Shin Seung Jun',
+    // siteUrl: 'https://gatsbystarterdefaultsource.gatsbyjs.io/',
   },
   plugins: [
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: 'gatsby-plugin-sharp',
       options: {
         defaults: {
           formats: ['auto', 'webp'],
@@ -33,7 +33,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
         allExtensions: true,
@@ -41,29 +41,29 @@ module.exports = {
     },
     // 여기 안의 image들은 포스팅에 사용됨.
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `contents`,
+        name: 'contents',
         path: `${__dirname}/contents`,
       },
     },
     // 여기 안의 image들은 포스팅 이 외에 쓰이는 이미지들.
     // 그냥 내가 이렇게 나눔.
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `static_images`,
+        name: 'static_images',
         path: `${__dirname}/static`,
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          `gatsby-remark-smartypants`,
-          `gatsby-remark-copy-linked-files`,
+          'gatsby-remark-smartypants',
+          'gatsby-remark-copy-linked-files',
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 768,
               withWebp: true,
@@ -71,7 +71,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
             },

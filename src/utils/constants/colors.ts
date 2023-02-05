@@ -6,6 +6,7 @@ const COLORS = {
   WHITE: '#ffffff',
   BLACK: '#000000',
   GRAY: '#e2e5e6',
+  GRAY_BOLD: '#757575',
   SHADOW: 'rgba(82,82,82,0.75)',
 };
 

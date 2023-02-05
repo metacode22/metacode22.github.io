@@ -15,6 +15,7 @@ export type Frontmatter = {
 
 export type PostItem = {
   node: {
+    timeToRead: number;
     id: string;
     fields: {
       slug: string;
@@ -25,6 +26,7 @@ export type PostItem = {
 
 export type PostDetail = {
   node: {
+    timeToRead: number;
     html: string;
     frontmatter: Frontmatter;
   };

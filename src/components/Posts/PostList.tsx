@@ -29,6 +29,7 @@ const PostList = ({
       ),
     [selectedCategory],
   );
+  console.log(posts);
 
   return (
     <Container>
@@ -37,6 +38,7 @@ const PostList = ({
         {postListFilteredBySelectedCategory.map(
           ({
             node: {
+              timeToRead,
               id,
               fields: { slug },
               frontmatter,
@@ -47,6 +49,7 @@ const PostList = ({
               link={slug}
               {...frontmatter}
               isFeatured={isFeatured}
+              timeToRead={timeToRead}
             />
           ),
         )}

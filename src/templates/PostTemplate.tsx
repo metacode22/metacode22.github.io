@@ -19,6 +19,8 @@ const PostTemplate = ({
 }: Props) => {
   const {
     node: {
+      timeToRead,
+      html,
       frontmatter: {
         title,
         summary,
@@ -29,7 +31,6 @@ const PostTemplate = ({
           publicURL,
         },
       },
-      html,
     },
   } = edges[0];
   return (
@@ -39,6 +40,7 @@ const PostTemplate = ({
         date={date}
         categories={categories}
         thumbnail={gatsbyImageData}
+        timeToRead={timeToRead}
       />
       <PostContent html={html} />
     </Container>
@@ -52,6 +54,7 @@ export const getMarkdownDataBySlug = graphql`
     allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
+          timeToRead
           html
           frontmatter {
             title

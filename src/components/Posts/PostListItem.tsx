@@ -5,7 +5,11 @@ import { Frontmatter } from 'types/Post';
 
 import CategoryListItem from './CategoryListItem';
 
-type Props = Frontmatter & { link: string; isFeatured: boolean };
+type Props = Frontmatter & {
+  link: string;
+  isFeatured: boolean;
+  timeToRead: number;
+};
 
 const PostListItem = ({
   categories,
@@ -17,6 +21,7 @@ const PostListItem = ({
   title,
   link,
   isFeatured,
+  timeToRead,
 }: Props) => {
   const handleClick = () => {
     navigate(link);
@@ -38,7 +43,10 @@ const PostListItem = ({
           <Title onClick={handleClick}>{title}</Title>
         </TitleContainer>
         <Description>{summary}</Description>
-        <CreatedAt>{date}</CreatedAt>
+        <CreatedAtAndTimeToReadContainer>
+          <CreatedAt>{date}</CreatedAt>
+          <TimeToRead>{timeToRead} min read</TimeToRead>
+        </CreatedAtAndTimeToReadContainer>
       </TextInfoContainer>
       <ThumbnailContainer onClick={handleClick}>
         <Thumbnail image={gatsbyImageData} alt='해당 포스트 썸네일 이미지' />
@@ -91,4 +99,12 @@ const Thumbnail = styled(GatsbyImage)`
   aspect-ratio: 3 / 2;
 `;
 
-const CreatedAt = styled.div``;
+const CreatedAtAndTimeToReadContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const CreatedAt = styled.span``;
+
+const TimeToRead = styled.span``;

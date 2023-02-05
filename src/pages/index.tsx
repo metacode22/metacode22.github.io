@@ -43,6 +43,7 @@ export const getPostList = graphql`
     ) {
       edges {
         node {
+          timeToRead
           id
           fields {
             slug

@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import CategoryListItem from 'components/Posts/CategoryListItem';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import COLORS from 'utils/constants/colors';
 
 type Props = {
   title: string;
   date: string;
   categories: string[];
   thumbnail: IGatsbyImageData;
+  timeToRead: number;
 };
 
 /**
@@ -16,7 +18,13 @@ type Props = {
  *
  * ViewCount 구현 할까 말까...
  */
-const PostHead = ({ title, date, categories, thumbnail }: Props) => {
+const PostHead = ({
+  title,
+  date,
+  categories,
+  thumbnail,
+  timeToRead,
+}: Props) => {
   return (
     <Container>
       <Thumbnail image={thumbnail} alt='해당 포스트 썸네일 이미지' />
@@ -24,15 +32,15 @@ const PostHead = ({ title, date, categories, thumbnail }: Props) => {
         <Title>{title}</Title>
         {/* <ViewCount></ViewCount> */}
       </div>
-      {/* <TimeToRead></TimeToRead> */}
       <CategoriesCreatedAtContainer>
-        <Categories>
+        <CategoriesAndTimeToReadContainer>
           {categories.map(category => (
             <CategoryListItem category={category} key={category}>
               {category}
             </CategoryListItem>
           ))}
-        </Categories>
+          <TimeToRead>{timeToRead} min read</TimeToRead>
+        </CategoriesAndTimeToReadContainer>
         <CreatedAt>{date}</CreatedAt>
       </CategoriesCreatedAtContainer>
     </Container>
@@ -60,6 +68,13 @@ const CategoriesCreatedAtContainer = styled.div`
 
 const Title = styled.h1``;
 
-const Categories = styled.div``;
+const CategoriesAndTimeToReadContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const TimeToRead = styled.div`
+  margin-left: 1rem;
+`;
 
 const CreatedAt = styled.div``;
