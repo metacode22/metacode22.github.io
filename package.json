@@ -24,8 +24,7 @@
     "query-string": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "reading-time": "^1.5.0"
+    "react-icons": "^4.7.1"
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.38.0",
