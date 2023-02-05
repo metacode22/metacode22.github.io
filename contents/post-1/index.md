@@ -10,7 +10,9 @@ categories: ['Featured', '프로젝트', '프론트엔드']
 
 프로그래머스 데브코스 3기 프론트엔드 1차 팀 프로젝트
 
-![test](./test.png)
+<div style="width: 200px; margin: 0 auto;">
+    <img src='./test.png'></img>
+</div>
 
 ```typescript
 const a: number = 1;

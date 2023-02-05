@@ -1,8 +1,8 @@
 const COLORS = {
   MAIN: '#f5f5f8',
-  SUB: '#eeebfd',
-  SUB_BOLD: '#6247f9',
-  SUB_MIDDLE_BOLD: '#ddd6fe',
+  SUB: '#e4f1ff',
+  SUB_MIDDLE_BOLD: '#badcff',
+  SUB_BOLD: '#0975ea',
   WHITE: '#ffffff',
   BLACK: '#000000',
   GRAY: '#e2e5e6',

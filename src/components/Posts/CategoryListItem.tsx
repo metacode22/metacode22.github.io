@@ -34,7 +34,7 @@ const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
 ))<{ active: boolean }>`
   z-index: 9;
   border-radius: 1rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   cursor: pointer;
   background-color: ${({ active }) =>
     active ? COLORS.SUB_MIDDLE_BOLD : COLORS.SUB};
