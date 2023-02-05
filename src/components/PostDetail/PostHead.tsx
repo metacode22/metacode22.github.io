@@ -66,7 +66,9 @@ const CategoriesCreatedAtContainer = styled.div`
   justify-content: space-between;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  word-break: keep-all;
+`;
 
 const CategoriesAndTimeToReadContainer = styled.div`
   display: flex;
