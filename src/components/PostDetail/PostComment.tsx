@@ -24,6 +24,8 @@ const PostComment = () => {
     const attributes: UtterancesAttributesType = {
       src,
       repo,
+      // To Do
+      // pathname에서 title로 바꾸기
       'issue-term': 'pathname',
       label: 'Comment',
       theme: 'github-light',

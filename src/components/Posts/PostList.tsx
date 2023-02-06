@@ -29,7 +29,6 @@ const PostList = ({
       ),
     [selectedCategory],
   );
-  console.log(posts);
 
   return (
     <Container>
