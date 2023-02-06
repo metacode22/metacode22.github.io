@@ -9,7 +9,6 @@
  */
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
-const { graphql } = require('gatsby');
 
 exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
   const output = getConfig().output || {};
