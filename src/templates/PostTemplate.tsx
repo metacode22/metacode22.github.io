@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import PostComment from 'components/PostDetail/PostComment';
 import PostContent from 'components/PostDetail/PostContent';
 import PostHead from 'components/PostDetail/PostHead';
 import { graphql } from 'gatsby';
@@ -43,6 +44,7 @@ const PostTemplate = ({
         timeToRead={timeToRead}
       />
       <PostContent html={html} />
+      <PostComment />
     </Container>
   );
 };
