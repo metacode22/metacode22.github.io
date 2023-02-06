@@ -21,7 +21,6 @@ const Home = ({
     allMarkdownRemark: { edges: posts },
     file: {
       childImageSharp: { gatsbyImageData },
-      publicURL,
     },
   },
 }: Props) => {

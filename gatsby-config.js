@@ -7,17 +7,14 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const metaConfig = require('./gatsby-meta');
+
 module.exports = {
   /**
    * To Do
    * 배포 후 siteUrl 등 수정
    */
-  siteMetadata: {
-    title: 'Dev-Log',
-    description: '프론트엔드 개발자 승두니의 이야기',
-    author: 'Shin Seung Jun',
-    siteUrl: 'https://gatsbystarterdefaultsource.gatsbyjs.io/',
-  },
+  siteMetadata: metaConfig,
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',

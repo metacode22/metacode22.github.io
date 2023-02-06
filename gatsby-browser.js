@@ -8,13 +8,22 @@
 import 'assets/styles/global.css';
 import 'prismjs/themes/prism-okaidia.css';
 
-// To Do
-// Layout 컴포넌트를 통해 seo 처리하기 위해 주석 처리
 import Layout from 'components/common/Layout.tsx';
+import { makeMetadata } from 'utils/helpers.ts';
 
 export const wrapPageElement = ({ element, props }) => {
-  console.log('-------------element', element);
-  console.log('-------------props', props);
+  const { title, description, url, image } = makeMetadata(props);
+  
+
   if (element.key === '/404.html') return;
-  return <Layout {...props}>{element}</Layout>;
+  return (
+    <Layout
+      title={title}
+      description={description}
+      url={url}
+      image={image}
+      {...props}>
+      {element}
+    </Layout>
+  );
 };
