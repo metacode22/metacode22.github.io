@@ -1,8 +1,13 @@
 import styled from '@emotion/styled';
+import { ForwardedRef, forwardRef } from 'react';
 
-const PostContent = ({ html }: { html: string }) => {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
-};
+const PostContent = forwardRef(
+  ({ html }: { html: string }, ref: ForwardedRef<HTMLDivElement>) => {
+    return (
+      <MarkdownRenderer ref={ref} dangerouslySetInnerHTML={{ __html: html }} />
+    );
+  },
+);
 
 export default PostContent;
 

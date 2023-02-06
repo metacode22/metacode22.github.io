@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Layout from 'components/common/Layout';
 import CategoryList, { CategoryListProps } from 'components/Posts/CategoryList';
 import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
@@ -9,18 +10,33 @@ import { PostItem } from 'types/Post';
 type Props = {
   location: {
     search: string;
+    href: string;
   };
   data: {
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+        siteUrl: string;
+      };
+    };
     allMarkdownRemark: {
       edges: PostItem[];
+    };
+    file: {
+      publicURL: string;
     };
   };
 };
 
 const Posts = ({
-  location: { search },
+  location: { search, href },
   data: {
+    site: {
+      siteMetadata: { title, description, siteUrl },
+    },
     allMarkdownRemark: { edges },
+    file: { publicURL },
   },
 }: Props) => {
   const parsedQueries: ParsedQuery<string> = queryString.parse(search);
@@ -56,13 +72,19 @@ const Posts = ({
   );
 
   return (
-    <Container>
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
-      <PostList selectedCategory={selectedCategory} posts={edges} />
-    </Container>
+    <Layout
+      title={title}
+      description={description}
+      url={href}
+      image={publicURL}>
+      <Container>
+        <CategoryList
+          selectedCategory={selectedCategory}
+          categoryList={categoryList}
+        />
+        <PostList selectedCategory={selectedCategory} posts={edges} />
+      </Container>
+    </Layout>
   );
 };
 
@@ -70,6 +92,13 @@ export default Posts;
 
 export const getPostList = graphql`
   query getPostList {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
     ) {
@@ -94,6 +123,9 @@ export const getPostList = graphql`
           }
         }
       }
+    }
+    file(name: { eq: "introduction-avatar-image" }) {
+      publicURL
     }
   }
 `;

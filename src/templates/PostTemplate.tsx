@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
+import Layout from 'components/common/Layout';
 import PostComment from 'components/PostDetail/PostComment';
 import PostContent from 'components/PostDetail/PostContent';
 import PostHead from 'components/PostDetail/PostHead';
 import TableOfContents from 'components/PostDetail/TableOfContents';
 import { graphql } from 'gatsby';
+import { useRef } from 'react';
 import { PostDetail } from 'types/Post';
 
 type Props = {
@@ -12,13 +14,18 @@ type Props = {
       edges: PostDetail[];
     };
   };
+  location: {
+    href: string;
+  };
 };
 
 const PostTemplate = ({
   data: {
     allMarkdownRemark: { edges },
   },
+  location: { href },
 }: Props) => {
+  const contentRef = useRef<HTMLDivElement>(null);
   const {
     node: {
       tableOfContents,
@@ -36,21 +43,24 @@ const PostTemplate = ({
       },
     },
   } = edges[0];
+
   return (
-    <ContainerWithTableOfContents>
-      <Container>
-        <PostHead
-          title={title}
-          date={date}
-          categories={categories}
-          thumbnail={gatsbyImageData}
-          timeToRead={timeToRead}
-        />
-        <PostContent html={html} />
-        <PostComment />
-      </Container>
-      <TableOfContents tableOfContents={tableOfContents} />
-    </ContainerWithTableOfContents>
+    <Layout title={title} description={summary} url={href} image={publicURL}>
+      <ContainerWithTableOfContents>
+        <Container>
+          <PostHead
+            title={title}
+            date={date}
+            categories={categories}
+            thumbnail={gatsbyImageData}
+            timeToRead={timeToRead}
+          />
+          <PostContent ref={contentRef} html={html} />
+          <PostComment />
+        </Container>
+        <TableOfContents ref={contentRef} tableOfContents={tableOfContents} />
+      </ContainerWithTableOfContents>
+    </Layout>
   );
 };
 

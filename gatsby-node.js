@@ -47,13 +47,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               fields {
                 slug
               }
-              frontmatter {
-                title
-                summary
-                thumbnail {
-                  publicURL
-                }
-              }
             }
           }
         }
@@ -78,18 +71,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     ({
       node: {
         fields: { slug },
-        frontmatter: {
-          title,
-          summary,
-          thumbnail: { publicURL },
-        },
       },
     }) => {
       createPage({
         path: slug,
         component: PostTemplate,
         // 이제 PostTemplate에서 graphql로 query를 보낼 때 slug 인자를 사용할 수 있다.
-        context: { slug, title, summary, publicURL },
+        context: { slug },
       });
     },
   );

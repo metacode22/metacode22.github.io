@@ -23,6 +23,6 @@ export default Menu;
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 `;

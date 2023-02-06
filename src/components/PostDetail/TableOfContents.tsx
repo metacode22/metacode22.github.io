@@ -1,18 +1,22 @@
 import styled from '@emotion/styled';
+import { ForwardedRef, forwardRef } from 'react';
 
 type Props = {
   tableOfContents: string;
 };
 
-const TableOfContents = ({ tableOfContents }: Props) => {
-  return (
-    <Container>
-      <TableOfContentsRenderer
-        dangerouslySetInnerHTML={{ __html: tableOfContents }}
-      />
-    </Container>
-  );
-};
+const TableOfContents = forwardRef(
+  ({ tableOfContents }: Props, ref: ForwardedRef<HTMLDivElement>) => {
+    console.log(ref);
+    return (
+      <Container>
+        <TableOfContentsRenderer
+          dangerouslySetInnerHTML={{ __html: tableOfContents }}
+        />
+      </Container>
+    );
+  },
+);
 
 export default TableOfContents;
 

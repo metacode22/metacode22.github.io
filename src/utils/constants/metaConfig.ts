@@ -1,4 +1,4 @@
-module.exports = {
+const META_CONFIG = {
   title: 'Dev-Log',
   description: '프론트엔드 개발자 승두니의 이야기',
   author: 'Shin Seung Jun',
@@ -6,3 +6,5 @@ module.exports = {
   // 배포 후 사이트 url로 바꾸기.
   siteUrl: 'https://gatsbystarterdefaultsource.gatsbyjs.io/',
 };
+
+export default META_CONFIG;
