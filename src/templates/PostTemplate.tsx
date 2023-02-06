@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import PostComment from 'components/PostDetail/PostComment';
 import PostContent from 'components/PostDetail/PostContent';
 import PostHead from 'components/PostDetail/PostHead';
+import TableOfContents from 'components/PostDetail/TableOfContents';
 import { graphql } from 'gatsby';
 import { PostDetail } from 'types/Post';
 
@@ -20,6 +21,7 @@ const PostTemplate = ({
 }: Props) => {
   const {
     node: {
+      tableOfContents,
       timeToRead,
       html,
       frontmatter: {
@@ -35,17 +37,20 @@ const PostTemplate = ({
     },
   } = edges[0];
   return (
-    <Container>
-      <PostHead
-        title={title}
-        date={date}
-        categories={categories}
-        thumbnail={gatsbyImageData}
-        timeToRead={timeToRead}
-      />
-      <PostContent html={html} />
-      <PostComment />
-    </Container>
+    <ContainerWithTableOfContents>
+      <Container>
+        <PostHead
+          title={title}
+          date={date}
+          categories={categories}
+          thumbnail={gatsbyImageData}
+          timeToRead={timeToRead}
+        />
+        <PostContent html={html} />
+        <PostComment />
+      </Container>
+      <TableOfContents tableOfContents={tableOfContents} />
+    </ContainerWithTableOfContents>
   );
 };
 
@@ -56,6 +61,7 @@ export const getMarkdownDataBySlug = graphql`
     allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
+          tableOfContents
           timeToRead
           html
           frontmatter {
@@ -76,8 +82,12 @@ export const getMarkdownDataBySlug = graphql`
   }
 `;
 
+const ContainerWithTableOfContents = styled.div`
+  position: relative;
+  width: 900px;
+  margin: 0 auto;
+`;
+
 const Container = styled.div`
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
 `;
