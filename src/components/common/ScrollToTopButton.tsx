@@ -44,21 +44,21 @@ const ScrollToTopButton = () => {
 export default ScrollToTopButton;
 
 const Container = styled.div<{ isShow: boolean }>`
-  visibility: ${({ isShow }) => (isShow ? 'visible' : 'hidden')};
-  opacity: ${({ isShow }) => (isShow ? 1 : 0)};
   position: fixed;
-  bottom: 3rem;
   right: 3rem;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: ${COLORS.SUB};
+  bottom: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: ${COLORS.SUB};
+  border-radius: 50%;
   box-shadow: 3px 3px 5px 0 ${COLORS.SHADOW};
-  transition: all 0.15s ease-out;
+  visibility: ${({ isShow }) => (isShow ? 'visible' : 'hidden')};
   cursor: pointer;
+  opacity: ${({ isShow }) => (isShow ? 1 : 0)};
+  transition: all 0.15s ease-out;
 
   &:hover {
     transform: scale(1.05);

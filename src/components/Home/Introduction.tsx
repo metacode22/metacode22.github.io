@@ -41,21 +41,20 @@ const Introduction = ({ image }: Props) => {
 export default Introduction;
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 25rem;
   background-color: ${COLORS.SUB};
-  display: flex;
-  align-items: center;
 `;
 
 const ContentContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-items: center;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 `;
 
 const IntroductionAvatar = styled(GatsbyImage)`
@@ -65,10 +64,10 @@ const IntroductionAvatar = styled(GatsbyImage)`
 `;
 
 const InfoContainer = styled.div`
-  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 180px;
 `;
 
 const Title = styled.h1`
@@ -79,6 +78,6 @@ const Description = styled.p``;
 
 const LinksContainer = styled.div`
   display: flex;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 `;

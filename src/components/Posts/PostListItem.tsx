@@ -58,9 +58,9 @@ const PostListItem = ({
 export default PostListItem;
 
 const Container = styled.div`
+  display: flex;
   border-radius: 1rem;
   transition: all 0.1s ease-out;
-  display: flex;
 
   &:not(:first-of-type) {
     margin-top: 3rem;
@@ -68,8 +68,8 @@ const Container = styled.div`
 `;
 
 const TextInfoContainer = styled.div`
-  flex: 3;
   display: flex;
+  flex: 3;
   flex-direction: column;
   justify-content: space-between;
 `;
@@ -79,8 +79,8 @@ const CategoriesContainer = styled.div``;
 const TitleContainer = styled.h2``;
 
 const Title = styled.span`
-  cursor: pointer;
   margin-top: 0;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
@@ -90,8 +90,8 @@ const Title = styled.span`
 const Description = styled.div``;
 
 const ThumbnailContainer = styled.div`
-  cursor: pointer;
   flex: 1;
+  cursor: pointer;
 `;
 
 const Thumbnail = styled(GatsbyImage)`
@@ -101,8 +101,8 @@ const Thumbnail = styled(GatsbyImage)`
 
 const CreatedAtAndTimeToReadContainer = styled.div`
   display: flex;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 `;
 
 const CreatedAt = styled.span``;

@@ -10,12 +10,12 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.footer`
-  margin-top: 8rem;
-  width: 100%;
-  height: 3rem;
-  background-color: ${COLORS.SUB};
-  color: ${COLORS.SUB_BOLD};
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 3rem;
+  margin-top: 8rem;
+  color: ${COLORS.SUB_BOLD};
+  background-color: ${COLORS.SUB};
 `;

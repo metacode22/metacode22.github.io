@@ -33,15 +33,15 @@ const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<{ active: boolean }>`
   z-index: 9;
-  border-radius: 1rem;
+  display: inline-block;
   padding: 0.35rem 0.75rem;
-  cursor: pointer;
-  background-color: ${({ active }) =>
-    active ? COLORS.SUB_MIDDLE_BOLD : COLORS.SUB};
   color: ${COLORS.SUB_BOLD};
   font-size: 0.9rem;
-  display: inline-block;
+  background-color: ${({ active }) =>
+    active ? COLORS.SUB_MIDDLE_BOLD : COLORS.SUB};
+  border-radius: 1rem;
   transform: scale(${({ active }) => (active ? 1.15 : 1)});
+  cursor: pointer;
   transition: all 0.1s ease-out;
 
   &:not(:first-of-type) {
@@ -49,7 +49,7 @@ const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 
   &:hover {
-    background-color: ${COLORS.SUB_MIDDLE_BOLD};
     color: ${COLORS.SUB_BOLD};
+    background-color: ${COLORS.SUB_MIDDLE_BOLD};
   }
 `;

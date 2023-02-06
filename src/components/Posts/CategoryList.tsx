@@ -30,9 +30,9 @@ const CategoryList = ({
 export default CategoryList;
 
 const Container = styled.nav`
-  margin: 4rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  margin: 4rem;
 `;

@@ -13,12 +13,12 @@ const MarkdownRenderer = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 100px 0;
-  word-break: break-all;
+  font-weight: 400;
+  font-size: 16px;
 
   /* Markdown Style */
   line-height: 1.8;
-  font-size: 16px;
-  font-weight: 400;
+  word-break: break-all;
 
   /* Apply Padding Attribute to All Elements */
   p {
@@ -29,8 +29,8 @@ const MarkdownRenderer = styled.div`
   h1,
   h2,
   h3 {
-    font-weight: 700;
     margin-bottom: 30px;
+    font-weight: 700;
   }
 
   h1 {
@@ -61,8 +61,8 @@ const MarkdownRenderer = styled.div`
   blockquote {
     margin: 30px 0;
     padding: 5px 15px;
-    border-left: 2px solid #000;
     font-weight: 800;
+    border-left: 2px solid #000;
   }
 
   /* Adjust List Element Style */
@@ -74,8 +74,8 @@ const MarkdownRenderer = styled.div`
 
   /* Adjust Horizontal Rule style */
   hr {
-    border: 1px solid #000;
     margin: 100px 0;
+    border: 1px solid #000;
   }
 
   /* Adjust Link Element Style */
