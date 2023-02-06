@@ -83,5 +83,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        // To Do
+        // 배포 후 사이트 url로 바꾸기.
+        siteUrl: '<https://my-website.com/>',
+        stripQueryString: true,
+      },
+    },
   ],
 };
