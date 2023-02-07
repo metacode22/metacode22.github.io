@@ -130,4 +130,4 @@ export const getPostList = graphql`
   }
 `;
 
-const Container = styled.main``;
+const Container = styled.div``;

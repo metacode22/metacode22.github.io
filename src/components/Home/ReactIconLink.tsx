@@ -4,11 +4,16 @@ import { ReactNode } from 'react';
 type Props = {
   children: ReactNode;
   href: string;
+  ariaLabel: string;
 };
 
-const ReactIconLink = ({ children, href }: Props) => {
+const ReactIconLink = ({ children, href, ariaLabel }: Props) => {
   return (
-    <Container href={href} target='_blank' rel='noopener noreferrer'>
+    <Container
+      href={href}
+      target='_blank'
+      rel='noopener noreferrer'
+      aria-label={ariaLabel}>
       {children}
     </Container>
   );

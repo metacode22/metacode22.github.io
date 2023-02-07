@@ -25,10 +25,14 @@ const Introduction = ({ image }: Props) => {
             프론트엔드 개발자 되고 싶습니다. 나름 열심히 하는 중입니다.
           </Description>
           <LinksContainer>
-            <ReactIconLink href='https://github.com/metacode22'>
+            <ReactIconLink
+              href='https://github.com/metacode22'
+              ariaLabel='Github'>
               <FaGithub />
             </ReactIconLink>
-            <ReactIconLink href='https://www.linkedin.com/in/%EC%8A%B9%EC%A4%80-%EC%8B%A0-73602420a/'>
+            <ReactIconLink
+              href='https://www.linkedin.com/in/%EC%8A%B9%EC%A4%80-%EC%8B%A0-73602420a/'
+              ariaLabel='LinkedIn'>
               <FaLinkedin />
             </ReactIconLink>
           </LinksContainer>
