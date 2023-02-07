@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef, useEffect } from 'react';
 
 type Props = {
   tableOfContents: string;
@@ -7,7 +7,12 @@ type Props = {
 
 const TableOfContents = forwardRef(
   ({ tableOfContents }: Props, ref: ForwardedRef<HTMLDivElement>) => {
-    console.log(ref);
+    useEffect(() => {
+      if (typeof ref !== 'function') {
+        console.log(ref?.current?.querySelectorAll('h1, h2, h3'));
+      }
+    }, []);
+
     return (
       <Container>
         <TableOfContentsRenderer

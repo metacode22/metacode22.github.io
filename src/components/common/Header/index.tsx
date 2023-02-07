@@ -48,23 +48,23 @@ const Header = () => {
 export default Header;
 
 const Container = styled.header<{ isScrolled: boolean }>`
-  z-index: 10;
   position: fixed;
   top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 4rem;
+  background-color: ${COLORS.WHITE};
   box-shadow: ${({ isScrolled }) =>
     isScrolled && `1px 1px 3px 0 ${COLORS.SHADOW}`};
   transition: all 0.15s ease-out;
-  background-color: ${COLORS.WHITE};
-  display: flex;
-  align-items: center;
 `;
 
 const ButtonsContainer = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
 `;
