@@ -18,7 +18,7 @@ module.exports = {
     author: 'Shin Seung Jun',
     // To Do
     // 배포 후 사이트 url로 바꾸기.
-    siteUrl: 'https://gatsbystarterdefaultsource.gatsbyjs.io/',
+    siteUrl: 'https://metacode22.github.io/',
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -95,7 +95,7 @@ module.exports = {
       options: {
         // To Do
         // 배포 후 사이트 url로 바꾸기.
-        siteUrl: '<https://my-website.com/>',
+        siteUrl: 'https://metacode22.github.io/',
         stripQueryString: true,
       },
     },
