@@ -18,6 +18,7 @@ const Layout = ({ title, description, url, image, children }: Props) => {
   return (
     <Container>
       <Helmet>
+        <html lang='ko' />
         <title>{title}</title>
 
         <meta name='description' content={description} />
