@@ -24,7 +24,7 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sitemap',
+    'gatsby-plugin-advanced-sitemap',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
