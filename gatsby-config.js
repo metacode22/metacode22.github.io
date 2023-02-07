@@ -99,5 +99,11 @@ module.exports = {
         stripQueryString: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      }
+    }
   ],
 };
