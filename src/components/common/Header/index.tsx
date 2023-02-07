@@ -40,7 +40,9 @@ const Header = () => {
         <Logo />
         <Menu />
       </ButtonsContainer>
-      <SearchBar />
+      {/* To Do */}
+      {/* 검색 기능 구현(post들의 title을 바탕으로 일단 구현해보자 */}
+      {/* <SearchBar /> */}
     </Container>
   );
 };
