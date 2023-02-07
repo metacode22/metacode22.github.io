@@ -42,6 +42,11 @@ const Layout = ({ title, description, url, image, children }: Props) => {
           name='google-site-verification'
           content='LKTF_tGr3v7xv-1If9MoMWN8tM-_9MPLnelP_dN7Sb0'
         />
+
+        <meta
+          name='naver-site-verification'
+          content='431e2cf8f4cc6b6faae997ca8e2c22d786b9172c'
+        />
       </Helmet>
       <Header />
       <ContentContainer>{children}</ContentContainer>
