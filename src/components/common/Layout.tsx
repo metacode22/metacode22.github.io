@@ -45,7 +45,7 @@ const Layout = ({ title, description, url, image, children }: Props) => {
 
         <meta
           name='naver-site-verification'
-          content='431e2cf8f4cc6b6faae997ca8e2c22d786b9172c'
+          content='5106d80f92af7db03ac5ecf572aa0b27f441c3e2'
         />
       </Helmet>
       <Header />
