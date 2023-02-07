@@ -7,9 +7,11 @@ type Props = {
 
 const TableOfContents = forwardRef(
   ({ tableOfContents }: Props, ref: ForwardedRef<HTMLDivElement>) => {
+    // To Do
+    // intersection observer 등을 활용해 해당 태그가 보이면 목차의 백그라운드 색깔도 바꾸기.
     useEffect(() => {
       if (typeof ref !== 'function') {
-        console.log(ref?.current?.querySelectorAll('h1, h2, h3'));
+        // console.log(ref?.current?.querySelectorAll('h1, h2, h3'));
       }
     }, []);
 
