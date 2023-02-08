@@ -22,5 +22,6 @@ const ReactIconLink = ({ children, href, ariaLabel }: Props) => {
 export default ReactIconLink;
 
 const Container = styled.a`
+  font-size: 1.25rem;
   cursor: pointer;
 `;

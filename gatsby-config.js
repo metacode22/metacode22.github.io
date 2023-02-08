@@ -66,6 +66,7 @@ module.exports = {
           'gatsby-remark-smartypants',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
+          'gatsby-plugin-react-helmet',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -103,7 +104,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         policy: [{ userAgent: '*', allow: '/' }],
-      }
-    }
+      },
+    },
   ],
 };

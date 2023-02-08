@@ -5,7 +5,6 @@ import COLORS from 'utils/constants/colors';
 
 import Logo from './Logo';
 import Menu from './Menu';
-import SearchBar from './SearchBar';
 
 /**
  * To Do

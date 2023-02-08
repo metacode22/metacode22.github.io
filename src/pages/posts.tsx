@@ -33,7 +33,7 @@ const Posts = ({
   location: { search, href },
   data: {
     site: {
-      siteMetadata: { title, description, siteUrl },
+      siteMetadata: { title, description },
     },
     allMarkdownRemark: { edges },
     file: { publicURL },
