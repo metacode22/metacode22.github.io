@@ -49,7 +49,6 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 25rem;
-  margin-top: 4rem;
   background-color: ${COLORS.SUB};
 `;
 
