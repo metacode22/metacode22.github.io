@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { ForwardedRef, forwardRef, useEffect } from 'react';
+import COLORS from 'utils/constants/colors';
 
 type Props = {
   tableOfContents: string;
@@ -32,11 +33,34 @@ const Container = styled.aside`
   top: 0;
   left: 900px;
   height: 100%;
+  padding-left: 4rem;
 `;
 
 const TableOfContentsRenderer = styled.nav`
   position: sticky;
   top: 6rem;
-  width: 200px;
+  width: 300px;
+  font-size: 0.8rem;
   word-break: keep-all;
+  border-left: 2px solid ${COLORS.GRAY};
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 4px;
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      background-color: ${COLORS.SUB_MIDDLE_BOLD};
+    }
+  }
+
+  ul {
+    padding: 0 1rem;
+    list-style: none;
+  }
 `;

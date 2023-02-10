@@ -36,7 +36,7 @@ const ScrollToTopButton = () => {
 
   return (
     <Container onClick={handleClick} isShow={isShow}>
-      <CustomFaArrowUp />
+      <StyledFaArrowUp />
     </Container>
   );
 };
@@ -65,7 +65,7 @@ const Container = styled.div<{ isShow: boolean }>`
   }
 `;
 
-const CustomFaArrowUp = styled(FaArrowUp)`
+const StyledFaArrowUp = styled(FaArrowUp)`
   width: 1.5rem;
   height: 1.5rem;
 `;

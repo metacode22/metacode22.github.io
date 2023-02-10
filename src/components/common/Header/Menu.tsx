@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import COLORS from 'utils/constants/colors';
 import { ROUTES } from 'utils/constants/routes';
 
 import DarkModeSwitch from '../DarkModeSwitch';
@@ -11,10 +12,11 @@ import DarkModeSwitch from '../DarkModeSwitch';
 const Menu = () => {
   return (
     <Container>
-      <DarkModeSwitch />
-      <Link to={ROUTES.HOME}>Home</Link>
-      <Link to={ROUTES.POSTS}>Posts</Link>
-      <Link to={ROUTES.ABOUT}>About</Link>
+      {/* To Do */}
+      {/* <DarkModeSwitch /> */}
+      <StyledLink to={ROUTES.HOME}>Home</StyledLink>
+      <StyledLink to={ROUTES.POSTS}>Posts</StyledLink>
+      <StyledLink to={ROUTES.ABOUT}>About</StyledLink>
     </Container>
   );
 };
@@ -25,4 +27,14 @@ const Container = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+`;
+
+const StyledLink = styled(Link)`
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    background-color: ${COLORS.SUB_MIDDLE_BOLD};
+  }
 `;
