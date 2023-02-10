@@ -17,43 +17,36 @@ const MarkdownRenderer = styled.div`
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  padding: 100px 0;
-  font-weight: 400;
-  font-size: 16px;
+  padding: 5rem 0;
 
   /* Markdown Style */
   line-height: 1.8;
   word-break: break-all;
 
-  /* Apply Padding Attribute to All Elements */
-  p {
-    padding: 3px 0;
-  }
-
   /* Adjust Heading Element Style */
   h1,
   h2,
   h3 {
-    margin-bottom: 30px;
+    margin-bottom: 1.5rem;
     font-weight: 700;
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 2rem;
   }
 
   h2 {
-    font-size: 25px;
+    font-size: 1.75rem;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 3rem;
   }
 
   hr + h1,
@@ -73,8 +66,8 @@ const MarkdownRenderer = styled.div`
   /* Adjust List Element Style */
   ol,
   ul {
-    margin-left: 20px;
-    padding: 30px 0;
+    margin-left: 1rem;
+    padding: 1rem 0;
   }
 
   /* Adjust Horizontal Rule style */

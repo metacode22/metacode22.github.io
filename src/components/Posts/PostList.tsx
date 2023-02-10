@@ -65,7 +65,7 @@ export default PostList;
  */
 const Container = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 768px;
   margin: 0 auto;
 `;
 

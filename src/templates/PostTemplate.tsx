@@ -94,7 +94,7 @@ export const getMarkdownDataBySlug = graphql`
 
 const ContainerWithTableOfContents = styled.div`
   position: relative;
-  width: 900px;
+  width: 768px;
   margin: 0 auto;
 `;
 

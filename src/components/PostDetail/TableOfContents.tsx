@@ -31,7 +31,7 @@ export default TableOfContents;
 const Container = styled.aside`
   position: absolute;
   top: 0;
-  left: 900px;
+  left: 768px;
   height: 100%;
   padding-left: 4rem;
 `;
@@ -39,7 +39,7 @@ const Container = styled.aside`
 const TableOfContentsRenderer = styled.nav`
   position: sticky;
   top: 6rem;
-  width: 300px;
+  width: 240px;
   font-size: 0.8rem;
   word-break: keep-all;
   border-left: 2px solid ${COLORS.GRAY};

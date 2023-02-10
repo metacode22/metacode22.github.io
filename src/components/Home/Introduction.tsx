@@ -57,7 +57,7 @@ const ContentContainer = styled.div`
   gap: 2rem;
   align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 768px;
   margin: 0 auto;
 `;
 
