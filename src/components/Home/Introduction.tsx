@@ -48,7 +48,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 25rem;
+  height: 20rem;
   background-color: ${COLORS.SUB};
 `;
 

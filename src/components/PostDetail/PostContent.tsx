@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { ForwardedRef, forwardRef } from 'react';
+import COLORS from 'utils/constants/colors';
 
 const PostContent = forwardRef(
   ({ html }: { html: string }, ref: ForwardedRef<HTMLDivElement>) => {
@@ -20,7 +21,7 @@ const MarkdownRenderer = styled.div`
   padding: 5rem 0;
 
   /* Markdown Style */
-  line-height: 1.8;
+  line-height: 1.5;
   word-break: break-all;
 
   /* Adjust Heading Element Style */
@@ -32,7 +33,9 @@ const MarkdownRenderer = styled.div`
   }
 
   h1 {
+    padding-left: 0.2rem;
     font-size: 2rem;
+    background-color: ${COLORS.SUB};
   }
 
   h2 {
@@ -78,8 +81,13 @@ const MarkdownRenderer = styled.div`
 
   /* Adjust Link Element Style */
   a {
-    color: #4263eb;
+    color: ${COLORS.SUB_BOLD};
     text-decoration: underline;
+  }
+
+  p {
+    margin: 0;
+    padding: 0.25rem;
   }
 
   /* Adjust Code Style */

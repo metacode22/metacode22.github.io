@@ -66,7 +66,7 @@ export default PostList;
 const Container = styled.div`
   width: 100%;
   max-width: 768px;
-  margin: 0 auto;
+  margin: 0 auto 6rem auto;
 `;
 
 const Title = styled.h1``;

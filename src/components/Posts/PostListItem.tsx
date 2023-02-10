@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { navigate } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Frontmatter } from 'types/Post';
+import COLORS from 'utils/constants/colors';
 
 import CategoryListItem from './CategoryListItem';
 
@@ -39,9 +40,7 @@ const PostListItem = ({
               </CategoryListItem>
             ))}
         </CategoriesContainer>
-        <TitleContainer>
-          <Title onClick={handleClick}>{title}</Title>
-        </TitleContainer>
+        <Title onClick={handleClick}>{title}</Title>
         <Description>{summary}</Description>
         <CreatedAtAndTimeToReadContainer>
           <CreatedAt>{date}</CreatedAt>
@@ -49,7 +48,11 @@ const PostListItem = ({
         </CreatedAtAndTimeToReadContainer>
       </TextInfoContainer>
       <ThumbnailContainer onClick={handleClick}>
-        <Thumbnail image={gatsbyImageData} alt='해당 포스트 썸네일 이미지' />
+        <Thumbnail
+          image={gatsbyImageData}
+          alt='해당 포스트 썸네일 이미지'
+          onClick={handleClick}
+        />
       </ThumbnailContainer>
     </Container>
   );
@@ -59,27 +62,30 @@ export default PostListItem;
 
 const Container = styled.div`
   display: flex;
-  border-radius: 1rem;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-bottom: 1px solid ${COLORS.GRAY_BOLD};
   transition: all 0.1s ease-out;
 
-  &:not(:first-of-type) {
-    margin-top: 3rem;
+  &:first-of-type {
+    border-top: 1px solid ${COLORS.GRAY_BOLD};
   }
 `;
 
 const TextInfoContainer = styled.div`
   display: flex;
-  flex: 3;
   flex-direction: column;
   justify-content: space-between;
+  width: calc(100% - 200px);
+  padding-right: 1rem;
 `;
 
 const CategoriesContainer = styled.div``;
 
-const TitleContainer = styled.h2``;
-
-const Title = styled.span`
-  margin-top: 0;
+const Title = styled.h2`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   cursor: pointer;
 
   &:hover {
@@ -87,22 +93,34 @@ const Title = styled.span`
   }
 `;
 
-const Description = styled.div``;
+const Description = styled.div`
+  /* stylelint-disable-next-line value-no-vendor-prefix */
+  display: -webkit-box;
+  overflow: hidden;
+  color: ${COLORS.GRAY_BOLD};
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;
 
 const ThumbnailContainer = styled.div`
-  flex: 1;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 200px;
 `;
 
 const Thumbnail = styled(GatsbyImage)`
-  width: 100%;
-  aspect-ratio: 3 / 2;
+  height: 100%;
+  cursor: pointer;
 `;
 
 const CreatedAtAndTimeToReadContainer = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+  padding-top: 1rem;
+  color: ${COLORS.GRAY_BOLD};
 `;
 
 const CreatedAt = styled.span``;
