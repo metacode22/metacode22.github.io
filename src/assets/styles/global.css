@@ -233,3 +233,12 @@ a:hover {
   src: url('../fonts/Pretendard-Bold.woff2') format('woff2');
   font-display: fallback;
 }
+
+@font-face {
+  font-weight: 400;
+  font-family: Menlo;
+  font-style: normal;
+  src: url('../fonts/Menlo-Regular.woff2') format('truetype'),
+    url('../fonts/Menlo-Regular.woff2') format('woff2');
+  font-display: fallback;
+}

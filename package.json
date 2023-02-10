@@ -3,7 +3,7 @@
   "private": true,
   "description": "Developer Shin Seung Jun's personal blog.",
   "version": "0.1.0",
-  "author": "Shin Seung Jun alohajune22@gmail.com>",
+  "author": "Shin Seung Jun",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import CategoryListItem from 'components/Posts/CategoryListItem';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import COLORS from 'utils/constants/colors';
 
 type Props = {
   title: string;
@@ -63,6 +64,7 @@ const CategoriesCreatedAtContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: ${COLORS.GRAY_BOLD};
 `;
 
 const Title = styled.h1`

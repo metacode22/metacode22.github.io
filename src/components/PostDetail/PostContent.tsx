@@ -94,16 +94,24 @@ const MarkdownRenderer = styled.div`
   pre[class*='language-'] {
     margin: 30px 0;
     padding: 15px;
+    font-weight: 400;
     font-size: 15px;
+    font-family: Menlo, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
+    /* background-color: #282c34; */
 
-    ::-webkit-scrollbar-thumb {
-      background: rgb(255 255 255 / 50%);
-      border-radius: 3px;
+    code {
+      background-color: transparent;
     }
   }
 
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  code[class*='language-'] {
+    /* font-family: Menlo; */
   }
 `;
