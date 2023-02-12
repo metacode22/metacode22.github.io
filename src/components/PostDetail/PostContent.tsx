@@ -35,7 +35,7 @@ const MarkdownRenderer = styled.div`
   h1 {
     padding-left: 0.2rem;
     font-size: 2rem;
-    background-color: ${COLORS.SUB};
+    border-bottom: 1px solid ${COLORS.GRAY};
   }
 
   h2 {
@@ -96,10 +96,7 @@ const MarkdownRenderer = styled.div`
     padding: 15px;
     font-weight: 400;
     font-size: 15px;
-    font-family: Menlo, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-      sans-serif;
-    /* background-color: #282c34; */
+    background-color: #192427;
 
     code {
       background-color: transparent;
@@ -108,10 +105,9 @@ const MarkdownRenderer = styled.div`
 
   code[class*='language-'],
   pre[class*='language-'] {
+    font-family: Menlo, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
     tab-size: 2;
-  }
-
-  code[class*='language-'] {
-    /* font-family: Menlo; */
   }
 `;

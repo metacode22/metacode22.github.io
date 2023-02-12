@@ -274,6 +274,10 @@ module.exports = {
 
 여태까지 설치한 패키지들 모두 devDependency로 설치하였다. production에는 영향을 끼치지 않고 개발할 때만 영향을 끼치도록 한 것이다. 즉 내가 한 것들은 모두 개발을 더 편리하게 만들어준다.
 
+<br />
+<br />
+<br />
+
 # 참고
 
 [소스 코드](https://github.com/metacode22/next-bolier-plate)
