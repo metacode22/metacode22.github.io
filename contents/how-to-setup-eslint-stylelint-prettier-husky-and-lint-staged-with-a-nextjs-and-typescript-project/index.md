@@ -1,7 +1,7 @@
 ---
 date: '2023-02-10'
-title: 'Nextjs, TypeScript 프로젝트에 ESlint, Stylelint, Prettier, Husky, Lint-Staged 설정하기'
-summary: 'Nextjs, TypeScript 프로젝트에 ESlint, Stylelint, Prettier, Husky, Lint-Staged 설정하기'
+title: 'Nextjs, TypeScript 프로젝트에 ESlint, Stylelint, Prettier, Husky, Lint-Staged, nvmrc 설정하기'
+summary: 'Nextjs, TypeScript 프로젝트에 ESlint, Stylelint, Prettier, Husky, Lint-Staged, nvmrc 설정하기'
 thumbnail: './tools.jpeg'
 categories: ['Featured', 'Next', '협업 툴']
 ---
