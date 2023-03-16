@@ -42,7 +42,6 @@ const TableOfContentsRenderer = styled.nav`
   width: 240px;
   font-size: 0.8rem;
   word-break: keep-all;
-  /* border-left: 2px solid ${COLORS.GRAY}; */
 
   p {
     margin: 0;
@@ -50,7 +49,7 @@ const TableOfContentsRenderer = styled.nav`
 
   a {
     display: block;
-    padding: 0.75rem 0;
+    padding: 0.75rem 0 0.75rem 0.75rem;
     border-radius: 4px;
     transition: all 0.1s ease-out;
 
@@ -60,7 +59,8 @@ const TableOfContentsRenderer = styled.nav`
   }
 
   ul {
-    padding: 0 1rem;
+    margin-left: 0.5rem;
+    padding: 0 0.5rem;
     list-style: none;
 
     border-left: 2px solid ${COLORS.GRAY};
