@@ -55,7 +55,7 @@ const Container = styled.header<{ isScrolled: boolean }>`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 4rem;
+  height: ${({ isScrolled }) => (isScrolled ? '3rem' : '4rem')};
   background-color: ${COLORS.WHITE};
   box-shadow: ${({ isScrolled }) =>
     isScrolled && `1px 1px 3px 0 ${COLORS.SHADOW}`};
