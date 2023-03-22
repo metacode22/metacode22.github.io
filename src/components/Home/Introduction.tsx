@@ -49,7 +49,6 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 20rem;
-  background-color: ${COLORS.SUB};
 `;
 
 const ContentContainer = styled.div`

@@ -49,7 +49,9 @@ const Layout = ({ title, description, url, image, children }: Props) => {
           content='431e2cf8f4cc6b6faae997ca8e2c22d786b9172c'
         />
       </Helmet>
-      <Header />
+      <HeaderContainer>
+        <Header />
+      </HeaderContainer>
       <ContentContainer>{children}</ContentContainer>
       <Footer />
       <ScrollToTopButton />
@@ -63,6 +65,11 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+`;
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 /**

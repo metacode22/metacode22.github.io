@@ -69,6 +69,6 @@ const Container = styled.div`
   margin: 0 auto 6rem auto;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h2``;
 
 const PostsContainer = styled.div``;
