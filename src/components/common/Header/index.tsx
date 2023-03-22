@@ -35,13 +35,15 @@ const Header = () => {
 
   return (
     <Container ref={ref} isScrolled={isScrolled}>
-      <ButtonsContainer>
-        <Logo />
-        <Menu />
-      </ButtonsContainer>
-      {/* To Do */}
-      {/* 검색 기능 구현(post들의 title을 바탕으로 일단 구현해보자 */}
-      {/* <SearchBar /> */}
+      <ContentContainer>
+        <ButtonsContainer>
+          <Logo />
+          <Menu />
+        </ButtonsContainer>
+        {/* To Do */}
+        {/* 검색 기능 구현(post들의 title을 바탕으로 일단 구현해보자 */}
+        {/* <SearchBar /> */}
+      </ContentContainer>
     </Container>
   );
 };
@@ -54,12 +56,18 @@ const Container = styled.header<{ isScrolled: boolean }>`
   z-index: 10;
   display: flex;
   align-items: center;
-  width: 768px;
+  justify-content: center;
+  width: 100%;
   height: ${({ isScrolled }) => (isScrolled ? '3rem' : '4rem')};
   background-color: ${COLORS.WHITE};
   box-shadow: ${({ isScrolled }) =>
-    isScrolled && `1px 1px 3px 0 ${COLORS.SHADOW}`};
+    isScrolled && `0px 0px 2px 0 ${COLORS.SHADOW}`};
   transition: all 0.15s ease-out;
+`;
+
+const ContentContainer = styled.div`
+  width: 100%;
+  max-width: 768px;
 `;
 
 const ButtonsContainer = styled.div`
