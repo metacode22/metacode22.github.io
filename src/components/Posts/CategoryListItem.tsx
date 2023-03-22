@@ -38,7 +38,8 @@ const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
   color: ${COLORS.SUB_BOLD};
   font-size: 0.9rem;
   background-color: ${({ active }) =>
-    active ? COLORS.SUB_MIDDLE_BOLD : COLORS.SUB};
+    active ? COLORS.SUB_MIDDLE_BOLD : COLORS.WHITE};
+  border: 1px solid ${COLORS.GRAY};
   border-radius: 1rem;
   transform: scale(${({ active }) => (active ? 1.15 : 1)});
   cursor: pointer;

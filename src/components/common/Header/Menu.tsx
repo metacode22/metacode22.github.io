@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import COLORS from 'utils/constants/colors';
 import { ROUTES } from 'utils/constants/routes';
 
-import DarkModeSwitch from '../DarkModeSwitch';
+// import DarkModeSwitch from '../DarkModeSwitch';
 
 /**
  * To Do
@@ -35,6 +35,6 @@ const StyledLink = styled(Link)`
   transition: all 0.1s ease-out;
 
   &:hover {
-    background-color: ${COLORS.SUB_MIDDLE_BOLD};
+    text-decoration: underline;
   }
 `;
