@@ -21,7 +21,7 @@ const MarkdownRenderer = styled.div`
   padding: 5rem 0;
 
   /* Markdown Style */
-  line-height: 1.5;
+  line-height: 1.75;
   word-break: break-all;
 
   /* Adjust Heading Element Style */

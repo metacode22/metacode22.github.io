@@ -21,7 +21,7 @@ let temp = true;
 <br />
 <br />
 
-# Next, TypeScript 프로젝트 생성
+## Next, TypeScript 프로젝트 생성
 
 최근 Next, TypeScript 환경에서 프로젝트를 진행하게 되어, 해당 환경에서 eslint, stylelint, prettier, husky, lint-staged를 설정하게 되었다.
 
@@ -35,7 +35,7 @@ npx create-next-app@latest -ts
 <br />
 <br />
 
-# ESLint
+## ESLint
 
 위와 같이 입력 후 프로젝트를 만들고 나면 .eslint.json 파일이 존재한다. 다음 명령어를 입력해 필요한 패키지를 설치하자.
 
@@ -108,7 +108,7 @@ gatsby에서는 위와 같은 js 파일들은 eslintignore 파일에 작성해�
 <br />
 <br />
 
-# Prettier
+## Prettier
 
 다음 패키지들을 설치해주자.
 
@@ -148,7 +148,7 @@ jsx문에서도 작은 따옴표를 쓰도록, 그리고 bracket이 혼자 뚝 �
 <br />
 <br />
 
-# Stylelint
+## Stylelint
 
 난 최근까지 css 코드도 lint 해줄 수 있다는 것을 몰랐다. 최근에 데브코스에서 갓종현 1기 선배님과 동기인 다연이한테 가르침을 받고 알 수 있게 되었다.
 
@@ -201,7 +201,7 @@ stylelint-config-rational-order가 꿀이다. css 코드 순서를 정렬해준�
 <br />
 <br />
 
-# nvmrc
+## nvmrc
 
 .nvmrc 파일을 만들어 다음과 같이 작성해주면 node 버전을 일치시킬 수 있다. 레포를 git clone 한 후 `nvm use` 를 실행해주면 해당 .nvmrc에 적힌 버전으로 바뀐다. 없으면 해당 버전을 설치해주고 `nvm use`를 해주면 된다.
 
@@ -213,7 +213,7 @@ v18.13.0
 <br />
 <br />
 
-# Husky + Lint-Staged
+## Husky + Lint-Staged
 
 husky를 통해 보통 commit이나 push를 하기 전에 앞서 설정한 eslint, prettier 규칙들이 제대로 적용되었는지 검사하고 고쳐줄 수 있다. 또한 lint-staged를 통해 git add 후 staged된 파일들도 eslint, prettier 규칙들을 검사하고 고쳐줄 수 있다.
 특히 eslint 규칙을 지키지 않은 체로 commit 혹은 push를 할 경우 error을 내어 commit이나 push를 막을 수 있게 된다.
@@ -270,7 +270,7 @@ module.exports = {
 <br />
 <br />
 
-# 여담
+## 여담
 
 여태까지 설치한 패키지들 모두 devDependency로 설치하였다. production에는 영향을 끼치지 않고 개발할 때만 영향을 끼치도록 한 것이다. 즉 내가 한 것들은 모두 개발을 더 편리하게 만들어준다.
 
@@ -278,7 +278,7 @@ module.exports = {
 <br />
 <br />
 
-# 참고
+## 참고
 
 [소스 코드](https://github.com/metacode22/next-bolier-plate)
 
