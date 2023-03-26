@@ -98,19 +98,6 @@ const MarkdownRenderer = styled.div`
     font-weight: 300;
   }
 
-  /* Adjust Code Style */
-  pre[class*='language-'] {
-    margin: 30px 0;
-    padding: 15px;
-    font-weight: 400;
-    font-size: 15px;
-    background-color: #192427;
-
-    code {
-      background-color: transparent;
-    }
-  }
-
   img {
     margin: 3rem 0;
   }
@@ -148,8 +135,7 @@ const MarkdownRenderer = styled.div`
   }
 
   pre[class*='language-'] {
-    margin: 0.5em 0;
-    margin: 0 1em;
+    padding: 1rem;
     overflow: auto;
     background: #1e1e1e;
   }
@@ -396,11 +382,15 @@ const MarkdownRenderer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
     padding: 0 0.5rem;
 
     img {
       width: 100%;
+    }
+
+    pre[class*='language-'] {
+      width: 100%;
+      overflow-x: auto;
     }
   }
 `;

@@ -46,20 +46,18 @@ const PostTemplate = ({
 
   return (
     <Layout title={title} description={summary} url={href} image={publicURL}>
-      <ContainerWithTableOfContents>
-        <Container>
-          <PostHead
-            title={title}
-            date={date}
-            categories={categories}
-            thumbnail={gatsbyImageData}
-            timeToRead={timeToRead}
-          />
-          <PostContent ref={contentRef} html={html} />
-          <PostComment />
-        </Container>
+      <Container>
+        <PostHead
+          title={title}
+          date={date}
+          categories={categories}
+          thumbnail={gatsbyImageData}
+          timeToRead={timeToRead}
+        />
+        <PostContent ref={contentRef} html={html} />
+        <PostComment />
         <TableOfContents ref={contentRef} tableOfContents={tableOfContents} />
-      </ContainerWithTableOfContents>
+      </Container>
     </Layout>
   );
 };
@@ -92,12 +90,9 @@ export const getMarkdownDataBySlug = graphql`
   }
 `;
 
-const ContainerWithTableOfContents = styled.div`
-  position: relative;
-  width: 768px;
-  margin: 0 auto;
-`;
-
 const Container = styled.div`
+  position: relative;
   width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
 `;

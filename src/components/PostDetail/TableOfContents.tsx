@@ -34,6 +34,10 @@ const Container = styled.aside`
   left: 768px;
   height: 100%;
   padding-left: 4rem;
+
+  @media (max-width: 1400px) {
+    display: none;
+  }
 `;
 
 const TableOfContentsRenderer = styled.nav`
