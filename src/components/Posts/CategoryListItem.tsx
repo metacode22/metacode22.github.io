@@ -34,9 +34,11 @@ const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
 ))<{ active: boolean }>`
   z-index: 9;
   display: inline-block;
-  padding: 0.35rem 0.75rem;
+  margin: 0.25rem 0;
+  padding: 0.25rem 0.75rem;
   color: ${COLORS.SUB_BOLD};
   font-size: 0.9rem;
+  white-space: nowrap;
   background-color: ${({ active }) =>
     active ? COLORS.SUB_MIDDLE_BOLD : COLORS.WHITE};
   border: 1px solid ${COLORS.GRAY};
@@ -52,5 +54,9 @@ const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
   &:hover {
     color: ${COLORS.SUB_BOLD};
     background-color: ${COLORS.SUB_MIDDLE_BOLD};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
   }
 `;

@@ -394,4 +394,13 @@ const MarkdownRenderer = styled.div`
     background-color: ${COLORS.GRAY};
     border-radius: 0.25rem;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 0.5rem;
+
+    img {
+      width: 100%;
+    }
+  }
 `;

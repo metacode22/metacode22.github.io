@@ -82,7 +82,7 @@ const TextInfoContainer = styled.div`
 
 const CategoriesContainer = styled.div``;
 
-const Title = styled.h2`
+const Title = styled.h3`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -123,6 +123,12 @@ const CreatedAtAndTimeToReadContainer = styled.div`
   color: ${COLORS.GRAY_BOLD};
 `;
 
-const CreatedAt = styled.span``;
+const CreatedAt = styled.span`
+  font-size: 14px;
+  white-space: nowrap;
+`;
 
-const TimeToRead = styled.span``;
+const TimeToRead = styled.span`
+  font-size: 14px;
+  white-space: nowrap;
+`;
