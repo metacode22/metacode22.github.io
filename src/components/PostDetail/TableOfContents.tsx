@@ -40,8 +40,8 @@ const TableOfContentsRenderer = styled.nav`
   position: sticky;
   top: 6rem;
   width: 240px;
+  overflow: hidden;
   font-size: 0.8rem;
-  word-break: keep-all;
 
   p {
     margin: 0;
@@ -49,7 +49,10 @@ const TableOfContentsRenderer = styled.nav`
 
   a {
     display: block;
-    padding: 0.75rem 0 0.75rem 0.75rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     border-radius: 4px;
     transition: all 0.1s ease-out;
 
