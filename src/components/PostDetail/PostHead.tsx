@@ -57,7 +57,7 @@ const Container = styled.div`
 const Thumbnail = styled(GatsbyImage)`
   width: 100%;
   max-width: 768px;
-  margin: 0 auto;
+  margin: 4rem auto;
 `;
 
 const CategoriesCreatedAtContainer = styled.div`

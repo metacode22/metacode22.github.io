@@ -3,7 +3,7 @@ date: '2023-02-10'
 title: 'Nextjs, TypeScript 프로젝트에 ESlint, Stylelint, Prettier, Husky, Lint-Staged, nvmrc 설정하기'
 summary: 'Nextjs, TypeScript 프로젝트에 ESlint, Stylelint, Prettier, Husky, Lint-Staged, nvmrc 설정하기'
 thumbnail: './tools.jpeg'
-categories: ['Featured', 'Next', '협업 툴']
+categories: ['Featured', 'NextJS', '협업 툴']
 ---
 
 약 6개월 전, React를 얕게 맛 보고 'state는 계속해서 값이 바뀔 수 있으니까 let으로 써야겠다. ㅎㅎㅎ'와 같은 생각으로 다음과 같이 useState를 썼던 기억이 난다.
