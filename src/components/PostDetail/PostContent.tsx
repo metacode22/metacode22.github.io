@@ -89,7 +89,7 @@ const MarkdownRenderer = styled.div`
   /* Adjust Link Element Style */
   a {
     color: ${COLORS.SUB_BOLD};
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
 
   p {
