@@ -27,7 +27,7 @@ const About = ({
 }: Props) => {
   return (
     <Layout
-      title={title}
+      title='About'
       description={description}
       url={href}
       image={publicURL}>

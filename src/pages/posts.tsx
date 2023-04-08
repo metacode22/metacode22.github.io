@@ -73,7 +73,7 @@ const Posts = ({
 
   return (
     <Layout
-      title={title}
+      title='Posts'
       description={description}
       url={href}
       image={publicURL}>

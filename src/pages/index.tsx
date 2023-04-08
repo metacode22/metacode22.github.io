@@ -38,7 +38,7 @@ const Home = ({
 }: Props) => {
   return (
     <Layout
-      title={title}
+      title='Home'
       description={description}
       url={siteUrl}
       image={publicURL}>
