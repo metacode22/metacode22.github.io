@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[49],{2766:function(e,t,i){i.r(t);var l=i(6267),a=i(5893);t.default=e=>{let{location:{href:t},data:{site:{siteMetadata:{title:i,description:r}},file:{publicURL:s}}}=e;return(0,a.jsx)(l.Z,{title:"About",description:r,url:t,image:s,children:"열띠미 만드는 중"})}}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-5e341b86958cbd55f12e.js.map
