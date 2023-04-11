@@ -1,7 +1,7 @@
 ---
 date: '2023-03-30'
 title: 'Gatsby와 함께 나만의 블로그 만들기'
-summary: 'Gatsby와 함께 나만의 블로그 만들기'
+summary: ''
 thumbnail: './gatsby-logo.png'
 categories: ['Featured', 'GatsbyJS', '회고']
 ---
