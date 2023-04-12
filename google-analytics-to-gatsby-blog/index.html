@@ -1,0 +1,621 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.4.2"/><meta data-react-helmet="true" name="description" content="Gatsby 프로젝트에 Google Analytics 설정하기"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="[블로그 개선기] Gatsby 프로젝트에 Google Analytics 설정하기"/><meta data-react-helmet="true" property="og:description" content="Gatsby 프로젝트에 Google Analytics 설정하기"/><meta data-react-helmet="true" property="og:image" content="/static/ea8c57654725526f93aebb576fabc83e/google-analytics-logo.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="[블로그 개선기] Gatsby 프로젝트에 Google Analytics 설정하기"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="[블로그 개선기] Gatsby 프로젝트에 Google Analytics 설정하기"/><meta data-react-helmet="true" name="twitter:description" content="Gatsby 프로젝트에 Google Analytics 설정하기"/><meta data-react-helmet="true" name="twitter:image" content="/static/ea8c57654725526f93aebb576fabc83e/google-analytics-logo.png"/><meta data-react-helmet="true" name="twitter:site" content="@seungjun"/><meta data-react-helmet="true" name="twitter:creator" content="@seungjun"/><meta data-react-helmet="true" name="google-site-verification" content="LKTF_tGr3v7xv-1If9MoMWN8tM-_9MPLnelP_dN7Sb0"/><meta data-react-helmet="true" name="naver-site-verification" content="431e2cf8f4cc6b6faae997ca8e2c22d786b9172c"/><style data-href="/styles.597cd358c53a2314414e.css" data-identity="gatsby-global-css">*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;line-height:1.15}body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;margin:0;overflow-y:scroll}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}a,a:hover{color:inherit;cursor:pointer;text-decoration:none}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:300;src:url(/static/Pretendard-Light-27c9a07cbc308ce88d1ab3613e3152c7.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:400;src:url(/static/Pretendard-Regular-6090e6b5524796768e78f23519d16488.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:500;src:url(/static/Pretendard-Medium-ea235f1edb8815831a25b376b479949e.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:600;src:url(/static/Pretendard-SemiBold-7e5eaaf650b9e738991373a7f173b94a.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:700;src:url(/static/Pretendard-Bold-0676c8838a37a3b770d85a5534f5fdcb.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Menlo;font-style:normal;font-weight:400;src:url(/static/Menlo-Regular-cb6da8cbfe3629a9ff9f48671a27e540.woff2) format("truetype"),url(/static/Menlo-Regular-cb6da8cbfe3629a9ff9f48671a27e540.woff2) format("woff2")}</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">[블로그 개선기] Gatsby 프로젝트에 Google Analytics 설정하기</title><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="canonical" href="https://metacode22.github.io/google-analytics-to-gatsby-blog/" data-baseprotocol="https:" data-basehost="metacode22.github.io"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 11pfcjj">.css-11pfcjj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;}</style><main class="css-11pfcjj eg56zyw1"><style data-emotion="css 142ywfy">.css-142ywfy{position:fixed;top:0;z-index:10;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;height:4rem;background-color:#ffffff;-webkit-transition:all 0.15s ease-out;transition:all 0.15s ease-out;}</style><header class="css-142ywfy e1oze3gj2"><style data-emotion="css 1q5d3ct">.css-1q5d3ct{width:100%;max-width:768px;}</style><div class="css-1q5d3ct e1oze3gj1"><style data-emotion="css 1g255of">.css-1g255of{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;width:100%;height:100%;}</style><div class="css-1g255of e1oze3gj0"><style data-emotion="css 1yxpgm8">.css-1yxpgm8{padding:0.5rem;font-size:x-large;font-style:italic;border-radius:4rem;}</style><a class="css-1yxpgm8 ein1yq40" href="/">Seung - Jun</a><style data-emotion="css 1pu7z21">.css-1pu7z21{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:1rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-1pu7z21 es6jy001"><style data-emotion="css ki3zwo">.css-ki3zwo{padding:0.5rem;border-radius:4px;-webkit-transition:all 0.1s ease-out;transition:all 0.1s ease-out;}.css-ki3zwo:hover{-webkit-text-decoration:underline;text-decoration:underline;}</style><a class="css-ki3zwo es6jy000" href="/">Home</a><a class="css-ki3zwo es6jy000" href="/posts/">Posts</a><a class="css-ki3zwo es6jy000" href="/about/">About</a></div></div></div></header><style data-emotion="css 100b38i">.css-100b38i{width:100%;max-width:768px;margin:0 auto 6rem auto;margin-top:4rem;}</style><div class="css-100b38i eg56zyw0"><style data-emotion="css 11k3q87">.css-11k3q87{position:relative;width:100%;max-width:768px;margin:0 auto;}</style><div class="css-11k3q87 e1v0b9td0"><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj egwpcge6"><style data-emotion="css 9aqgc6">.css-9aqgc6{width:100%;max-width:768px;margin:4rem auto;}</style><div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-9aqgc6 egwpcge5"><div style="max-width:1200px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;413&#x27;%20width=&#x27;1200&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABlklEQVR42jWRv2sUcRDF3xljLCxCMGBlQO30UFHsNAEbJRgQkVR6yimKP9Ds531jODmxMTYWNqIWipIiuB6x8Q9Q9BpBYiHY2Lib2FqFvQVl5auX4jEzzPDmvRnlSL3XUm4NVJ+kItW7XqqFX4tDmg0z0zbB9g5gCNgEbAEGbcd8HNhneyOgCGVIawuq/WxLVaVakWr1d0fvJ5uPR2wuBifbgDtAy3ZiuwXcsn0NeBJhe76/TMoTaXlCymZ0fLWleq+jb0Wqj91HexTMhM0V29NAAzhju9mPbeApcAk4Z3vwPyHSStDWLNGfPOhFuaQvRaru12djetA+uyE4GbOtiHVbwGbgFLC/3xtYn/mncGVWw1miXh70MhKuvap1n89PyeaYTdN23fYR24eAKeCE7VHb521PAodtH4gz8YZvc9TIEpV5UKdc0vci1efqgyJhw2YuWupbvg/cBS7bjqc4CdwArts+avt2VLico9M5WvxxUxfKN3pYprpXVVJ77upocBK/uh0YAQ7a3gXs7ufDQKzrwE5g719b++2B8aHqfAAAAABJRU5ErkJggg==" alt=""/><picture><source type="image/webp" data-srcset="/static/ea8c57654725526f93aebb576fabc83e/8811b/google-analytics-logo.webp 300w,/static/ea8c57654725526f93aebb576fabc83e/a0045/google-analytics-logo.webp 600w,/static/ea8c57654725526f93aebb576fabc83e/b6326/google-analytics-logo.webp 1200w" sizes="(min-width: 1200px) 1200px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1200px) 1200px, 100vw" decoding="async" loading="lazy" data-src="/static/ea8c57654725526f93aebb576fabc83e/940a1/google-analytics-logo.png" data-srcset="/static/ea8c57654725526f93aebb576fabc83e/1fca1/google-analytics-logo.png 300w,/static/ea8c57654725526f93aebb576fabc83e/1d160/google-analytics-logo.png 600w,/static/ea8c57654725526f93aebb576fabc83e/940a1/google-analytics-logo.png 1200w" alt="해당 포스트 썸네일 이미지"/></picture><noscript><picture><source type="image/webp" srcSet="/static/ea8c57654725526f93aebb576fabc83e/8811b/google-analytics-logo.webp 300w,/static/ea8c57654725526f93aebb576fabc83e/a0045/google-analytics-logo.webp 600w,/static/ea8c57654725526f93aebb576fabc83e/b6326/google-analytics-logo.webp 1200w" sizes="(min-width: 1200px) 1200px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1200px) 1200px, 100vw" decoding="async" loading="lazy" src="/static/ea8c57654725526f93aebb576fabc83e/940a1/google-analytics-logo.png" srcSet="/static/ea8c57654725526f93aebb576fabc83e/1fca1/google-analytics-logo.png 300w,/static/ea8c57654725526f93aebb576fabc83e/1d160/google-analytics-logo.png 600w,/static/ea8c57654725526f93aebb576fabc83e/940a1/google-analytics-logo.png 1200w" alt="해당 포스트 썸네일 이미지"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><div><style data-emotion="css 255c6r">.css-255c6r{word-break:keep-all;}</style><h1 class="css-255c6r egwpcge3">[블로그 개선기] Gatsby 프로젝트에 Google Analytics 설정하기</h1></div><style data-emotion="css jr6aws">.css-jr6aws{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;color:#757575;}</style><div class="css-jr6aws egwpcge4"><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-s5xdrg egwpcge2"><style data-emotion="css q41a2b">.css-q41a2b{z-index:9;display:inline-block;margin:0.25rem 0;padding:0.25rem 0.75rem;color:#0975ea;font-size:0.9rem;white-space:nowrap;background-color:#ffffff;border:1px solid #e2e5e6;border-radius:1rem;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1);cursor:pointer;-webkit-transition:all 0.1s ease-out;transition:all 0.1s ease-out;}.css-q41a2b:not(:first-of-type){margin-left:1rem;}.css-q41a2b:hover{color:#0975ea;background-color:#badcff;}@media (max-width: 768px){.css-q41a2b{font-size:0.75rem;}}</style><a class="css-q41a2b e1h1hwxn0" href="/posts/?category=GatsbyJS">GatsbyJS</a><a class="css-q41a2b e1h1hwxn0" href="/posts/?category=Google%20Analytics">Google Analytics</a><a class="css-q41a2b e1h1hwxn0" href="/posts/?category=%EB%B8%94%EB%A1%9C%EA%B7%B8">블로그</a><style data-emotion="css 1mys3sh">.css-1mys3sh{margin-left:1rem;}</style><div class="css-1mys3sh egwpcge1">2<!-- --> min read</div></div><div class="css-0 egwpcge0">2023-04-12</div></div></div><style data-emotion="css tbckvg">.css-tbckvg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;margin:0 auto;padding:5rem 0;line-height:1.75;word-break:break-all;}.css-tbckvg h1,.css-tbckvg h2,.css-tbckvg h3{margin-bottom:1.5rem;font-weight:700;}.css-tbckvg h1{padding-left:0.2rem;font-size:2rem;border-bottom:1px solid #e2e5e6;}.css-tbckvg h2{font-size:1.75rem;border-bottom:1px solid #e2e5e6;}.css-tbckvg h3{font-size:1.25rem;}.css-tbckvg *+h1,.css-tbckvg *+h2,.css-tbckvg *+h3{margin-top:1rem;margin-bottom:0.5rem;}.css-tbckvg hr+h1,.css-tbckvg hr+h2,.css-tbckvg hr+h3{margin-top:0;}.css-tbckvg blockquote{margin:30px 0;padding:0 1rem;color:#757575;font-weight:800;border-left:2px solid #e2e5e6;}.css-tbckvg ol,.css-tbckvg ul{margin-left:1rem;padding:1rem 0;}.css-tbckvg li{font-weight:300;}.css-tbckvg hr{margin:100px 0;border:1px solid #000;}.css-tbckvg a{color:#0975ea;}.css-tbckvg p{margin:0;padding:0.5rem 0;font-weight:300;}.css-tbckvg img{margin:3rem 0;}.css-tbckvg pre[class*='language-'],.css-tbckvg code[class*='language-']{color:#d4d4d4;font-size:13px;font-family:Menlo,Monaco,Consolas,'Andale Mono','Ubuntu Mono','Courier New',monospace;direction:ltr;white-space:pre;text-align:left;text-shadow:none;word-break:normal;word-spacing:normal;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}.css-tbckvg pre[class*='language-']::selection,.css-tbckvg code[class*='language-']::selection,.css-tbckvg pre[class*='language-'] *::selection,.css-tbckvg code[class*='language-'] *::selection{text-shadow:none;background:#264f78;}@media print{.css-tbckvg pre[class*='language-'],.css-tbckvg code[class*='language-']{text-shadow:none;}}.css-tbckvg pre[class*='language-']{padding:1rem;overflow:auto;background:#1e1e1e;}.css-tbckvg:not(pre)>code[class*='language-']{padding:0.1em 0.3em;background:#1e1e1e;border-radius:0;border-radius:0.3em;}.css-tbckvg .namespace{opacity:0.7;}.css-tbckvg .token.doctype .token.doctype-tag{color:#569cd6;}.css-tbckvg .token.doctype .token.name{color:#9cdcfe;}.css-tbckvg .token.comment,.css-tbckvg .token.prolog{color:#6a9955;}.css-tbckvg .token.punctuation,.css-tbckvg .language-html .language-css .token.punctuation,.css-tbckvg .language-html .language-javascript .token.punctuation{color:#d4d4d4;}.css-tbckvg .token.property,.css-tbckvg .token.tag,.css-tbckvg .token.boolean,.css-tbckvg .token.number,.css-tbckvg .token.constant,.css-tbckvg .token.symbol,.css-tbckvg .token.inserted,.css-tbckvg .token.unit{color:#b5cea8;}.css-tbckvg .token.selector,.css-tbckvg .token.attr-name,.css-tbckvg .token.string,.css-tbckvg .token.char,.css-tbckvg .token.builtin,.css-tbckvg .token.deleted{color:#ce9178;}.css-tbckvg .language-css .token.string.url{-webkit-text-decoration:underline;text-decoration:underline;}.css-tbckvg .token.operator,.css-tbckvg .token.entity{color:#d4d4d4;}.css-tbckvg .token.operator.arrow{color:#569cd6;}.css-tbckvg .token.atrule{color:#ce9178;}.css-tbckvg .token.atrule .token.rule{color:#c586c0;}.css-tbckvg .token.atrule .token.url{color:#9cdcfe;}.css-tbckvg .token.atrule .token.url .token.function{color:#dcdcaa;}.css-tbckvg .token.atrule .token.url .token.punctuation{color:#d4d4d4;}.css-tbckvg .token.keyword{color:#569cd6;}.css-tbckvg .token.keyword.module,.css-tbckvg .token.keyword.control-flow{color:#c586c0;}.css-tbckvg .token.function,.css-tbckvg .token.function .token.maybe-class-name{color:#dcdcaa;}.css-tbckvg .token.regex{color:#d16969;}.css-tbckvg .token.important{color:#569cd6;}.css-tbckvg .token.italic{font-style:italic;}.css-tbckvg .token.constant{color:#9cdcfe;}.css-tbckvg .token.class-name,.css-tbckvg .token.maybe-class-name{color:#4ec9b0;}.css-tbckvg .token.console{color:#9cdcfe;}.css-tbckvg .token.parameter{color:#9cdcfe;}.css-tbckvg .token.interpolation{color:#9cdcfe;}.css-tbckvg .token.punctuation.interpolation-punctuation{color:#569cd6;}.css-tbckvg .token.boolean{color:#569cd6;}.css-tbckvg .token.property,.css-tbckvg .token.variable,.css-tbckvg .token.imports .token.maybe-class-name,.css-tbckvg .token.exports .token.maybe-class-name{color:#9cdcfe;}.css-tbckvg .token.selector{color:#d7ba7d;}.css-tbckvg .token.escape{color:#d7ba7d;}.css-tbckvg .token.tag{color:#569cd6;}.css-tbckvg .token.tag .token.punctuation{color:#808080;}.css-tbckvg .token.cdata{color:#808080;}.css-tbckvg .token.attr-name{color:#9cdcfe;}.css-tbckvg .token.attr-value,.css-tbckvg .token.attr-value .token.punctuation{color:#ce9178;}.css-tbckvg .token.attr-value .token.punctuation.attr-equals{color:#d4d4d4;}.css-tbckvg .token.entity{color:#569cd6;}.css-tbckvg .token.namespace{color:#4ec9b0;}.css-tbckvg pre[class*='language-javascript'],.css-tbckvg code[class*='language-javascript'],.css-tbckvg pre[class*='language-jsx'],.css-tbckvg code[class*='language-jsx'],.css-tbckvg pre[class*='language-typescript'],.css-tbckvg code[class*='language-typescript'],.css-tbckvg pre[class*='language-tsx'],.css-tbckvg code[class*='language-tsx']{color:#9cdcfe;}.css-tbckvg pre[class*='language-css'],.css-tbckvg code[class*='language-css']{color:#ce9178;}.css-tbckvg pre[class*='language-html'],.css-tbckvg code[class*='language-html']{color:#d4d4d4;}.css-tbckvg .language-regex .token.anchor{color:#dcdcaa;}.css-tbckvg .language-html .token.punctuation{color:#808080;}.css-tbckvg pre[class*='language-']>code[class*='language-']{position:relative;z-index:1;}.css-tbckvg .line-highlight.line-highlight{z-index:0;background:#f7ebc6;box-shadow:inset 5px 0 0 #f7d87c;}.css-tbckvg pre[class*='language-text'],.css-tbckvg code[class*='language-text']{padding:0.25rem;color:#000000;background-color:#e2e5e6;border-radius:0.25rem;}@media (max-width: 768px){.css-tbckvg{padding:0 0.5rem;}.css-tbckvg img{width:100%;}.css-tbckvg pre[class*='language-']{width:100%;overflow-x:auto;}}</style><div class="css-tbckvg e1lyygfx0"><p>내 블로그에 방문한 사람들은 어떤 글을 가장 많이 볼까? 어떤 페이지를 가장 많이 볼까?라는 궁금증에 Google Analytics를 얼마 전에 설정했다. 이번 글에서는 GatsbyJS로 만든 프로젝트에 어떻게 Google Analytics를 설정했는지 말하고자 한다. 정말 쉽다!</p>
+<h2 id="how" style="position:relative;"><a href="#how" aria-label="how permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How?</h2>
+<h3 id="google-analytics-계정-만들기" style="position:relative;"><a href="#google-analytics-%EA%B3%84%EC%A0%95-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-label="google analytics 계정 만들기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Google Analytics 계정 만들기</h3>
+<p>먼저 <a href="https://analytics.google.com/" target="_blank" rel="nofollow">google analytics</a>를 검색하고 로그인해주자.</p>
+<p>그러고 나면 옆의 사이드바에서 <code class="language-text">관리</code>를 클릭하자.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 249px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/31e01dfaf8def48228bbc282fbfc42f7/14a1f/sidebar.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 388.54166666666663%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAABOCAYAAAAgnDacAAAACXBIWXMAAAsTAAALEwEAmpwYAAADMUlEQVR42u2YS2sTURTHZ1XEIrVudKXu/Aiu3fQb+AEs2Ie2hS7UhW4EQRDciiBUg+CiiPjAWlupuukjSatN0zZ92CSN5jVtJzN3Mo9MZv5ybpyQRptH04WLuXDIPfec+8uZO/demL8AAI5jo9wcB400x3FgmgUUCgWYpsnNtm0IjlMsJeQW4bBNEE5VGQzDgGVZ0A0DTFXLPoFoIrVsVoQo7iCdySIajUNWFAgUKIgJsNddgDQN3QI+f/kKf2AeM3N+LK9G8H0xhPDyCtY3NsEY41CCi6KIRCIBScpBVVXkNQ2C7ThQgqNQJgZh6wlQvYypSGdE/EplkNcMGGYBal7Dzq4E3TBhFR1YRRv+QBDjHycx+WkK78c+QJZ5hXb16jSyglW+hb29Pd4TFmIGyOajOv/9VuG7Y9U5+8cMhBIm/wtd1yB0DqbQMZDCycGSnbhe8k8NpUCxzqHaRnmU3+uToLA8BBq49VLGi1mNBy8/2sWlByLODKdw/mYa5xqwszfS6BhIYiqcg9DWk8TFe1l0PRRxvD/Jg6eHUzjWl0R7f5KP1bL2a0m09SZx4XYGkZ8MwlWfhO5nCrp9DNS/MiKh+6mEHp/E/Uas77mE6U0TlqmV9iHMHHQ5jVYbX0PqjL56izt37/PBrdg2lpYjCK+sQdyV+KYq8H1X24q2A6b+Acbj21gMhUvFmiY0TeNHrVgsls9trTPt/nJgZfK/Jjp1Lou/gOTQoU5nMjxAtwdVWFldUxWSE1oKY2x8gkPWNzYwO+cvH6XDVSgrfB0J6FZUmdgUsJHHabpCfkHG4jyQz+ehMNbQGz4QGAgu4M27sdI+jEb5haoo7PBA2ns5WS5f7S09cvWkll9KNeRIgK00D+gBPaAH9IAe0AN6QA/oAT2gB/SAHvA/AB70rdyMHTnQtX1f9K7eUE9JqtU4kEQzF+Zq1SSxkLBBvit61zOaw1QNAjmrkTXMzM7xQCaTRSwWRy6X4xoY6TiNGOUqTIXg2DbXvR4/GeFC2o+tLQQCQS56U4Vucj2jPFlhEDhZUSBJEnRdL2uHblKtKithBpf48xDo2WkN6UVQ/zDmzqc1/A3im6Q82/QSLwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/31e01dfaf8def48228bbc282fbfc42f7/a59e9/sidebar.webp 192w,
+/static/31e01dfaf8def48228bbc282fbfc42f7/e7380/sidebar.webp 249w"
+              sizes="(max-width: 249px) 100vw, 249px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/31e01dfaf8def48228bbc282fbfc42f7/3b721/sidebar.png 192w,
+/static/31e01dfaf8def48228bbc282fbfc42f7/14a1f/sidebar.png 249w"
+            sizes="(max-width: 249px) 100vw, 249px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/31e01dfaf8def48228bbc282fbfc42f7/14a1f/sidebar.png"
+            alt="google analytics 사이드바"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>그러면 다음과 같은 화면이 나온다. 여기서 계정 만들기를 클릭해주자.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/31b45b5a7cb66eeb6e05682730919936/34cf9/create-account.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.041666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA7UlEQVR42o2S627DMAiF8/7PtgdYNe3PtLXStrS5YWzAPpWTNM1SLyrSkQHDJ3ypLk2L4B1ONeHrHKBqENVRZoqGFJ+1wItC53xZhhAE1c/vGUDC25HwetLRR0pIKY3+xzfh5Z2gcYrTsreyOfbeoxrIwSxi6BrAwtKQFWOEZ0IUN/elf7UA2U+QvPogD43MHuS4CCgCMyRP0nXdeAfbwmEY4JwrArZxCOE+YakoS0RgZrvAm59tAa6T6/WZCXeBW+V7YebdB1nrD7BkE9DhWasOR0aKNn5M3Sgf9dL2qFtC7wQtCXrycMwPtTddAYUuFKd+wcJsAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/31b45b5a7cb66eeb6e05682730919936/a59e9/create-account.webp 192w,
+/static/31b45b5a7cb66eeb6e05682730919936/0ca9f/create-account.webp 384w,
+/static/31b45b5a7cb66eeb6e05682730919936/dc9b9/create-account.webp 768w,
+/static/31b45b5a7cb66eeb6e05682730919936/e2c2f/create-account.webp 1152w,
+/static/31b45b5a7cb66eeb6e05682730919936/f3efb/create-account.webp 1536w,
+/static/31b45b5a7cb66eeb6e05682730919936/c8d93/create-account.webp 2858w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/31b45b5a7cb66eeb6e05682730919936/3b721/create-account.png 192w,
+/static/31b45b5a7cb66eeb6e05682730919936/66595/create-account.png 384w,
+/static/31b45b5a7cb66eeb6e05682730919936/fe486/create-account.png 768w,
+/static/31b45b5a7cb66eeb6e05682730919936/d2d74/create-account.png 1152w,
+/static/31b45b5a7cb66eeb6e05682730919936/e8464/create-account.png 1536w,
+/static/31b45b5a7cb66eeb6e05682730919936/34cf9/create-account.png 2858w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/31b45b5a7cb66eeb6e05682730919936/fe486/create-account.png"
+            alt="google analytics 계정 만들기"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>여기서부터는 각자의 상황에 맞게 하면 되겠다. 먼저 계정을 설정하고,</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/98ef3795990ecf9ab854895449124660/ec056/account-options.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.39583333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABXElEQVR42qVTCXLDIBDr/x/atKljc+9yGHVYMGkyTY8JMzLY2FqtkF/eVIJ1HrXuqLU+jZd9r7DWgojQxtOE7WKMhfcezIyUkmy0Qg3HaM9+G5MwxiREKec+p4QYo+Ao8Ff1Qtjadc6BmSZZUysgwr7vNyrvxdZ7hcZonBeFRQcY18lFYSqgVIdaHoXinHvROLtphYXQeoY2FsY6OB8QwgARiBiOMjwX+eA7lFJQyj4UAlCO8Xo6YVkWKKWxKSVYtw1KKShtsG1t7nvtnbYWKA3rHLwPR8uA8RGXy4rLukJr3T31XeH08g5NOY11zllUTkIXIpbLKiq0MZJLZTwCDZ/i1acDLAnI8xAb6SRcbRIPS8my0V/iaTrHK/FUGeOj2ACbZbyfP7ApIyG31t3ksK/TzT2Pk6ZR9MirnHJKESGQeHlE5mv6//XrNTPlJBuMx2YYzve24oO2fiL8BHBQSntgcwvLAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/98ef3795990ecf9ab854895449124660/a59e9/account-options.webp 192w,
+/static/98ef3795990ecf9ab854895449124660/0ca9f/account-options.webp 384w,
+/static/98ef3795990ecf9ab854895449124660/dc9b9/account-options.webp 768w,
+/static/98ef3795990ecf9ab854895449124660/e2c2f/account-options.webp 1152w,
+/static/98ef3795990ecf9ab854895449124660/f3efb/account-options.webp 1536w,
+/static/98ef3795990ecf9ab854895449124660/8edd7/account-options.webp 1840w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/98ef3795990ecf9ab854895449124660/3b721/account-options.png 192w,
+/static/98ef3795990ecf9ab854895449124660/66595/account-options.png 384w,
+/static/98ef3795990ecf9ab854895449124660/fe486/account-options.png 768w,
+/static/98ef3795990ecf9ab854895449124660/d2d74/account-options.png 1152w,
+/static/98ef3795990ecf9ab854895449124660/e8464/account-options.png 1536w,
+/static/98ef3795990ecf9ab854895449124660/ec056/account-options.png 1840w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/98ef3795990ecf9ab854895449124660/fe486/account-options.png"
+            alt="google analytics 계정 설정"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>속성을 설정한 다음,</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b47a71801ac94b7688e967c070700fea/13727/property-options.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.79166666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAt0lEQVR42qWS0QrCMAxF9/8f5T/45LP4JMx1dK1N0zRX0sFkiG5q4JLSlsu5aburI0jJ+FwK1X3qigiccwgh4J4SYsqIiZGIwMyIVCGiwF7DWivGcYT3vvXBefSDxxQC7EzqfrpmKCKIMcL6UwWllLZWrXNoVWzVYphSagZE1GJn5uXCLGySrQwtns3LNizmHpq3hPaCwhk550Zm3WjXhF/M8DYJzn2Z6X4weDE8XhiHEy1/7d96AI50x7qeeswAAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/b47a71801ac94b7688e967c070700fea/a59e9/property-options.webp 192w,
+/static/b47a71801ac94b7688e967c070700fea/0ca9f/property-options.webp 384w,
+/static/b47a71801ac94b7688e967c070700fea/dc9b9/property-options.webp 768w,
+/static/b47a71801ac94b7688e967c070700fea/e2c2f/property-options.webp 1152w,
+/static/b47a71801ac94b7688e967c070700fea/f3efb/property-options.webp 1536w,
+/static/b47a71801ac94b7688e967c070700fea/27be8/property-options.webp 1848w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/b47a71801ac94b7688e967c070700fea/3b721/property-options.png 192w,
+/static/b47a71801ac94b7688e967c070700fea/66595/property-options.png 384w,
+/static/b47a71801ac94b7688e967c070700fea/fe486/property-options.png 768w,
+/static/b47a71801ac94b7688e967c070700fea/d2d74/property-options.png 1152w,
+/static/b47a71801ac94b7688e967c070700fea/e8464/property-options.png 1536w,
+/static/b47a71801ac94b7688e967c070700fea/13727/property-options.png 1848w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/b47a71801ac94b7688e967c070700fea/fe486/property-options.png"
+            alt="google analytics 속성 설정"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>비즈니스 정보를 입력하고 만들기를 클릭하면 된다. 이후 약관 동의가 뜨는데 대한민국으로 바꾸고 모두 동의해주었다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f2e5d375849f6b3dfff8aaec845a0240/78496/business-info.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.6875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAyElEQVR42qWTWw+CMAyF+f+/Uh/kIrAJbOzC2mO2BIKR6MQmfWmaL6enbdFIC2dmEDPWYObTWQAMrTWccwghYFkWENF5YIRIIaD1DGNMgsfaWaVFIMKkNIgC9rE2/BIJuARG0wp0XQvv/WFTjtoNyExQ0wgpH8nHWIwjx4xe5qh9ARrPuFYP3Jsadd1gGIak1Hn/5mUmkHC5dZCixzhNactHzd+824BxLCF6KKUP7zB32xswBEJZVmnUXEUftxwVWmv/+o79HT4BJeNmUKYKsswAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/f2e5d375849f6b3dfff8aaec845a0240/a59e9/business-info.webp 192w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/0ca9f/business-info.webp 384w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/dc9b9/business-info.webp 768w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/e2c2f/business-info.webp 1152w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/f3efb/business-info.webp 1536w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/a9c35/business-info.webp 1836w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/f2e5d375849f6b3dfff8aaec845a0240/3b721/business-info.png 192w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/66595/business-info.png 384w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/fe486/business-info.png 768w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/d2d74/business-info.png 1152w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/e8464/business-info.png 1536w,
+/static/f2e5d375849f6b3dfff8aaec845a0240/78496/business-info.png 1836w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/f2e5d375849f6b3dfff8aaec845a0240/fe486/business-info.png"
+            alt="google analytics 비즈니스 정보 설정"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>이후 데이터 스트림에서 웹을 클릭하자.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/07c3078aed68d0a2d1e905444ba50c4a/ffe51/data-stream-web.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.29166666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAzklEQVR42m2QbW8CIRCE7///xX5rk8Yaq3JysK+M2T2xJnWTJ8BkGJZdTAifx4qPA0HNwCIw83+4O0QdXfa9vvHE/cVN8H2q+DoR3A3MjDEGzOxJBJgpztcVP78FKpzaZHqiFhGFMAFDU4zAMDALiCgJrRPhfCm4XAu21iEiqQeUq2QjS1xeS8F2q4jw1hp673AzvJY50NgTdbytZ+BWK0w1O2t9f712zXmFyX3kurGj85+GMbA2Az18GTi/OecR+yi1kUxjwLozz3hor747EurX+77j4EsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/07c3078aed68d0a2d1e905444ba50c4a/a59e9/data-stream-web.webp 192w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/0ca9f/data-stream-web.webp 384w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/dc9b9/data-stream-web.webp 768w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/e2c2f/data-stream-web.webp 1152w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/f3efb/data-stream-web.webp 1536w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/d7270/data-stream-web.webp 2018w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/07c3078aed68d0a2d1e905444ba50c4a/3b721/data-stream-web.png 192w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/66595/data-stream-web.png 384w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/fe486/data-stream-web.png 768w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/d2d74/data-stream-web.png 1152w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/e8464/data-stream-web.png 1536w,
+/static/07c3078aed68d0a2d1e905444ba50c4a/ffe51/data-stream-web.png 2018w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/07c3078aed68d0a2d1e905444ba50c4a/fe486/data-stream-web.png"
+            alt="데이터 스트림"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>google analytics를 부여할 url을 넣고 스트림 이름을 설정한 다음 스트림 만들기를 클릭하면</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/76e25ef671b16653fb4898332058ed92/de34d/data-stream-options.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35.416666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA8UlEQVR42nWR0WrDMAxF/f9/s+8YexvsbdDRZqOMJpFjW5Lt3GF5CWFrBQcJIV+JaxdjwjwTiAilFNRaUWq1/JfyoD7iWBSiGSEE5PwrWMoDKnLONtfqrbdlzRkusSIxw3tCC1XF3VhXS8Jsor217gCrCbvEYhdSYIzjhBAimg2NJUSkxGgzG5EVLNneHJmW3jfBdmrNCcPXFafLgNNwwcflE9fvG6bZg/yCmbxxo2jLTTx1Wj1StOxYBCEpnt8j3s4RPniMnjD6Bbp7daT72XzcKQUiAtUMJ6qYg+DpZcHrmc2bWrsv/42/t6DTPrMd8AP4uCOG60NwagAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/76e25ef671b16653fb4898332058ed92/a59e9/data-stream-options.webp 192w,
+/static/76e25ef671b16653fb4898332058ed92/0ca9f/data-stream-options.webp 384w,
+/static/76e25ef671b16653fb4898332058ed92/dc9b9/data-stream-options.webp 768w,
+/static/76e25ef671b16653fb4898332058ed92/e2c2f/data-stream-options.webp 1152w,
+/static/76e25ef671b16653fb4898332058ed92/f3efb/data-stream-options.webp 1536w,
+/static/76e25ef671b16653fb4898332058ed92/54a31/data-stream-options.webp 2042w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/76e25ef671b16653fb4898332058ed92/3b721/data-stream-options.png 192w,
+/static/76e25ef671b16653fb4898332058ed92/66595/data-stream-options.png 384w,
+/static/76e25ef671b16653fb4898332058ed92/fe486/data-stream-options.png 768w,
+/static/76e25ef671b16653fb4898332058ed92/d2d74/data-stream-options.png 1152w,
+/static/76e25ef671b16653fb4898332058ed92/e8464/data-stream-options.png 1536w,
+/static/76e25ef671b16653fb4898332058ed92/de34d/data-stream-options.png 2042w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/76e25ef671b16653fb4898332058ed92/fe486/data-stream-options.png"
+            alt="데이터 스트림 설정"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>측정 ID가 생긴다. 이 ID를 복사해두자.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c25c033bbba53aecb6b6bc6ca3bca82c/550d9/google-analytics-id.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 20.833333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAzklEQVR42j2OS1LDMBBEfVNuwZIzsOU0nIAVlSoW7IidYBJZsjTW6GM/yiJh8ap7uma6pnOz53IZmecJ1YUYBVX5V403VMgpkvON5pXoDfb0SRSHpkzngiD+B2e+cFOPm47MtsfbobHP90yXEZWRGL6J4UxSw/V84PD6wth/MIvSOR+ws2f/tK5bI+dCkKXpPSt1xYeFlEvzpW5oVNJwZBt6ZLLYIH+FPgRy2Y/XhqaEMQYRodbaKKVwbdnCuu9tkL0jPz+xPj4Q39+wufILaB0yFgQGCP4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/c25c033bbba53aecb6b6bc6ca3bca82c/a59e9/google-analytics-id.webp 192w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/0ca9f/google-analytics-id.webp 384w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/dc9b9/google-analytics-id.webp 768w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/e2c2f/google-analytics-id.webp 1152w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/f3efb/google-analytics-id.webp 1536w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/c6086/google-analytics-id.webp 2140w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/c25c033bbba53aecb6b6bc6ca3bca82c/3b721/google-analytics-id.png 192w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/66595/google-analytics-id.png 384w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/fe486/google-analytics-id.png 768w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/d2d74/google-analytics-id.png 1152w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/e8464/google-analytics-id.png 1536w,
+/static/c25c033bbba53aecb6b6bc6ca3bca82c/550d9/google-analytics-id.png 2140w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/c25c033bbba53aecb6b6bc6ca3bca82c/fe486/google-analytics-id.png"
+            alt="google analytics 측정 ID"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<p>이제 google analytics 사이트에서 설정해둬야 할 것들은 끝났다.</p>
+<br />
+<br />
+<br />
+<h3 id="gatsby-프로젝트에-google-analytics-설정하기" style="position:relative;"><a href="#gatsby-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-google-analytics-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0" aria-label="gatsby 프로젝트에 google analytics 설정하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gatsby 프로젝트에 Google Analytics 설정하기</h3>
+<p>Gatsby 프로젝트로 돌아와서 터미널에 다음을 입력하여 Google Analytics 플러그인을 설치해주자.</p>
+<p><code class="language-text">npm install gatsby-plugin-google-gtag</code></p>
+<br />
+<p>그리고 <code class="language-text">gatsby-config.js</code> 파일로 이동해 <code class="language-text">plugins</code>에 다음과 같이 추가해주자.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token operator">...</span>
+
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">resolve</span><span class="token operator">:</span> <span class="token string">'gatsby-plugin-google-gtag'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">trackingIds</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'G-XXXXXXXXXX'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+    <span class="token operator">...</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>gtag를 이용한 특정 이벤트 측정이라던가 더 자세한 설정은 <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/" target="_blank" rel="nofollow">공식 문서</a>를 통해 확인하면 될 것 같다.</p>
+<p>여담으로 React에서나 Next 프로젝트에서는 페이지가 변경될 때 마다 gtag를 이용해 google analytics로 데이터를 보내는 코드를 추가로 작성해야 했는데 Gatsby에서는 위와 같이 플러그인을 설치하고 <code class="language-text">gatsby-config.js</code>에 설정만 해주면 된다.</p>
+<p>물론 다음과 같이 각 페이지들마다 title 태그를 꼭 명시해줘야 제대로 데이터를 측정할 수 있다. 안 그러면 Not set이라는 이름으로 측정되어 어떤 페이지를 방문한 건지 알 수 없게 된다.</p>
+<p><code class="language-text">404.tsx</code></p>
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token operator">...</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Helmet <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-helmet'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">NotFound</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Helmet</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span><span class="token plain-text">Not Found</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Helmet</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Container</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Not Found. 404 Error.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">GoHomeButton</span></span> <span class="token attr-name">to</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token constant">ROUTES</span><span class="token punctuation">.</span><span class="token constant">HOME</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">Home</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">GoHomeButton</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Container</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> NotFound<span class="token punctuation">;</span>
+
+<span class="token operator">...</span></code></pre></div>
+<p>Next에서는 Head 컴포넌트를 이용해 html의 head 태그 안에 들어가는 태그들, 이를테면 meta나 title 태그를 설정해줄 수 있었다. 나는 Gatsby에서 react-helmet을 사용했다. 이를 사용하는 방법 역시 단순하다. 다음과 같이 플러그인과 라이브러리를 설치해주자.</p>
+<p><code class="language-text">npm install gatsby-plugin-react-helmet react-helmet</code></p>
+<p>TypeScript를 사용하고 있다면 다음 패키지도 설치해주자.</p>
+<p><code class="language-text">npm install --save-dev @types/react-helmet</code></p>
+<p>설치를 마치고 나면 <code class="language-text">gatsby-config.js</code>의 plugins에 다음과 같이 등록해주면 된다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token operator">...</span>
+
+    <span class="token string">'gatsby-plugin-react-helmet'</span><span class="token punctuation">,</span>
+
+    <span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>그리고 나면 위에 적은 404 페이지 코드처럼 사용할 수 있다.</p>
+<br />
+<br />
+<br />
+<h3 id="데이터-통계" style="position:relative;"><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%86%B5%EA%B3%84" aria-label="데이터 통계 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>데이터 통계</h3>
+<p>24 ~ 48 시간이 지나면 Google Analytics가 다음과 같이 보고서를 만들어준다. 그 이전에는 보고서 - 실시간 항목을 이용해 실시간으로 몇 명의 사용자가 어떤 페이지를 보고 있는지 확인할 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/45caae1e0770013178e10be9aeb90857/853dd/statistics.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 88.02083333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAACIklEQVR42l1U2ZLjIAz0/39oHmaSdTK2uSTRW93gXFSpACEaHS2WI1eU2lBrG3Mzzc18rsd5+Tp/yThPuUiW698AyznDPbDtOyIC63rHcST03hHRUVpFM8NxHMilwN0Rvevc3AXMx5Zw16EMoiPnIiNeTDljjI7oATPH4/GAm0n3PnhOTxceEEAGfRr1l/HwrqNah5nBPGDe4YGnaO+hSBe67dHRrCO3QK6hNS9WG3teILAAzbSurSn01ppCNuW8YUnFcOSG0mK+HqgTmDpeZk6VK/MZDaQ7U3UOhZxSVrJfOelfAnmcKqMIAX0PpoOPK+R933Gk9KQO3W7NNL/TKVNK+7JrM/TX2fJzXXFb7yo7gVJp2NMA4P7UURhJnTqmiZLf9AJkrjzO4tJ1x5ZM4Z0MyNWxZ3vuyQLmnro67TxC4AsrNdyuEhG01o8OqXV48dkxn55JSsVypDzKL0q4Zn9W21BmLtk1p93pAO+qqE+7ikU8UpVfo5SCCJ/sL9qv6z+klFRltiE76Xa7qVVJHT4mQG5YaYa5bZvWe6rYWJjZIfTk8vuAOXSZedyPjN91Vz/TKUalonDD/uSLl8tFoE82ThKXZrjek9Jw6rYj4+f2kCOjJf3sZeiFEWZo/UHe3r/I/AJc73/6pczGHQG+t877hfOPsBgtd+a5zY+B+SKY5urqdwGy1GruL+FD/GRT9UmJIj25R52opI8hsGcXLwn4H88IhmYa47YzAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/45caae1e0770013178e10be9aeb90857/a59e9/statistics.webp 192w,
+/static/45caae1e0770013178e10be9aeb90857/0ca9f/statistics.webp 384w,
+/static/45caae1e0770013178e10be9aeb90857/dc9b9/statistics.webp 768w,
+/static/45caae1e0770013178e10be9aeb90857/e2c2f/statistics.webp 1152w,
+/static/45caae1e0770013178e10be9aeb90857/aee86/statistics.webp 1328w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/45caae1e0770013178e10be9aeb90857/3b721/statistics.png 192w,
+/static/45caae1e0770013178e10be9aeb90857/66595/statistics.png 384w,
+/static/45caae1e0770013178e10be9aeb90857/fe486/statistics.png 768w,
+/static/45caae1e0770013178e10be9aeb90857/d2d74/statistics.png 1152w,
+/static/45caae1e0770013178e10be9aeb90857/853dd/statistics.png 1328w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/45caae1e0770013178e10be9aeb90857/fe486/statistics.png"
+            alt="google analytics 보고서"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<br />
+<br />
+<br />
+<h2 id="사람들은-내-블로그에서-어떤-글들을-제일-많이-봤을까" style="position:relative;"><a href="#%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%80-%EB%82%B4-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%97%90%EC%84%9C-%EC%96%B4%EB%96%A4-%EA%B8%80%EB%93%A4%EC%9D%84-%EC%A0%9C%EC%9D%BC-%EB%A7%8E%EC%9D%B4-%EB%B4%A4%EC%9D%84%EA%B9%8C" aria-label="사람들은 내 블로그에서 어떤 글들을 제일 많이 봤을까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>사람들은 내 블로그에서 어떤 글들을 제일 많이 봤을까?</h2>
+<p>비록 글도 적고 총 조회수도 적지만 대체로 Home 페이지에서 Featured 화면의 조회수가 높은 것을 확인할 수 있었다. Featured라는 공간을 따로 두어, 사람들이 조금 더 봐주었으면 하는 글들을 잘 노출될 수 있도록 마련해두었는데 의도가 잘 먹힌 것 같다.</p>
+<br />
+<br />
+<br />
+<h2 id="참고" style="position:relative;"><a href="#%EC%B0%B8%EA%B3%A0" aria-label="참고 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>참고</h2>
+<p><a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/" target="_blank" rel="nofollow">gatsby-plugin-google-gtag</a></p></div><div></div><style data-emotion="css fmunkh">.css-fmunkh{position:absolute;top:0;left:768px;height:100%;padding-left:4rem;}@media (max-width: 1400px){.css-fmunkh{display:none;}}</style><aside class="css-fmunkh e1w0yw541"><style data-emotion="css pwv7uh">.css-pwv7uh{position:-webkit-sticky;position:sticky;top:6rem;width:240px;overflow:hidden;font-size:0.8rem;}.css-pwv7uh p{margin:0;}.css-pwv7uh a{display:block;padding:0.5rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;border-radius:4px;-webkit-transition:all 0.1s ease-out;transition:all 0.1s ease-out;}.css-pwv7uh a:hover{background-color:#badcff;}.css-pwv7uh ul{margin-left:0.5rem;padding:0 0.5rem;list-style:none;border-left:2px solid #e2e5e6;}</style><nav class="css-pwv7uh e1w0yw540"><ul>
+<li>
+<p><a href="#how">How?</a></p>
+<ul>
+<li><a href="#google-analytics-%EA%B3%84%EC%A0%95-%EB%A7%8C%EB%93%A4%EA%B8%B0">Google Analytics 계정 만들기</a></li>
+<li><a href="#gatsby-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-google-analytics-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0">Gatsby 프로젝트에 Google Analytics 설정하기</a></li>
+<li><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%86%B5%EA%B3%84">데이터 통계</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%82%AC%EB%9E%8C%EB%93%A4%EC%9D%80-%EB%82%B4-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%97%90%EC%84%9C-%EC%96%B4%EB%96%A4-%EA%B8%80%EB%93%A4%EC%9D%84-%EC%A0%9C%EC%9D%BC-%EB%A7%8E%EC%9D%B4-%EB%B4%A4%EC%9D%84%EA%B9%8C">사람들은 내 블로그에서 어떤 글들을 제일 많이 봤을까?</a></p>
+</li>
+<li>
+<p><a href="#%EC%B0%B8%EA%B3%A0">참고</a></p>
+</li>
+</ul></nav></aside></div></div><style data-emotion="css 1x6a0ri">.css-1x6a0ri{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;height:6rem;margin-top:auto;color:#0975ea;font-size:0.75rem;background-color:#e4f1ff;}</style><footer class="css-1x6a0ri ecav7ff0">© 2023 신승준, Powered by Gatsby.</footer><style data-emotion="css 1f4580j">.css-1f4580j{position:fixed;right:3rem;bottom:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:3rem;height:3rem;background-color:#e4f1ff;border-radius:50%;box-shadow:3px 3px 5px 0 rgba(82,82,82,0.75);visibility:hidden;cursor:pointer;opacity:0;-webkit-transition:all 0.15s ease-out;transition:all 0.15s ease-out;}.css-1f4580j:hover{-webkit-transform:scale(1.05);-moz-transform:scale(1.05);-ms-transform:scale(1.05);transform:scale(1.05);}</style><div class="css-1f4580j e36r2e91"><style data-emotion="css 11v5qdi">.css-11v5qdi{width:1.5rem;height:1.5rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="css-11v5qdi e36r2e90" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path></svg></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-91F94BS03N"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-91F94BS03N', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/google-analytics-to-gatsby-blog/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-aef13dd2dd031217bca5.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-ff7f72c2c70e1e665f4e.js\"],\"component---src-pages-about-tsx\":[\"/component---src-pages-about-tsx-93c4dae3048801139e18.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-09d2821eb5b26542177f.js\"],\"component---src-pages-posts-tsx\":[\"/component---src-pages-posts-tsx-e436c4103402b3513eaa.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-8c0fff05ce8c4e2e1490.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="4afdb71be72d8a5b337c";</script><script src="/webpack-runtime-625e856c95fb5de6248f.js" async></script><script src="/framework-2e8bccb64aab9145259b.js" async></script><script src="/app-aef13dd2dd031217bca5.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
