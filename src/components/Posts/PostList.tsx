@@ -63,11 +63,7 @@ export default PostList;
  * To Do
  * media, 반응형 디자인 작성
  */
-const Container = styled.div`
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto 6rem auto;
-`;
+const Container = styled.div``;
 
 const Title = styled.h2``;
 

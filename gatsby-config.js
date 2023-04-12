@@ -25,6 +25,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -66,7 +67,6 @@ module.exports = {
           'gatsby-remark-smartypants',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-autolink-headers',
-          'gatsby-plugin-react-helmet',
           {
             resolve: 'gatsby-remark-images',
             options: {

@@ -70,5 +70,8 @@ const Container = styled.main`
  * media, 반응형 디자인 작성
  */
 const ContentContainer = styled.div`
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto 6rem auto;
   margin-top: 4rem;
 `;

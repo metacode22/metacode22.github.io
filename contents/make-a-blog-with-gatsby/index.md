@@ -3,7 +3,7 @@ date: '2023-03-30'
 title: 'Gatsby와 함께 나만의 블로그 만들기'
 summary: ''
 thumbnail: './gatsby-logo.png'
-categories: ['Featured', 'GatsbyJS', '회고']
+categories: ['Featured', 'GatsbyJS', '회고', '블로그']
 ---
 
 꾸준히 관리하는 블로그가 하나 쯤은 있었으면 좋겠다는 생각을 개발자가 되기를 마음 먹었던 순간부터 가지고 있었다. 찾아보니 Gatsby가 적절하다는 아티클들이 많았고, 마침 인프런에 텍스트로 제공되는 무료 강의가 있었다.

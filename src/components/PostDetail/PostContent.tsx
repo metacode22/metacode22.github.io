@@ -44,7 +44,7 @@ const MarkdownRenderer = styled.div`
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   * + h1,

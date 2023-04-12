@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import Layout from 'components/common/Layout';
 import { graphql } from 'gatsby';
 
@@ -31,7 +32,7 @@ const About = ({
       description={description}
       url={href}
       image={publicURL}>
-      열띠미 만드는 중
+      <Container>열띠미 만드는 중!</Container>
     </Layout>
   );
 };
@@ -51,3 +52,5 @@ export const getSiteMetadata = graphql`
     }
   }
 `;
+
+const Container = styled.div``;
