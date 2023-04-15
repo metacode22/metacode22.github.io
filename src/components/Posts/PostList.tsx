@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 import { useMemo } from 'react';
 import { PostItem } from 'types/Post';
+import { ROUTES } from 'utils/constants/routes';
 
 import PostListItem from './PostListItem';
 
@@ -32,8 +34,13 @@ const PostList = ({
 
   return (
     <Container>
-      {isFeatured && <Title>Featured</Title>}
-      <PostsContainer>
+      {isFeatured && (
+        <PostListHeaderContainer>
+          <Title>Featured</Title>
+          <StyledLink to={ROUTES.POSTS}>다른 글 구경하기</StyledLink>
+        </PostListHeaderContainer>
+      )}
+      <PostListContainer>
         {postListFilteredBySelectedCategory.map(
           ({
             node: {
@@ -52,7 +59,7 @@ const PostList = ({
             />
           ),
         )}
-      </PostsContainer>
+      </PostListContainer>
     </Container>
   );
 };
@@ -67,4 +74,19 @@ const Container = styled.div``;
 
 const Title = styled.h2``;
 
-const PostsContainer = styled.div``;
+const PostListContainer = styled.div``;
+
+const PostListHeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const StyledLink = styled(Link)`
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;

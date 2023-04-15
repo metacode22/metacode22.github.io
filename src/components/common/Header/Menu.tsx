@@ -32,7 +32,6 @@ const Container = styled.div`
 const StyledLink = styled(Link)`
   padding: 0.5rem;
   border-radius: 4px;
-  transition: all 0.1s ease-out;
 
   &:hover {
     text-decoration: underline;
