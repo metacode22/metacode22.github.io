@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import COLORS from 'utils/constants/colors';
 import { ROUTES } from 'utils/constants/routes';
 
 // import DarkModeSwitch from '../DarkModeSwitch';
