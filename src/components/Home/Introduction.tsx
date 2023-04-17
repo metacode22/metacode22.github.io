@@ -68,12 +68,6 @@ const InfoContainer = styled.div`
   height: 180px;
 `;
 
-const Title = styled.h1`
-  margin: 0;
-`;
-
-const Description = styled.p``;
-
 const LinksContainer = styled.div`
   display: flex;
   gap: 1rem;
