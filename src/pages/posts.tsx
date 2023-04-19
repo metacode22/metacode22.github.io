@@ -4,7 +4,6 @@ import CategoryList, { CategoryListProps } from 'components/Posts/CategoryList';
 import PostList from 'components/Posts/PostList';
 import { graphql } from 'gatsby';
 import queryString, { ParsedQuery } from 'query-string';
-import { useMemo } from 'react';
 import { PostItem } from 'types/Post';
 
 type Props = {
@@ -44,31 +43,27 @@ const Posts = ({
     typeof parsedQueries.category !== 'string' || !parsedQueries.category
       ? 'All'
       : parsedQueries.category;
-  const categoryList = useMemo(
-    () =>
-      edges.reduce(
-        (
-          list: CategoryListProps['categoryList'],
-          {
-            node: {
-              frontmatter: { categories },
-            },
-          }: PostItem,
-        ) => {
-          categories.forEach(category => {
-            list[category] ??= 0;
-            list[category] += 1;
-          });
-
-          list['All'] += 1;
-
-          return list;
+  const categoryList = edges.reduce(
+    (
+      list: CategoryListProps['categoryList'],
+      {
+        node: {
+          frontmatter: { categories },
         },
-        {
-          All: 0,
-        },
-      ),
-    [],
+      }: PostItem,
+    ) => {
+      categories.forEach(category => {
+        list[category] ??= 0;
+        list[category] += 1;
+      });
+
+      list['All'] += 1;
+
+      return list;
+    },
+    {
+      All: 0,
+    },
   );
 
   return (

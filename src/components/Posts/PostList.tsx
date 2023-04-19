@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { useMemo } from 'react';
 import { PostItem } from 'types/Post';
 import { ROUTES } from 'utils/constants/routes';
 
@@ -17,19 +16,13 @@ const PostList = ({
   isFeatured = false,
   selectedCategory = 'All',
 }: Props) => {
-  const postListFilteredBySelectedCategory = useMemo(
-    () =>
-      posts.filter(
-        ({
-          node: {
-            frontmatter: { categories },
-          },
-        }: PostItem) =>
-          selectedCategory !== 'All'
-            ? categories.includes(selectedCategory)
-            : true,
-      ),
-    [selectedCategory],
+  const postListFilteredBySelectedCategory = posts.filter(
+    ({
+      node: {
+        frontmatter: { categories },
+      },
+    }: PostItem) =>
+      selectedCategory !== 'All' ? categories.includes(selectedCategory) : true,
   );
 
   return (
