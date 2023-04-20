@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   // 모든 slug들을 가지고 온다.
-  const allSlugs = await graphql(
+  const response = await graphql(
     `
       {
         allMarkdownRemark(
@@ -44,6 +44,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         ) {
           edges {
             node {
+              frontmatter {
+                title
+              }
               fields {
                 slug
               }
@@ -55,10 +58,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   );
 
   // 에러 처리
-  if (allSlugs.errors) {
+  if (response.errors) {
     reporter.panicOnBuild('Error while running query');
     return;
   }
+
+  const posts = response.data.allMarkdownRemark.edges;
 
   // 해당 slug를 바탕으로 어떤 페이지에 데이터를 넣어 그릴 건지, 템플릿을 가지고 온다.
   const PostTemplate = path.resolve(
@@ -67,17 +72,34 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   );
 
   // 가져온 slug를 바탕으로 페이지들을 만든다.
-  allSlugs.data.allMarkdownRemark.edges.forEach(
-    ({
-      node: {
-        fields: { slug },
+  posts.forEach(
+    (
+      {
+        node: {
+          frontmatter: { title },
+          fields: { slug },
+        },
       },
-    }) => {
+      currentIndex,
+    ) => {
+      const previousPost = posts[currentIndex + 1];
+      const nextPost = posts[currentIndex - 1];
+
       createPage({
         path: slug,
         component: PostTemplate,
         // 이제 PostTemplate에서 graphql로 query를 보낼 때 slug 인자를 사용할 수 있다.
-        context: { slug },
+        context: {
+          slug,
+          previousPost: previousPost && {
+            title: previousPost.node.frontmatter.title,
+            slug: previousPost.node.fields.slug,
+          },
+          nextPost: nextPost && {
+            title: nextPost.node.frontmatter.title,
+            slug: nextPost.node.fields.slug,
+          },
+        },
       });
     },
   );

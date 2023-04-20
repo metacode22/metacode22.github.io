@@ -110,14 +110,14 @@ const PostTemplate = ({
   return (
     <Layout title={title} description={summary} url={href} image={publicURL}>
       <Container>
-        <PostHead
+        <PostHeader
           title={title}
           date={date}
           categories={categories}
           thumbnail={gatsbyImageData}
           timeToRead={timeToRead}
         />
-        <PostContent ref={contentRef} html={html} />
+        <PostBody ref={contentRef} html={html} />
         <PostComment />
         <TableOfContents ref={contentRef} tableOfContents={tableOfContents} />
       </Container>
@@ -156,7 +156,7 @@ export const getMarkdownDataBySlug = graphql`
 ...
 ```
 
-매 포스트 페이지마다 slug가 존재한다. 이 slug를 통해 graphQL로 slug에 맞는 마크다운 데이터를 가지고 온다. 마치 Next의 getStaticProps 혹은 getServerSideProps처럼 graphql을 통해 미리 데이터를 가지고 와서 이 데이터를 컴포넌트 함수의 props로 전달한다. 이렇게 해서 마크다운 파일 데이터를 PostTemplate라는 컴포넌트 함수에서 사용할 수 있게 된다. categories를 통해 카테고리를 보여주면 되고 timeToRead를 통해 읽는 데에 얼마나 걸리는지, tableOfContents를 통해 목차를 렌더링하고 있다. 그리고 html을 PostContent라는 컴포넌트에 전달하고 있는데 내부적으로 dangerouslySetInnerHTML을 통해 html을 렌더링한다.
+매 포스트 페이지마다 slug가 존재한다. 이 slug를 통해 graphQL로 slug에 맞는 마크다운 데이터를 가지고 온다. 마치 Next의 getStaticProps 혹은 getServerSideProps처럼 graphql을 통해 미리 데이터를 가지고 와서 이 데이터를 컴포넌트 함수의 props로 전달한다. 이렇게 해서 마크다운 파일 데이터를 PostTemplate라는 컴포넌트 함수에서 사용할 수 있게 된다. categories를 통해 카테고리를 보여주면 되고 timeToRead를 통해 읽는 데에 얼마나 걸리는지, tableOfContents를 통해 목차를 렌더링하고 있다. 그리고 html을 PostBody라는 컴포넌트에 전달하고 있는데 내부적으로 dangerouslySetInnerHTML을 통해 html을 렌더링한다.
 
 잘 설명이 되었을지 모르겠다. 인프런 강의도 보고 공식 문서도 여러 번 보았지만 아직도 헷갈리는 부분이다.
 

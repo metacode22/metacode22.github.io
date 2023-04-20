@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { ForwardedRef, forwardRef } from 'react';
 import COLORS from 'utils/constants/colors';
 
-const PostContent = forwardRef(
+const PostBody = forwardRef(
   ({ html }: { html: string }, ref: ForwardedRef<HTMLDivElement>) => {
     return (
       <MarkdownRenderer ref={ref} dangerouslySetInnerHTML={{ __html: html }} />
@@ -10,7 +10,7 @@ const PostContent = forwardRef(
   },
 );
 
-export default PostContent;
+export default PostBody;
 
 const MarkdownRenderer = styled.div`
   /* Renderer Style */

@@ -18,7 +18,7 @@ type Props = {
  *
  * ViewCount 구현 할까 말까...
  */
-const PostHead = ({
+const PostHeader = ({
   title,
   date,
   categories,
@@ -47,7 +47,7 @@ const PostHead = ({
   );
 };
 
-export default PostHead;
+export default PostHeader;
 
 const Container = styled.div`
   display: flex;

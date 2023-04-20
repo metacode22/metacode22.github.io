@@ -31,4 +31,14 @@ export type PostDetail = {
     html: string;
     frontmatter: Frontmatter;
   };
+  previous: {
+    fields: {
+      slug: string;
+    };
+  };
+  next: {
+    fields: {
+      slug: string;
+    };
+  };
 };

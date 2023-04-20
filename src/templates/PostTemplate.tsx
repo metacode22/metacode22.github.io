@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import Layout from 'components/common/Layout';
+import NextAndPreviousPostLinks from 'components/PostDetail/NextAndPreviousPostLinks';
+import PostBody from 'components/PostDetail/PostBody';
 import PostComment from 'components/PostDetail/PostComment';
-import PostContent from 'components/PostDetail/PostContent';
-import PostHead from 'components/PostDetail/PostHead';
+import PostHeader from 'components/PostDetail/PostHeader';
 import TableOfContents from 'components/PostDetail/TableOfContents';
 import { graphql } from 'gatsby';
 import { useRef } from 'react';
@@ -17,6 +18,17 @@ type Props = {
   location: {
     href: string;
   };
+  pageContext: {
+    slug: string;
+    previousPost?: {
+      title: string;
+      slug: string;
+    };
+    nextPost?: {
+      title: string;
+      slug: string;
+    };
+  };
 };
 
 const PostTemplate = ({
@@ -24,6 +36,7 @@ const PostTemplate = ({
     allMarkdownRemark: { edges },
   },
   location: { href },
+  pageContext: { previousPost, nextPost },
 }: Props) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const {
@@ -47,14 +60,18 @@ const PostTemplate = ({
   return (
     <Layout title={title} description={summary} url={href} image={publicURL}>
       <Container>
-        <PostHead
+        <PostHeader
           title={title}
           date={date}
           categories={categories}
           thumbnail={gatsbyImageData}
           timeToRead={timeToRead}
         />
-        <PostContent ref={contentRef} html={html} />
+        <PostBody ref={contentRef} html={html} />
+        <NextAndPreviousPostLinks
+          previousPost={previousPost}
+          nextPost={nextPost}
+        />
         <PostComment />
         <TableOfContents ref={contentRef} tableOfContents={tableOfContents} />
       </Container>
