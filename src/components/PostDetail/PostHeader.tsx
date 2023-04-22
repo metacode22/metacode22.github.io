@@ -39,7 +39,7 @@ const PostHeader = ({
               {category}
             </CategoryListItem>
           ))}
-          <TimeToRead>{timeToRead} min read</TimeToRead>
+          <TimeToRead>약 {timeToRead}분</TimeToRead>
         </CategoriesAndTimeToReadContainer>
         <CreatedAt>{date}</CreatedAt>
       </CategoriesCreatedAtContainer>

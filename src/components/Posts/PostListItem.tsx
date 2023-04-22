@@ -44,7 +44,7 @@ const PostListItem = ({
         <Description>{summary}</Description>
         <CreatedAtAndTimeToReadContainer>
           <CreatedAt>{date}</CreatedAt>
-          <TimeToRead>{timeToRead} min read</TimeToRead>
+          <TimeToRead>약 {timeToRead}분</TimeToRead>
         </CreatedAtAndTimeToReadContainer>
       </TextInfoContainer>
       <ThumbnailContainer onClick={handleClick}>
