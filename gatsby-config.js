@@ -103,6 +103,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        sitemap: 'https://metacode22.github.io/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
