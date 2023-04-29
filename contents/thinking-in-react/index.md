@@ -1,7 +1,7 @@
 ---
 date: '2023-04-27'
 title: '[React 공식 문서 타파하기] Thinking in React'
-summary: '새로운 React 공식 문서를 학습하고 기록으로 남기고자 합니다.'
+summary: '새로운 React 공식 문서를 학습하며 새로 얻은 지식과 깨달은 것들을 기록으로 남기고자 합니다.'
 thumbnail: './react-logo.png'
 categories: ['React']
 ---
@@ -75,6 +75,7 @@ setState 함수 혹은 setState 함수가 사용되는 handleEvent 메서드를 
 
 ## 새롭게 알게 된 점
 
+- 왜 새로운 React 공식 문서가 나왔는지.
 - React 공식 문서에서는 UI를 그릴 때 마크업을 먼저 작성하라고 한다.
 - array의 length와 같이 쉽게 구할 수 있는 값은 따로 state로 저장하지 않는 것이 좋다.
 
