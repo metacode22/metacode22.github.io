@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://metacode22.github.io/sitemap-index.xml
+Sitemap: https://metacode22.github.io/sitemap.xml
 Host: https://metacode22.github.io
