@@ -50,7 +50,7 @@ const MarkdownRenderer = styled.div`
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
 
@@ -72,6 +72,8 @@ const MarkdownRenderer = styled.div`
   /* Adjust List Element Style */
   ol,
   ul {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
     margin-left: 1rem;
     padding: 1rem 0;
   }
