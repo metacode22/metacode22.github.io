@@ -257,8 +257,9 @@
     </span></p>
 <p>두 번째는 카카오맵이 중복 생성되어 사용자가 맵을 이동시키거나 확대/축소할 때 카카오맵이 겹치게 보이는 현상이었다. 이는 단순히 내가 의존성 배열을 잘못 작성하였기 때문에 벌어진 일이었다. eslint가 알아서 의존성 배열에 넣을 것들을 추천해주는데 당연히 이게 맞겠지~ 하면서 안일하게 생각했기 때문이다.</p>
 <p>카카오 Maps API에서는 생성된 kakao map 객체를 삭제할 수 있는 메서드가 존재하지 않는다. 따라서 useEffect문에서 unmount할 때, 즉 return문에다가 기존 kakao map 객체를 삭제하는 코드를 삽입할 수 없다. 그렇기 때문에 kakao map 객체는 mount될 때에만 딱 1번 생성되어야 한다. 하지만 내가 의존성 배열에 빈 배열이 아니라 값이 들어간 배열을 작성했기 때문에, 그 값이 변하면 kakao.maps.load의 callback 함수에서 kakao map 객체를 다시 생성했고 이로 인해 여러 카카오맵이 화면 상에 보이게 되어 맵들이 겹치게 보이는 현상이 발생했던 것이다. 의존성 배열을 비움으로써 해당 현상은 말끔히 해결할 수 있었다.</p>
-<div style="display: flex; justify-content: center;">
-  <img src="/9a812e67e840151e03e670bef26541e0/kakao-map-overlap.gif" alt="채팅방 화면">
+<div style='display: flex; justify-content: center;'>
+  <video src='/e8994c7b2d33ce226bdfb6e9fa9df402/kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  </video>
 </div>
 <p>카카오 Maps API 사용 경험은 정말 좋았다. 공식 문서도 깔끔했고 한국 전용이다보니 한글로 된 아티클들도 많아서 참고하기 편했기 때문이다. 하지만 다음에 다른 프로젝트를 할 때에는 구글 Maps API를 써서 더 많은 기능을 제공해보고 싶기도 하다.</p>
 <br />
@@ -267,7 +268,8 @@
 <p>이전에 모 기업의 과제에서 채팅을 완벽하게는 아니지만 대강 구색은 갖춰서 만들어 봤었기에 자신감 있게 개발했다. 당연히 socket.io-client를 쓰면 되겠지?라고 안일하게 판단했었는데 막상 구현하려고 보니 SockJS와 StompJS를 써야했다. 전자는 NodeJS 전용이지만 후자는 Java-Spring 전용이기 때문이다. 다행히 크게 개념적으로 다른 부분은 없었던 것 같다.</p>
 <p>프론트에서 채팅을 구현한 흐름을 설명하자면, 먼저 해당 밥모임에 대한 채팅방 페이지로 이동한다. 그러면 밥모임 고유 id를 바탕으로 채팅방을 생성하게 된다. 즉 밥모임 고유 id가 채팅 room id가 되는 셈이다. 들어가는 순간 데이터베이스에 저장된 기존의 메세지 이력들을 들고와 렌더링 시킨다. 이 때 조금 커스텀 한 부분은 날짜이다. 카카오톡을 참고하여 커스텀하였는데, 같은 날짜에 작성된 메세지들의 경우 날짜는 1번만 출력될 수 있게 하였다. 즉 다음과 같이 채팅 화면이 나올 수 있도록 구현했다.</p>
 <div style="display: flex; justify-content: center;">
-  <img src="/a752f54a61f2761a1033aa4022ad41e8/chat.gif" alt="채팅방 화면">
+  <video src='/4d8dacd2353dd658b3c341b5856dba50/chat_AdobeExpress.mp4' width='60%' controls>
+  </video>
 </div>
 <p>어쨋든, 그렇게 기존의 메세지들을 데이터베이스로부터 가지고 와서 렌더링을 하면서 소켓 서버와 연결한다. connect가 정상적으로 이뤄지면 subscribe를 하게 된다. 이제 구독(subscribe)할테니 발행(publish)을 하면 나한테도 데이터를 날려달라는 것이다. 이렇게 구현하면 채팅방에 들어온 다른 사람들이 메세지를 보내면, 즉 publish(send)하면 나는 그 데이터를 즉각적으로 받아서 기존의 state에 더하면 해당 메세지를 화면에 보여줄 수 있다. 나도 보낼 때 send 메서드를 사용하면 다른 사람들의 채팅방 화면에 나의 메세지가 출력되게 된다.</p>
 <p><a href="https://github.com/prgrms-web-devcourse/Team-DarkNight-Kkini-FE/blob/develop/src/pages/food-party/detail/chat/%5BroomId%5D.tsx" target="_blank" rel="noreferrer noopener">채팅 코드 링크</a></p>
@@ -365,8 +367,9 @@
 <h3 id="recoil" style="position:relative;"><a href="#recoil" aria-label="recoil permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recoil</h3>
 <p>Recoil에 대한 만족도는 아직 높지 않은 것 같다. 상태 관리를 위해 React에서 기본으로 제공하는 Context API 대신 Recoil을 사용한 이유는 불필요한 재렌더링을 막고 코드양 또한 줄이기 위해서였다. 허나 kakao map 객체를 atom으로 관리하는 과정에서 마주한 에러로 인해 Context API와 Recoil을 같이 쓰게 되었다.</p>
 <p>마주한 에러는 다음과 같다.</p>
-<div>
-  <img width="100%" src="/23af97344b0e7e2b6624316ed834cd24/recoil-error.gif" alt="recoil로 kakao map 객체를 관리할 때 생기는 에러">
+<div style='display: flex; justify-content: center;'>
+  <video src='/e8994c7b2d33ce226bdfb6e9fa9df402/kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  </video>
 </div>
 <p>Cannot add property 0, object is not extensible라는 에러가 계속해서 뜨는데 read only 객체에 속성을 추가하려고 할 때 뜨는 에러이다. 왜 저렇게 깨지는지, 드래그할 때마다 에러 숫자가 늘어나는지는 확인하지 못했다. 허나 kakao map 객체가 read only라는 것은 type 코드를 타고 들어가면서 확인할 수 있었는데 지금은 찾을 수가 없다…</p>
 <p>어쨋든 에러가 떴을 때 구글링을 해본 결과, 크게 2가지 방법을 떠올렸다. lodash의 deep clone 메서드를 통해 kakao map 객체를 read only가 아닌 객체로 깊은 복사하여 atom으로 관리하는 것과 그냥 context로 관리해버리는 것 2가지였다. 전자의 경우 deep clone을 위해 lodash를 설치한다는 것은 소 잡는 칼로 닭을 잡는다?라는 느낌이 다소 들었다. 그래서 불필요한 재렌더링을 방지하기 위해 Recoil을 선택했던 처음의 의도와는 상반되게 Context API를 사용하여 kakao map 객체를 관리하게 되었다.</p>
