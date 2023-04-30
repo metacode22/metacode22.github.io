@@ -65,6 +65,10 @@ const TableOfContentsRenderer = styled.nav`
     }
   }
 
+  ul:first-child {
+    border-left: none;
+  }
+
   ul {
     margin-left: 0.5rem;
     padding: 0 0.5rem;
