@@ -1,0 +1,923 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.4.2"/><meta data-react-helmet="true" name="description" content="데브코스 과정 중 프론트엔드 프로젝트를 진행하면서 생각한 고민과 겪은 이슈, 해결 방법들을 정리합니다."/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="프로그래머스 데브코스 프론트엔드 프로젝트 회고"/><meta data-react-helmet="true" property="og:description" content="데브코스 과정 중 프론트엔드 프로젝트를 진행하면서 생각한 고민과 겪은 이슈, 해결 방법들을 정리합니다."/><meta data-react-helmet="true" property="og:image" content="/static/86ce441fe6b8380d000c3588c67d5a20/bigtoria.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="프로그래머스 데브코스 프론트엔드 프로젝트 회고"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="프로그래머스 데브코스 프론트엔드 프로젝트 회고"/><meta data-react-helmet="true" name="twitter:description" content="데브코스 과정 중 프론트엔드 프로젝트를 진행하면서 생각한 고민과 겪은 이슈, 해결 방법들을 정리합니다."/><meta data-react-helmet="true" name="twitter:image" content="/static/86ce441fe6b8380d000c3588c67d5a20/bigtoria.png"/><meta data-react-helmet="true" name="twitter:site" content="@seungjun"/><meta data-react-helmet="true" name="twitter:creator" content="@seungjun"/><meta data-react-helmet="true" name="google-site-verification" content="LKTF_tGr3v7xv-1If9MoMWN8tM-_9MPLnelP_dN7Sb0"/><meta data-react-helmet="true" name="naver-site-verification" content="431e2cf8f4cc6b6faae997ca8e2c22d786b9172c"/><style data-href="/styles.597cd358c53a2314414e.css" data-identity="gatsby-global-css">*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;line-height:1.15}body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;margin:0;overflow-y:scroll}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none;appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}a,a:hover{color:inherit;cursor:pointer;text-decoration:none}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:300;src:url(/static/Pretendard-Light-27c9a07cbc308ce88d1ab3613e3152c7.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:400;src:url(/static/Pretendard-Regular-6090e6b5524796768e78f23519d16488.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:500;src:url(/static/Pretendard-Medium-ea235f1edb8815831a25b376b479949e.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:600;src:url(/static/Pretendard-SemiBold-7e5eaaf650b9e738991373a7f173b94a.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Pretendard;font-style:normal;font-weight:700;src:url(/static/Pretendard-Bold-0676c8838a37a3b770d85a5534f5fdcb.woff2) format("woff2")}@font-face{font-display:fallback;font-family:Menlo;font-style:normal;font-weight:400;src:url(/static/Menlo-Regular-cb6da8cbfe3629a9ff9f48671a27e540.woff2) format("truetype"),url(/static/Menlo-Regular-cb6da8cbfe3629a9ff9f48671a27e540.woff2) format("woff2")}</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">프로그래머스 데브코스 프론트엔드 프로젝트 회고</title><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="canonical" href="https://metacode22.github.io/programmers-devcourse-frontend-project-retrospect/" data-baseprotocol="https:" data-basehost="metacode22.github.io"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 11pfcjj">.css-11pfcjj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;}</style><div class="css-11pfcjj eg56zyw1"><style data-emotion="css 142ywfy">.css-142ywfy{position:fixed;top:0;z-index:10;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;height:4rem;background-color:#ffffff;-webkit-transition:all 0.15s ease-out;transition:all 0.15s ease-out;}</style><header class="css-142ywfy e1oze3gj2"><style data-emotion="css 1q5d3ct">.css-1q5d3ct{width:100%;max-width:768px;}</style><div class="css-1q5d3ct e1oze3gj1"><style data-emotion="css 1g255of">.css-1g255of{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;width:100%;height:100%;}</style><div class="css-1g255of e1oze3gj0"><style data-emotion="css 1yxpgm8">.css-1yxpgm8{padding:0.5rem;font-size:x-large;font-style:italic;border-radius:4rem;}</style><a class="css-1yxpgm8 ein1yq40" href="/">Seung - Jun</a><style data-emotion="css 1pu7z21">.css-1pu7z21{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:1rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-1pu7z21 es6jy001"><style data-emotion="css 113oixb">.css-113oixb{padding:0.5rem;border-radius:4px;}.css-113oixb:hover{-webkit-text-decoration:underline;text-decoration:underline;}</style><a class="css-113oixb es6jy000" href="/">Home</a><a class="css-113oixb es6jy000" href="/posts/">Posts</a><a class="css-113oixb es6jy000" href="/about/">About</a></div></div></div></header><style data-emotion="css 100b38i">.css-100b38i{width:100%;max-width:768px;margin:0 auto 6rem auto;margin-top:4rem;}</style><main class="css-100b38i eg56zyw0"><style data-emotion="css 11k3q87">.css-11k3q87{position:relative;width:100%;max-width:768px;margin:0 auto;}</style><div class="css-11k3q87 e1v0b9td0"><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj e1bcbo3k6"><style data-emotion="css 9aqgc6">.css-9aqgc6{width:100%;max-width:768px;margin:4rem auto;}</style><div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-9aqgc6 e1bcbo3k5"><div style="max-width:596px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;234.00000000000003&#x27;%20width=&#x27;596&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABP0lEQVR42pVSPavCQBDMT01nY5VCsBEiNhaCEvKBgtiEFIKFpgpBLQRJoxElBBGJ6bQR0hgSk5E7uFNf8XhvYdnbubu53dkTAKAsS3wayRlGYlEUf8YFBsznc8xmM5xOJ078fD6/1sQ/iRj++YjAktFoBNd1MRgMcL/fEUURvzQej5Hn+VcXj8cDYRjynD1CK0zTFM1mE8PhEKvVCtvtFpvNBr7vw3EctFot7Pd7TKdTeJ6H6/WK4/FIzxwOB8RxzEkp4XK5hGVZFKzVami329B1HY1GA5IkYb1eQxRFVKtV9Pt9dDodKIoC0zQhyzKNSZK8K1wsFqjX6+j1erBtm7bY7XZRqVRgGAYmkwmV4nw+Y7fb0TWRSFVV6mQ/CII3IdHncrkgyzKuiaZpVNP/2NdQfk7zdrtxXdhkf3P2bV7iej+AxLWpIAAAAABJRU5ErkJggg==" alt=""/><picture><source type="image/webp" data-srcset="/static/86ce441fe6b8380d000c3588c67d5a20/ab9d9/bigtoria.webp 149w,/static/86ce441fe6b8380d000c3588c67d5a20/9cffa/bigtoria.webp 298w,/static/86ce441fe6b8380d000c3588c67d5a20/fbcc7/bigtoria.webp 596w" sizes="(min-width: 596px) 596px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 596px) 596px, 100vw" decoding="async" loading="lazy" data-src="/static/86ce441fe6b8380d000c3588c67d5a20/9389b/bigtoria.png" data-srcset="/static/86ce441fe6b8380d000c3588c67d5a20/83413/bigtoria.png 149w,/static/86ce441fe6b8380d000c3588c67d5a20/98871/bigtoria.png 298w,/static/86ce441fe6b8380d000c3588c67d5a20/9389b/bigtoria.png 596w" alt="해당 포스트 썸네일 이미지"/></picture><noscript><picture><source type="image/webp" srcSet="/static/86ce441fe6b8380d000c3588c67d5a20/ab9d9/bigtoria.webp 149w,/static/86ce441fe6b8380d000c3588c67d5a20/9cffa/bigtoria.webp 298w,/static/86ce441fe6b8380d000c3588c67d5a20/fbcc7/bigtoria.webp 596w" sizes="(min-width: 596px) 596px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 596px) 596px, 100vw" decoding="async" loading="lazy" src="/static/86ce441fe6b8380d000c3588c67d5a20/9389b/bigtoria.png" srcSet="/static/86ce441fe6b8380d000c3588c67d5a20/83413/bigtoria.png 149w,/static/86ce441fe6b8380d000c3588c67d5a20/98871/bigtoria.png 298w,/static/86ce441fe6b8380d000c3588c67d5a20/9389b/bigtoria.png 596w" alt="해당 포스트 썸네일 이미지"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><div><style data-emotion="css 255c6r">.css-255c6r{word-break:keep-all;}</style><h1 class="css-255c6r e1bcbo3k3">프로그래머스 데브코스 프론트엔드 프로젝트 회고</h1></div><style data-emotion="css jr6aws">.css-jr6aws{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;color:#757575;}</style><div class="css-jr6aws e1bcbo3k4"><style data-emotion="css s5xdrg">.css-s5xdrg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-s5xdrg e1bcbo3k2"><style data-emotion="css q41a2b">.css-q41a2b{z-index:9;display:inline-block;margin:0.25rem 0;padding:0.25rem 0.75rem;color:#0975ea;font-size:0.9rem;white-space:nowrap;background-color:#ffffff;border:1px solid #e2e5e6;border-radius:1rem;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1);cursor:pointer;-webkit-transition:all 0.1s ease-out;transition:all 0.1s ease-out;}.css-q41a2b:not(:first-of-type){margin-left:1rem;}.css-q41a2b:hover{color:#0975ea;background-color:#badcff;}@media (max-width: 768px){.css-q41a2b{font-size:0.75rem;}}</style><a class="css-q41a2b e1h1hwxn0" href="/posts/?category=%ED%9A%8C%EA%B3%A0">회고</a><a class="css-q41a2b e1h1hwxn0" href="/posts/?category=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4">프로그래머스</a><style data-emotion="css 1mys3sh">.css-1mys3sh{margin-left:1rem;}</style><div class="css-1mys3sh e1bcbo3k1">약 <!-- -->8<!-- -->분</div></div><div class="css-0 e1bcbo3k0">2023-01-15</div></div></div><style data-emotion="css 15rltkp">.css-15rltkp{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:100%;margin:0 auto;padding:5rem 0;line-height:1.75;word-break:break-all;}.css-15rltkp h1,.css-15rltkp h2,.css-15rltkp h3{margin-bottom:1.5rem;font-weight:700;}.css-15rltkp h1{padding-left:0.2rem;font-size:2rem;border-bottom:1px solid #e2e5e6;}.css-15rltkp h2{font-size:1.75rem;border-bottom:1px solid #e2e5e6;}.css-15rltkp h3{font-size:1.25rem;}.css-15rltkp *+h1,.css-15rltkp *+h2,.css-15rltkp *+h3{margin-top:2rem;margin-bottom:0.5rem;}.css-15rltkp hr+h1,.css-15rltkp hr+h2,.css-15rltkp hr+h3{margin-top:0;}.css-15rltkp blockquote{margin:30px 0;padding:0 1rem;color:#757575;font-weight:800;border-left:2px solid #e2e5e6;}.css-15rltkp ol,.css-15rltkp ul{margin-top:0rem;margin-bottom:0rem;margin-left:1rem;padding:0.5rem 0;}.css-15rltkp li{font-weight:300;}.css-15rltkp hr{margin:100px 0;border:1px solid #000;}.css-15rltkp a{color:#0975ea;}.css-15rltkp p{margin:0;padding:0.5rem 0;font-weight:300;}.css-15rltkp img{margin:3rem 0;}.css-15rltkp pre[class*='language-'],.css-15rltkp code[class*='language-']{color:#d4d4d4;font-size:13px;font-family:Menlo,Monaco,Consolas,'Andale Mono','Ubuntu Mono','Courier New',monospace;direction:ltr;white-space:pre;text-align:left;text-shadow:none;word-break:normal;word-spacing:normal;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}.css-15rltkp pre[class*='language-']::selection,.css-15rltkp code[class*='language-']::selection,.css-15rltkp pre[class*='language-'] *::selection,.css-15rltkp code[class*='language-'] *::selection{text-shadow:none;background:#264f78;}@media print{.css-15rltkp pre[class*='language-'],.css-15rltkp code[class*='language-']{text-shadow:none;}}.css-15rltkp pre[class*='language-']{padding:1rem;overflow:auto;background:#1e1e1e;}.css-15rltkp:not(pre)>code[class*='language-']{padding:0.1em 0.3em;background:#1e1e1e;border-radius:0;border-radius:0.3em;}.css-15rltkp .namespace{opacity:0.7;}.css-15rltkp .token.doctype .token.doctype-tag{color:#569cd6;}.css-15rltkp .token.doctype .token.name{color:#9cdcfe;}.css-15rltkp .token.comment,.css-15rltkp .token.prolog{color:#6a9955;}.css-15rltkp .token.punctuation,.css-15rltkp .language-html .language-css .token.punctuation,.css-15rltkp .language-html .language-javascript .token.punctuation{color:#d4d4d4;}.css-15rltkp .token.property,.css-15rltkp .token.tag,.css-15rltkp .token.boolean,.css-15rltkp .token.number,.css-15rltkp .token.constant,.css-15rltkp .token.symbol,.css-15rltkp .token.inserted,.css-15rltkp .token.unit{color:#b5cea8;}.css-15rltkp .token.selector,.css-15rltkp .token.attr-name,.css-15rltkp .token.string,.css-15rltkp .token.char,.css-15rltkp .token.builtin,.css-15rltkp .token.deleted{color:#ce9178;}.css-15rltkp .language-css .token.string.url{-webkit-text-decoration:underline;text-decoration:underline;}.css-15rltkp .token.operator,.css-15rltkp .token.entity{color:#d4d4d4;}.css-15rltkp .token.operator.arrow{color:#569cd6;}.css-15rltkp .token.atrule{color:#ce9178;}.css-15rltkp .token.atrule .token.rule{color:#c586c0;}.css-15rltkp .token.atrule .token.url{color:#9cdcfe;}.css-15rltkp .token.atrule .token.url .token.function{color:#dcdcaa;}.css-15rltkp .token.atrule .token.url .token.punctuation{color:#d4d4d4;}.css-15rltkp .token.keyword{color:#569cd6;}.css-15rltkp .token.keyword.module,.css-15rltkp .token.keyword.control-flow{color:#c586c0;}.css-15rltkp .token.function,.css-15rltkp .token.function .token.maybe-class-name{color:#dcdcaa;}.css-15rltkp .token.regex{color:#d16969;}.css-15rltkp .token.important{color:#569cd6;}.css-15rltkp .token.italic{font-style:italic;}.css-15rltkp .token.constant{color:#9cdcfe;}.css-15rltkp .token.class-name,.css-15rltkp .token.maybe-class-name{color:#4ec9b0;}.css-15rltkp .token.console{color:#9cdcfe;}.css-15rltkp .token.parameter{color:#9cdcfe;}.css-15rltkp .token.interpolation{color:#9cdcfe;}.css-15rltkp .token.punctuation.interpolation-punctuation{color:#569cd6;}.css-15rltkp .token.boolean{color:#569cd6;}.css-15rltkp .token.property,.css-15rltkp .token.variable,.css-15rltkp .token.imports .token.maybe-class-name,.css-15rltkp .token.exports .token.maybe-class-name{color:#9cdcfe;}.css-15rltkp .token.selector{color:#d7ba7d;}.css-15rltkp .token.escape{color:#d7ba7d;}.css-15rltkp .token.tag{color:#569cd6;}.css-15rltkp .token.tag .token.punctuation{color:#808080;}.css-15rltkp .token.cdata{color:#808080;}.css-15rltkp .token.attr-name{color:#9cdcfe;}.css-15rltkp .token.attr-value,.css-15rltkp .token.attr-value .token.punctuation{color:#ce9178;}.css-15rltkp .token.attr-value .token.punctuation.attr-equals{color:#d4d4d4;}.css-15rltkp .token.entity{color:#569cd6;}.css-15rltkp .token.namespace{color:#4ec9b0;}.css-15rltkp pre[class*='language-javascript'],.css-15rltkp code[class*='language-javascript'],.css-15rltkp pre[class*='language-jsx'],.css-15rltkp code[class*='language-jsx'],.css-15rltkp pre[class*='language-typescript'],.css-15rltkp code[class*='language-typescript'],.css-15rltkp pre[class*='language-tsx'],.css-15rltkp code[class*='language-tsx']{color:#9cdcfe;}.css-15rltkp pre[class*='language-css'],.css-15rltkp code[class*='language-css']{color:#ce9178;}.css-15rltkp pre[class*='language-html'],.css-15rltkp code[class*='language-html']{color:#d4d4d4;}.css-15rltkp .language-regex .token.anchor{color:#dcdcaa;}.css-15rltkp .language-html .token.punctuation{color:#808080;}.css-15rltkp pre[class*='language-']>code[class*='language-']{position:relative;z-index:1;}.css-15rltkp .line-highlight.line-highlight{z-index:0;background:#f7ebc6;box-shadow:inset 5px 0 0 #f7d87c;}.css-15rltkp pre[class*='language-text'],.css-15rltkp code[class*='language-text']{padding:0.25rem;color:#000000;background-color:#e2e5e6;border-radius:0.25rem;}@media (max-width: 768px){.css-15rltkp{padding:0 0.5rem;}.css-15rltkp img{width:100%;}.css-15rltkp pre[class*='language-']{width:100%;overflow-x:auto;}}</style><div class="css-15rltkp e1s97qn70"><blockquote>
+<p>잘 만들어진 백엔드 api를 바탕으로 프론트엔드를 구성하는 팀 프로젝트를 진행했습니다.</p>
+</blockquote>
+<h2 id="셋팅" style="position:relative;"><a href="#%EC%85%8B%ED%8C%85" aria-label="셋팅 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>셋팅</h2>
+<h3 id="react" style="position:relative;"><a href="#react" aria-label="react permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React</h3>
+<p>SPA 구현을 위해 React를 선택했다. 데브코스에서는 React와 Vue를 배울 수 있는데, React에 익숙한 사람이 더 많았기에 자연스럽게 React를 선택하게 되었다.</p>
+<br />
+<h3 id="vite" style="position:relative;"><a href="#vite" aria-label="vite permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vite</h3>
+<p>React 프로젝트는 Vite로 만들었다. 이전에 한 번 맛보기로 경험해봤었는데 CRA보다 많이 빠르고, CRA에서 당장은 불필요하다는 생각이 드는 것들이 생략되었다고 느꼈었다. 그래서 팀원들에게 Vite로 만들자고 제안했었는데 다행히 팀원들 모두 동의해주었다. 그리고 한 팀원분이 아주 잘 셋팅된 vite 보일러 플레이트를 이전에 만들어두어서 이를 이용해 아주 손쉽게 시작할 수 있었다.</p>
+<br />
+<h3 id="typescript" style="position:relative;"><a href="#typescript" aria-label="typescript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TypeScript</h3>
+<p>TypeScript는 꼭 한 번 적용해서 제대로 경험해보고 싶었다. 오류를 줄일 수 있고 더 나은 개발자 경험(자동으로 메서드나 속성을 리스트업 해주는 등)을 제공한다는데 이를 제대로 느껴본 적은 없었다. 그래서 사용하고 싶었다.</p>
+<br />
+<h3 id="emotion" style="position:relative;"><a href="#emotion" aria-label="emotion permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Emotion</h3>
+<p>Emotion과 비교해서 가장 많이 언급되는 것으로는 styled-components가 있다. 둘 다 styled를 사용할거면 사용방법은 거의 동일하다. 성능 차이도 유의미할 정도는 아닌 것으로 알고 있다. 또한 우리 팀은 emotion의 css props 문법을 사용하지도 않을 거라서 둘 중 아무거나 고르면 된다고 생각했다. 그래서 데브코스 강의에서는 emotion을 경험했으니 더 익숙한 emotion을 선택했다. 만약 Next.js를 사용했다면 emotion을 바로 선택했을 것 같다. 서버 사이드 렌더링을 위해 styled-components는 따로 설정이 필요하나 <a href="https://emotion.sh/docs/ssr#nextjs" target="_blank" rel="nofollow">emotion은 그러지 않아도 되는 것</a>으로 알고 있다.</p>
+<br />
+<h3 id="axios" style="position:relative;"><a href="#axios" aria-label="axios permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Axios</h3>
+<p>fetch, axios, ky 3개 중 1개를 고를 생각이었다. 번들 사이즈가 적고 사용해본 적이 없는 ky를 경험해보고 싶은 생각이 들었던 반면, 프로젝트 수행 기간이 짧기에 러닝 커브가 존재한다는 단점이 생각 났다. 또한 레퍼런스가 적을 것 같아 제일 먼저 제쳐두었다. 남은 fetch와 axios 중에서 아무거나 되어도 상관없다는 생각이 들어 이건 팀원들의 결정에 따라가고 싶었다. 그래서 axios를 선택하게 되었다. 이전에 axios instance를 나름 효과적으로 만든 코드를 본 적이 있어 이걸 적용하게 되었는데 이 때 axios의 장점을 다시 느낄 수 있었다.</p>
+<p><code class="language-text">axiosInstance.ts</code></p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> axios<span class="token punctuation">,</span> <span class="token punctuation">{</span> AxiosInstance<span class="token punctuation">,</span> AxiosRequestConfig<span class="token punctuation">,</span> Method <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">TOKEN_KEY</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../constants/auth'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">HTTP_METHODS</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../constants/http'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getLocalStorage <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../utils/storage'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> axiosInstance<span class="token operator">:</span> AxiosInstance <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  baseURL<span class="token operator">:</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VITE_API_URL</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">handleRequest</span> <span class="token operator">=</span> <span class="token punctuation">(</span>config<span class="token operator">:</span> AxiosRequestConfig<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> token <span class="token operator">=</span> <span class="token function">getLocalStorage</span><span class="token punctuation">(</span><span class="token constant">TOKEN_KEY</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> token
+    <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token operator">...</span>config<span class="token punctuation">,</span>
+        headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token operator">...</span>config<span class="token punctuation">.</span>headers<span class="token punctuation">,</span>
+          Authorization<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>token<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span> <span class="token keyword">as</span> AxiosRequestConfig<span class="token punctuation">)</span>
+    <span class="token operator">:</span> config<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">createApiMethod</span> <span class="token operator">=</span>
+  <span class="token punctuation">(</span>axiosInstance<span class="token operator">:</span> AxiosInstance<span class="token punctuation">,</span> methodType<span class="token operator">:</span> Method<span class="token punctuation">)</span> <span class="token operator">=></span>
+  <span class="token punctuation">(</span>config<span class="token operator">:</span> AxiosRequestConfig<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">axiosInstance</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span><span class="token function">handleRequest</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">,</span> method<span class="token operator">:</span> methodType <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  get<span class="token operator">:</span> <span class="token function">createApiMethod</span><span class="token punctuation">(</span>axiosInstance<span class="token punctuation">,</span> <span class="token constant">HTTP_METHODS</span><span class="token punctuation">.</span><span class="token constant">GET</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  post<span class="token operator">:</span> <span class="token function">createApiMethod</span><span class="token punctuation">(</span>axiosInstance<span class="token punctuation">,</span> <span class="token constant">HTTP_METHODS</span><span class="token punctuation">.</span><span class="token constant">POST</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  put<span class="token operator">:</span> <span class="token function">createApiMethod</span><span class="token punctuation">(</span>axiosInstance<span class="token punctuation">,</span> <span class="token constant">HTTP_METHODS</span><span class="token punctuation">.</span><span class="token constant">PUT</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">delete</span><span class="token operator">:</span> <span class="token function">createApiMethod</span><span class="token punctuation">(</span>axiosInstance<span class="token punctuation">,</span> <span class="token constant">HTTP_METHODS</span><span class="token punctuation">.</span><span class="token constant">DELETE</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>이렇게 설정해두면 해당 인스턴스를 가지고 api를 작성할 때 method: ‘GET’, method: ‘PUT’와 같은 method 속성을 따로 넣어주지 않아도 된다. 그리고 baseURL을 설정해두어서 계속해서 api url 또한 안 넣어도 된다. 그리고 중간에 handleRequest 함수를 통해 token을 검사하여 config에 token을 넣어줄 수도 있다. 이 인스턴스를 가지고 api를 작성하게 되면 비교적 많은 코드를 줄일 수 있게 된다.</p>
+<p><code class="language-text">example.ts</code></p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">API_URLS</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./../constants/apiUrls'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> http <span class="token keyword">from</span> <span class="token string">'./instance'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getStoriesOfUser</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>userId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token operator">:</span> stories <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> http<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token operator">:</span> <span class="token constant">API_URLS</span><span class="token punctuation">.</span><span class="token constant">POST</span><span class="token punctuation">.</span><span class="token constant">GET_POSTS_OF_SPECIFIC_USER</span><span class="token punctuation">(</span>userId<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> stories<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>위와 같이 http라는 이름으로 인스턴스를 가져와 api를 작성했다. baseURL에 붙을 부가적인 api url만 넣어주면 되는 api다. 인스턴스를 사용하지 않았다면 token을 가지고 오는 로직도 작성해야 하고 method, 더 긴 api url을 config에 넣어줘야 될 것이다.</p>
+<p>지금 보니 axios의 interceptor를 handleRequest라는 로직을 구현하여 대체했다는 느낌이 든다. 다음엔 interceptor를 사용해서 구현해봐야겠다.</p>
+<br />
+<h3 id="swr" style="position:relative;"><a href="#swr" aria-label="swr permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SWR</h3>
+<p>채팅과 알림, 현재 접속 중인 사용자 목록을 구현해야 하는데 api 문서를 보니 따로 소켓 서버는 없는 것 같았다. 그래서 떠올린 것은 SWR과 React Query였다. 둘 다 일정 주기를 바탕으로 refetch를 할 수 있다. 마치 실시간으로 통신하는 듯이 모방하여 사용자에게 실시간 경험을 제공하는 것이다.</p>
+<p>물론 useEffect 안에 setInterval을 넣어 쌩으로 구현할 수도 있을 것이다. 하지만 그러면 코드가 복잡해질 수 있고 캐싱도 되지 않아 비효율적이라는 생각이 들었다.(캐싱도 코드로 작성하면 머가리 깨질 듯!) 반면 SWR과 React Query는 캐싱 기능을 제공한다.(사실 아직 어떤 부분에서 캐싱이 되는 것인지는 정확하게 파악하지 못했다! 헤헷! 다른 곳에서 이미 네트워크 요청을 했으면 이를 캐시에 저장해두고, 또 다른 곳에서 동일한 네트워크 요청이 일어났을 때 새로 요청하지 않고 캐싱된 데이터를 가져다 쓰지 않을까라는 추측은 했었다. 그러면 요청을 줄일 수 있으니까!)</p>
+<p>SWR과 React Query 둘 중 하나를 선택해야 했는데 SWR로 기울었다. 복잡하게 사용해야 하는 것이 아니라 그저 데이터 페칭을 주기적으로 하기 위한 간단한 솔루션이 필요했는데 여러 아티클에서 공통적으로 말해주는 것이 간단한 솔루션에는 SWR을 추천했기 때문이다. 이유는 번들 사이즈가 React Query에 비해 3 ~ 5배 정도 적기 때문이지 않을까 싶다.</p>
+<p><a href="https://bundlephobia.com/package/swr@2.0.0" target="_blank" rel="nofollow">SWR 번들 사이즈</a> VS <a href="https://bundlephobia.com/package/react-query@3.39.2" target="_blank" rel="nofollow">React Query 번들 사이즈</a></p>
+<p>그리고 내가 이전에 사용해봤었기 때문에 러닝 커브가 비교적 적을 것이라 판단했다. 공식 문서도 한글로 비교적 잘 되어 있고 지금과는 달리 이전에는 SWR이 더 안정적이었기에 SWR을 적용한 제품이 많아 레퍼런스 또한 충분하다는 생각이 들었다.</p>
+<p>반면 아쉬운 점도 있다. React Query는 가비지 컬렉션을 알아서 해주지만(cacheTime 속성을 통해 가비지 컬렉션 주기 또한 설정할 수 있다) SWR은 그렇지 않다. Dev Tools도 React Query는 해당 패키지에서 바로 제공하지만 SWR은 따로 패키지를 다운로드해야 한다. 인피니트 스크롤을 구현할 때에도 React Query가 더 많은 기능을 제공해 구현하기 쉬워진다.</p>
+<p>이러한 점에서 React Query가 요즘 전반적으로 더 잘 나가는 듯 하다. 하지만 우리 프로젝트에서는 SWR이 더 간단하고 적절하다는 판단이 들어 SWR을 선택하게 되었다.</p>
+<blockquote>
+<p>레퍼런스</p>
+</blockquote>
+<p><a href="https://swr.vercel.app/ko" target="_blank" rel="nofollow">데이터 가져오기를 위한 React Hooks - SWR</a></p>
+<p><a href="https://swr.vercel.app/ko/docs/data-fetching" target="_blank" rel="nofollow">데이터 가져오기 - SWR</a></p>
+<p><a href="https://fe-developers.kakaoent.com/2022/220224-data-fetching-libs/" target="_blank" rel="nofollow">React에서 서버 데이터를 최신으로 관리하기(React Query, SWR)</a></p>
+<p><a href="https://codedamn.com/news/javascript/useswr-vs-react-query-differences-and-which-one-should-you-choose" target="_blank" rel="nofollow">useSWR vs. React Query - Differences and which one should you choose?</a></p>
+<p><a href="https://goongoguma.github.io/2021/11/04/React-Query-vs-SWR/" target="_blank" rel="nofollow">React Query vs SWR</a></p>
+<br />
+<h3 id="포맷팅-툴" style="position:relative;"><a href="#%ED%8F%AC%EB%A7%B7%ED%8C%85-%ED%88%B4" aria-label="포맷팅 툴 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>포맷팅 툴</h3>
+<p>코드 포맷팅을 위해서 eslint와 prettier를 사용했다.</p>
+<p>대부분의 진행 상황 내용을 적는 곳으로는 github repo의 issues를 활용했고, 여기에 담기 어려운 것들은 노션을 활용하는 형태로 진행하고 있다. 그리고 PR을 통해 서로의 코드에 대해 얘기하는 편이고, 즉각적으로 코드나 자료를 공유해야하거나 에러 해결을 위해서는 슬랙과 디스코드를 활용하고 있다.</p>
+<br />
+<h2 id="git-전략" style="position:relative;"><a href="#git-%EC%A0%84%EB%9E%B5" aria-label="git 전략 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git 전략</h2>
+<p>git flow를 아주 간소화했다. 간단하게 표현하자면 main -> develop -> 작업할 브랜치들</p>
+<p>작업 브랜치에서 develop으로 합쳐가고 배포를 할 때에는 main에다가 할 셈이었다.</p>
+<p>대략 이런 느낌?
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/555268c6e54e8efac8f43b6156a44e5b/13ce4/custom-git-flow.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 38.541666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABqklEQVR42oWQzW7TUBCF/dDAgiAhoapQUKVuyAax4AlAgrQs+GmBLLpIF0GlTtLYiW/sxD+5thPb147tfAinoCIhcaSRRt+M5syMVgOqKMjznCzLUEpRVRW3VZbln9pms2nY7f66rhu23W7R5u1Dxi/buPMFchmxcFwiGRFFIWEYIqUkiiJs20YIQRzHDf8VQRBgmmZT/72EVngLYtvGX3rY0mIorhiYOkrlJElCmmVkSjW5YRg7lqYN3zGzMaluttTKm7OsYEK7+4QXvQOevz3AtgS+5yKsKaYxZjqdMnccrkcjfN9jJgRZmhL4PgNdpyp3r9D4h6Jsw4+RgUwUE9vFkxEL10XGK+aeT6pygjBilWZsAddfEq6S3cDT6yVdU/JlLLmwJB094PGZ4FHnOw87l7Q6Oq8uFuizgAfvLrn7ps/+5wlPv86487rP/Y5O63jAveMRH8w1Wuv9mP2PBnufTFonQ84nS6Sq6Q2m9E2HK+Fjzn0sSzBxXFQFK1USqw1JUbPOK9ZFTaxKsqL8++SevW6cj849DrsOz77Z7J3OOBlK2Na7+I9+AjPDTq/67KAjAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/555268c6e54e8efac8f43b6156a44e5b/a59e9/custom-git-flow.webp 192w,
+/static/555268c6e54e8efac8f43b6156a44e5b/0ca9f/custom-git-flow.webp 384w,
+/static/555268c6e54e8efac8f43b6156a44e5b/dc9b9/custom-git-flow.webp 768w,
+/static/555268c6e54e8efac8f43b6156a44e5b/e2c2f/custom-git-flow.webp 1152w,
+/static/555268c6e54e8efac8f43b6156a44e5b/f3efb/custom-git-flow.webp 1536w,
+/static/555268c6e54e8efac8f43b6156a44e5b/30e03/custom-git-flow.webp 2006w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/555268c6e54e8efac8f43b6156a44e5b/3b721/custom-git-flow.png 192w,
+/static/555268c6e54e8efac8f43b6156a44e5b/66595/custom-git-flow.png 384w,
+/static/555268c6e54e8efac8f43b6156a44e5b/fe486/custom-git-flow.png 768w,
+/static/555268c6e54e8efac8f43b6156a44e5b/d2d74/custom-git-flow.png 1152w,
+/static/555268c6e54e8efac8f43b6156a44e5b/e8464/custom-git-flow.png 1536w,
+/static/555268c6e54e8efac8f43b6156a44e5b/13ce4/custom-git-flow.png 2006w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/555268c6e54e8efac8f43b6156a44e5b/fe486/custom-git-flow.png"
+            alt="빅토리아 팀이 정한 git 전략"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>ㅎㅎㅎㅎㅎ 하지만 배포 과정에서 조금 문제가 있어 정확히 위와 같지는 않을 것 같다. 아마 deploy 브랜치를 따로 팔 수도 있을 것 같다.</p>
+<p>작업은 원본 레포에서 issue를 작성하고 fork한 레포의 develop 브랜치에서 작업 브랜치(ex. feature/make-header-component)를 파서 원본 레포의 develop 브랜치로 pr을 날리는 방식으로 진행했다. 이렇게 하니 원본 레포의 develop에서 merge된 작업물들을 검사하고 난 후 원본 레포의 main으로 날릴 수 있으니 더 안전해진다는 생각이 들었다. 또한 fork한 나의 레포에서는 마음대로 할 수 있으니 자유도 또한 높아졌다고 느꼈다.</p>
+<br />
+<h2 id="코드-리뷰" style="position:relative;"><a href="#%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0" aria-label="코드 리뷰 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>코드 리뷰</h2>
+<p>다들 적극적으로 코드리뷰를 해주어서 정말 감사했다! 칭찬을 해주기도 하고 잘못된 부분은 잘 짚어주어서 적절하게 고쳐나갈 수 있었다.</p>
+<p>코드리뷰에서는 그냥 평소 하던 방식으로 한 것 같다. 가끔은 이전 멘토님이 알려주신 <a href="https://blog.banksalad.com/tech/banksalad-code-review-culture/" target="_blank" rel="nofollow">뱅크샐러드의 Pn 룰</a>을 적용하기도 했다. 어떻게 하면 더 부드럽게 말하면서도 내 의견을 잘 전달해줄 수 있을지 여러가지 시도해봐야겠다.</p>
+<p>새로 시도해본 것은 <a href="https://nesoy.github.io/articles/2019-11/Github-suggestion" target="_blank" rel="nofollow">github의 suggestion 기능</a>이었다. 사용해본 적은 거의 없었는데 이번에 익숙해지니 좀 더 내가 생각한 코드를 잘 전달할 수 있어 좋았다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 71.875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAACRElEQVR42p2R2Y7bOBBF+/9/azAPCTKTTrflRbZsayNFUast0Vp5AttCln6ZYAo4qEIBdXAJviRRRFaUCJWSVzXX1vBfZRfuNYwTWV7QmBvDOPJyX9ZKUUrJVaXc6orucuFW1/TNFVNXmKqkb1q6a8PQNMymZb4ZZmOYHrRPum4Rvn6l3TjgueTOO9J5Qzgr5HZL4qxRzo5ks0as1yj3SHEKuAYhcxJDKp8owVzmd6HFrFb03uGxtCePNgi5eB7lwaU+eTT+mep4INvvqPyAOZXYNMHqBPTSU8lcFc+E1etXGnfLdHAp//6Ly3ZPd/ZpgzNt4GNCn14K2tBnlDFohf3Ir0LzvmI47LHnI7e1g9k4TFEARQa5hkw/JGTps6fJBxQoiS0XYb76RrV1MJ5LrwRDKulV/JiNCOmSmF4rOiUYdcJcKOZcMWULjzlhqgte7t//T7PGaVzEJWRbHtkWB3aVz7722eUndsWJ/SXCrQO8VnK6KcJBIa1GzhppM4RNyefqmfDTdcU3syfpEg7pjvf0wJtyeU02bEuflfZ4lWv+lTucWuB1Cf6oEGTECxGazC7Cz43Dm9kT9QLRxgSt5nz1ceszXntPFXLqJO7FJ541CdlDJuxPIqvJ5h/CFW+ty3EU7IeQ8yQQ5CQUSPIfJOTPVFYT20W68FvC+5Pvwk174kvtsDbHx3E0p8vxk+iX+SORTdH3hNZa4lpx1jEyUxTXClVmJJXmZvs/xtiO3g68zLPlUtfcmpJhmBiH8cE0Tvyf+g4GoCWRqYVMyQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/57615dbdfcf4c7e9782adde2c6960f25/a59e9/pr-suggestion.webp 192w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/0ca9f/pr-suggestion.webp 384w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/dc9b9/pr-suggestion.webp 768w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/e2c2f/pr-suggestion.webp 1152w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/f3efb/pr-suggestion.webp 1536w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/8cb6d/pr-suggestion.webp 1576w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/57615dbdfcf4c7e9782adde2c6960f25/3b721/pr-suggestion.png 192w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/66595/pr-suggestion.png 384w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/fe486/pr-suggestion.png 768w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/d2d74/pr-suggestion.png 1152w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/e8464/pr-suggestion.png 1536w,
+/static/57615dbdfcf4c7e9782adde2c6960f25/f31ea/pr-suggestion.png 1576w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/57615dbdfcf4c7e9782adde2c6960f25/fe486/pr-suggestion.png"
+            alt="github pr의 suggestion 기능"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+    </span></p>
+<br />
+<h2 id="문제들" style="position:relative;"><a href="#%EB%AC%B8%EC%A0%9C%EB%93%A4" aria-label="문제들 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>문제들</h2>
+<p>후… 일주일간 겪었던 문제들을 적고 싶었지만… 자연스럽게 반성하게 된다. 구현에만 너무 급급했던 나머지 따로 정리를 안해서 기억이 나지 않는다. ^.^ 억지로 끄집어 내봐야겠다.</p>
+<br />
+<h3 id="emotion-normalize-적용-시-출력되는-경고-문구" style="position:relative;"><a href="#emotion-normalize-%EC%A0%81%EC%9A%A9-%EC%8B%9C-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-%EA%B2%BD%EA%B3%A0-%EB%AC%B8%EA%B5%AC" aria-label="emotion normalize 적용 시 출력되는 경고 문구 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>emotion-normalize 적용 시 출력되는 경고 문구</h3>
+<p>처음엔 다음과 같이 emotion-normalize를 적용하려고 했다.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> css<span class="token punctuation">,</span> Global <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@emotion/react'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> emotionNormalize <span class="token keyword">from</span> <span class="token string">'emotion-normalize'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">GlobalStyle</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>Global styles<span class="token operator">=</span><span class="token punctuation">{</span>style<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> GlobalStyle<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> style <span class="token operator">=</span> css<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>emotionNormalize<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></code></pre></div>
+<p>근데 이렇게 하면 다음과 같은 경고 문구가 발생했다. 대강 ‘너 왜 @emotion/react 또 불러오니? 있잖아유!’하는 것 같다. emotion-normalize와 기존에 깔린 @emotion/react와의 충돌때문인 것 같다. 혹시나 해서 emotion-reset도 해봤는데 그대로였다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 17.708333333333332%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA10lEQVR42iXM2U6DQABAUf7/k6SCpYtQSqlRyzgwO7MwYGtNWvbEqMl9PdexMjEsbNShlnuRLzV97m9kuLOp45IfSbETNC1gSFHM6QFmG5zvrDnhItHyzWFgQU+uxitNVgJ6Anq1iC7V8cu+SLRG7w8M+iR7ZMBTZEs/nijwbBl/f4L7NXcE9Mrc/zc0cwX0FQokChhYGLq5mFTj36kVoaHrim8VWjLgKhw0KnYqFjZy36jEiuis07NJLY+u9evc8akv57/GlvU3MrZ8bNnQsnmQU19OnfgBCgvQJN8J7sEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/5dac093014b8cbdb495370088a54d2b7/a59e9/emotion-warning.webp 192w,
+/static/5dac093014b8cbdb495370088a54d2b7/0ca9f/emotion-warning.webp 384w,
+/static/5dac093014b8cbdb495370088a54d2b7/dc9b9/emotion-warning.webp 768w,
+/static/5dac093014b8cbdb495370088a54d2b7/16274/emotion-warning.webp 850w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/5dac093014b8cbdb495370088a54d2b7/3b721/emotion-warning.png 192w,
+/static/5dac093014b8cbdb495370088a54d2b7/66595/emotion-warning.png 384w,
+/static/5dac093014b8cbdb495370088a54d2b7/fe486/emotion-warning.png 768w,
+/static/5dac093014b8cbdb495370088a54d2b7/d6170/emotion-warning.png 850w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/5dac093014b8cbdb495370088a54d2b7/fe486/emotion-warning.png"
+            alt="emotion 경고"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+    </span>
+<a href="https://github.com/emotion-js/emotion/issues?page=2&#x26;q=you+are+loading" target="_blank" rel="nofollow">emotion의 깃헙 이슈</a>에서 검색해도 딱히 해결법은 찾지 못했다. 영어가 많으니 무섭다. ㅎㅎㅎ</p>
+<p>그래서 <a href="https://github.com/infinum/emotion-normalize/blob/master/src/index.js" target="_blank" rel="nofollow">emotion-normalize 레포</a>의 normalize css 내용을 그대로 가져와 붙여서 해결하였다! 다행히 경고문구도 사라지고 적용도 잘 된 것을 확인할 수 있었다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 43.75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAv0lEQVR42qWRS27DMAwFfRBLsiyZpD5WnOy66P2PNQWCwkC6qpPF2xHDId/UtFKq0Y4HZkLZhK6ZKpkUI845vPf/zmSlM+47NhpaKkkrYVmZnTthV6CTJUFWQVXYRyXn/DJw2VBKI2tFJROXgHeOeZ5x/hroBPZjcPv6ph13rO8kUUS30+5qpjEKdd+JKZM2Yc2ZNa1v2T0Nx61TWiOE3389N/kPgMMQM7YYCSG8NPvWyVYU6wM1ZVnC5Vb/Gv4AHHT3SzjrtJ4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/c2aa438d5c6827ef5fcad211c2f153f2/a59e9/emotion-normalize.webp 192w,
+/static/c2aa438d5c6827ef5fcad211c2f153f2/0ca9f/emotion-normalize.webp 384w,
+/static/c2aa438d5c6827ef5fcad211c2f153f2/dc9b9/emotion-normalize.webp 768w,
+/static/c2aa438d5c6827ef5fcad211c2f153f2/b6283/emotion-normalize.webp 863w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/c2aa438d5c6827ef5fcad211c2f153f2/3b721/emotion-normalize.png 192w,
+/static/c2aa438d5c6827ef5fcad211c2f153f2/66595/emotion-normalize.png 384w,
+/static/c2aa438d5c6827ef5fcad211c2f153f2/fe486/emotion-normalize.png 768w,
+/static/c2aa438d5c6827ef5fcad211c2f153f2/85c72/emotion-normalize.png 863w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/c2aa438d5c6827ef5fcad211c2f153f2/fe486/emotion-normalize.png"
+            alt="emotion normalize css 코드"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+    </span></p>
+<br />
+<h3 id="팀원-간-node-버전-불일치-문제" style="position:relative;"><a href="#%ED%8C%80%EC%9B%90-%EA%B0%84-node-%EB%B2%84%EC%A0%84-%EB%B6%88%EC%9D%BC%EC%B9%98-%EB%AC%B8%EC%A0%9C" aria-label="팀원 간 node 버전 불일치 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>팀원 간 node 버전 불일치 문제</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dc394630804a6982274b5dc18df313af/58a83/node-version-error.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52.083333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACAklEQVR42l2S2W7bMBBF9V4USR+y2HJjy9qoxdRirZYsy7ITBEV/oX/SxzZpgaBAvvgUZIqi6MPlUJzRwVwODVk0bHcD3fGeqh8pugPVfiTKK9w4ZelHWpaIMW3BzPK0bv+L5h8ZHyyfWZBghimLKNPRDBPmQcKt2HC59LQuli6XKw9Vf7VyuVm5XC8dHdX3O0vw3hIYfRjQCcG42TAlCUMUcYhjve+DgElKhijkqPJS0ochscxw5JYor7GTgnyT8Mu75qtzg/GyWfKarXnNbV7iO57FXOtHYPLkz3gWM757t/rsZ7jgm3vDKCVu3iCLFj+riGXOlyzms3Aw5l6Mn9ckuwNpP+JkFU5SIooWL6919LctTlpipyULIVl4EatAYjrizbrlabsXyrK6UJEW9McH+tMjRT+SNT31MLHtDjTDib0670aqYXrLtwPNeCYuWg2crX3MtcdcDWW+9gmyit3xnuZwIt8NGqSmXe6PlP2ooSpXDSeq/aSlwOV+wgqlnrSe9trHUEuQV+zPj+yOD7pwOD9SDyfdVTueNUzlhvtPb/vpQTeQ79QTO5LUnbavoMbCDQnVHTa9LlaQrN3THM6kdYcdp4i0xE8KnDjDk1tcueWjF+qO5rZg4QYopxqo7NpRihVIDVY/ezLHT0vcTa4tqfydF2m46uRq6fy1+a+U5d+JlTcCFR6rdQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/dc394630804a6982274b5dc18df313af/a59e9/node-version-error.webp 192w,
+/static/dc394630804a6982274b5dc18df313af/0ca9f/node-version-error.webp 384w,
+/static/dc394630804a6982274b5dc18df313af/dc9b9/node-version-error.webp 768w,
+/static/dc394630804a6982274b5dc18df313af/e2c2f/node-version-error.webp 1152w,
+/static/dc394630804a6982274b5dc18df313af/f952e/node-version-error.webp 1488w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/dc394630804a6982274b5dc18df313af/3b721/node-version-error.png 192w,
+/static/dc394630804a6982274b5dc18df313af/66595/node-version-error.png 384w,
+/static/dc394630804a6982274b5dc18df313af/fe486/node-version-error.png 768w,
+/static/dc394630804a6982274b5dc18df313af/d2d74/node-version-error.png 1152w,
+/static/dc394630804a6982274b5dc18df313af/58a83/node-version-error.png 1488w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/dc394630804a6982274b5dc18df313af/fe486/node-version-error.png"
+            alt="노드 버전 에러"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>팀원 1명이 commit 할 때마다 위와 같은 에러가 발생하여 commit을 못하고 있었다. package-lock.json이나 node_modules를 지웠다가 다시 설치하기도 하고 다시 git clone을 받아서 npm install을 해보기도 했지만 현상은 여전했다. 그러던 와중 검색하다가 우연히 어떤 블로그를 봤는데(출처를 못 찾겠다) 그 글을 보고 node 버전이 서로 일치하지 않아서 발생할 수도 있는 문제라는 생각이 들었다. 확인해보니 대부분의 팀원은 18.12.1 버전이었던 반면 에러가 발생한 팀원의 node 버전은 16이었다. 바로 nvm을 통해 18버전으로 바꾸고 package-lock.json이었나 node_modules를 지우고 다시 npm install을 하니 에러가 사라졌었다.</p>
+<p>그래서 프로젝트 시작 시 node 버전을 맞추고 가는 것도 좋은 방법이라는 생각이 든다. .prettierrc, .eslintrc처럼 <a href="https://mong-blog.tistory.com/entry/NVM-%EB%B2%84%EC%A0%84-%EC%84%A4%EC%A0%95-%EC%89%BD%EA%B2%8C-%ED%95%98%EA%B8%B0with-nvmrc?category=967416" target="_blank" rel="nofollow">.nvmrc 파일을 만들어 일치</a>시킬 수 있는 것 같다.</p>
+<br />
+<h3 id="typescript-1" style="position:relative;"><a href="#typescript-1" aria-label="typescript 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TypeScript</h3>
+<p>타입스크립트 덕분에 초반에도 그렇고 지금도 힘들다. 근데 무엇 때문에 힘든지 딱 말해서 짚을 수가 없다… 갑자기 생각치 못하게 타입 에러가 뜨면 정신이 아득해진다. 그러다가 검색을 통해 땜빵하듯이 일단 해결하는데 깊게 이해하지 못할 땐 내 자신이 한 없이 부끄러워진다. 별 거 아닐 줄 알았기 때문! 강의도 듣고 공식 문서도 참고하면서 심도 있게 이해해봐야겠다.</p>
+<p>타입 때문에 힘들었던 것 중 기억 나는 건 다음 경우이다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/72de1fa2de7a796eb0ae6b3d44f37eb1/b49e7/typescript-error.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVR42pWS2XLjIBBF9R+StVsgQAsWsuR4UZyZzP//0ZkClzN+yMPk4dbtBU41VEe6UfTO0Y0TRmnsMCCVpqr31GVJlqXsdjvSNP0vRartMO6Esg6pWnqtMHJPkiQB9BNYAFZS0WqD1JrS9KSiJSuyMJk/8A+6+4q/y5+KxF4ymI6xrRknh5lmdN9T1vsAzPOcLMu+le89+t6L4JEsctRwQCrDdV25XK6cz5fgx+PC4TAxz0fW9RTcuTnI59Ye6LqeYRhRylAUJZEsC7SQdEJwO524XG8BuG1bgC7LEi57uAdNkwvg1/wZl2VFJFrFYEeEbJjnhff7Bx+/fnO/39m2dz4//3C7bQHqp/VTeR9H+wXybu1EVVVETSPR1iJtj5scl7f18bzljHVv9P2IVhpjDFJKhJDUdR0khKBpHvJ1/5+RUYrVDXRDR972QUU3keYVSRwTJwmx9zgOq/S6Ts/8tR5pLTkeR+Zloh4XqmFm765UbU/6wx30e/gXcWsmZ6yCzpQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/72de1fa2de7a796eb0ae6b3d44f37eb1/a59e9/typescript-error.webp 192w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/0ca9f/typescript-error.webp 384w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/dc9b9/typescript-error.webp 768w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/e2c2f/typescript-error.webp 1152w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/77b97/typescript-error.webp 1314w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/72de1fa2de7a796eb0ae6b3d44f37eb1/3b721/typescript-error.png 192w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/66595/typescript-error.png 384w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/fe486/typescript-error.png 768w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/d2d74/typescript-error.png 1152w,
+/static/72de1fa2de7a796eb0ae6b3d44f37eb1/b49e7/typescript-error.png 1314w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/72de1fa2de7a796eb0ae6b3d44f37eb1/fe486/typescript-error.png"
+            alt="typescript 에러"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>워호우… 에러 메세지도 너무 길고, 내가 vscode를 영어로 설정해놔서 더 당황스러웠다. 사실 지금도 뭐가 문제인지 정확히는 모르겠다. 추측하기로는 axiosInstance에 AxiosRequestConfig 타입의 config 인자가 들어가야 하는데, handleRequest를 통해 반환된 값 중 빨간색 값은 내가 커스텀하였기에 AxiosRequestConfig 타입이 아니게 되어 발생한 에러지 않을까 싶다.</p>
+<p>실제로 위 상태에서 handleRequest 함수의 반환값 타입을 보면 다음과 같다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 658px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/577dd8234d952c81e306925a10b83683/e7930/handle-request-return-type.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 41.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABTklEQVR42nWRWW4bMRBEdZLI4tY9HJGzcTTaHCexkAS5/31eIGqMQED8UegiSDx2dW92sqedFubLlfPXM2UeGMtAmmbaeUYPBTkU9DCifUaiYkVwbcTFpsrHSBDFGMPG7iwqLU0uXG+/eP32xlQm2txXqKaEdBnJGUl7dJ+Qdo8OPdp3SErEoSfuE955NmZnkCCoKONyIZdTVcw9Ovb1Z/ticMbirPsns8o6bL3zGGPZbLdbrLU45+jKwun9N8fbH8bTlXheiMcD0ndozrUD5wP+E905K9DVx6mfOP64Ud5/Ml+/k8sBnacKbebpAfUB5/yjrqCP8wp8qabRhpQ7VCMhKKIR0QYvir9X1Ye/d7kCPvwT0JkvNXuMLd0w1EFrbAlB/h8vCD6Ep/jPQG1wQWnaRLm80R0v9GWpm9NpfGxzGuscm5TQudB03SdAx19+Fu5mGHejSwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/577dd8234d952c81e306925a10b83683/a59e9/handle-request-return-type.webp 192w,
+/static/577dd8234d952c81e306925a10b83683/0ca9f/handle-request-return-type.webp 384w,
+/static/577dd8234d952c81e306925a10b83683/17549/handle-request-return-type.webp 658w"
+              sizes="(max-width: 658px) 100vw, 658px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/577dd8234d952c81e306925a10b83683/3b721/handle-request-return-type.png 192w,
+/static/577dd8234d952c81e306925a10b83683/66595/handle-request-return-type.png 384w,
+/static/577dd8234d952c81e306925a10b83683/e7930/handle-request-return-type.png 658w"
+            sizes="(max-width: 658px) 100vw, 658px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/577dd8234d952c81e306925a10b83683/e7930/handle-request-return-type.png"
+            alt="handleRequest 반환값의 타이"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>AxiosRequestConfig이거나 커스텀하여 만들어진 config 타입이 반환되는 것을 확인할 수 있다.</p>
+<p>해결방법은 생각보다 단순했다. as를 사용하는 것!
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/29f098261259c068bf892814f10f3f14/75b60/resolve-type-error-by-as.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.166666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABDklEQVR42p2SS26DQBQEfRAzMB/mw8zjFxB2cv9zVWRjRfEqkEVLb1Wq1uuLhIzMH5RxJqfMNA6UIrgQcdbijKZSiqqqUEr9mUtOgqx3ZNlIMVFSpI+eWimu1+sOesGOQC9tFlIZabuMloEm97jg0bp5Axw2dCHRSSF3nlwy9gFtW+qmfppVByDvhm0gyIw25lVvt9nz+z6Wi9aaft2Q7U5MCe08dd2gVHXK7MfQGIOLkdoajLX/grwBkwjTtpJGQQf/nIv2nvoxl5N1n5VjiHQieOnwyVNKwIcW6z0udtiQzn15EOHrNrMsA0ZWTJlx8ydO5h10djalJNZ1YNtm2mnD9gtuutNONxptT2/xG51qMhS8qqtSAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/29f098261259c068bf892814f10f3f14/a59e9/resolve-type-error-by-as.webp 192w,
+/static/29f098261259c068bf892814f10f3f14/0ca9f/resolve-type-error-by-as.webp 384w,
+/static/29f098261259c068bf892814f10f3f14/dc9b9/resolve-type-error-by-as.webp 768w,
+/static/29f098261259c068bf892814f10f3f14/e2c2f/resolve-type-error-by-as.webp 1152w,
+/static/29f098261259c068bf892814f10f3f14/437c9/resolve-type-error-by-as.webp 1210w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/29f098261259c068bf892814f10f3f14/3b721/resolve-type-error-by-as.png 192w,
+/static/29f098261259c068bf892814f10f3f14/66595/resolve-type-error-by-as.png 384w,
+/static/29f098261259c068bf892814f10f3f14/fe486/resolve-type-error-by-as.png 768w,
+/static/29f098261259c068bf892814f10f3f14/d2d74/resolve-type-error-by-as.png 1152w,
+/static/29f098261259c068bf892814f10f3f14/75b60/resolve-type-error-by-as.png 1210w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/29f098261259c068bf892814f10f3f14/fe486/resolve-type-error-by-as.png"
+            alt="as를 이용해 type 에러 해결하기"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>‘이 값은 내가 조금 변경시키긴 했는데, 그래도 타입은 AxiosRequestConfig야~ 라고 말해주는 것이다.’</p>
+<p>같이 데브코스를 진행하고 있는 착하고 재밌으면서 잘생긴 분한테서 답을 얻을 수 있었다. 민종쨔이 쵝오!</p>
+<p>이 밖에도 로직 구현 등 문제가 있었으나 일단 기억나는 것만 적어보았다.</p>
+<br />
+<h2 id="배포" style="position:relative;"><a href="#%EB%B0%B0%ED%8F%AC" aria-label="배포 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>배포</h2>
+<p>배포는 짜릿한 반면에 어렵고 두려운 놈이다. 백엔드분들에게도 마찬가지일까?</p>
+<p>생각보다 많이 헤매서 힘들었다… 한글 아티클에서는 비슷한 사례가 잘 보이지 않아서였다.</p>
+<p>길었던 배포 과정은 다음과 같은 순서로 진행했다.</p>
+<blockquote>
+<p><strong>vercel -> meta 태그 적용 -> netlify -> s3 -> ec2 -> netlify</strong></p>
+</blockquote>
+<h3 id="vercel" style="position:relative;"><a href="#vercel" aria-label="vercel permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vercel</h3>
+<p>배포에서는 무슨일이 생길지 모르기에 프로젝트 작업에 들어가고 나서 5일차인 금요일 어제 바로 배포를 시도하게 되었다. 먼저 vercel로 진행했는데 역시 예상처럼 쉽게 되지 않았다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/87fa0f1464ccda5e6b56b7c7c92f18fb/e08f9/http-error.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 72.91666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAACr0lEQVR42m2TSZPcNBiG+xdzYsmFCxcIHPg9OXGnUpCimJn09O5Fki1Zku222+2lH5BmapIJHFSf1udb9H4rgOE6sj8JjLUY6yh1hTYWoQqSLCeXBVkuUYVGV5ZMSJJccjylOF9jfY2vGzKhWAXgsszkIuX+YU2SZjjncd5TlJqqssgATjP2hyOmsqiwlobhMjCOI9frlWka45sn4DyjpWC92fK42eJ9HbbjY1NVSKXYH09keU7TtgipyArLpb+8Brpn4DzNWF2RCxEvn5I0grz31HUd50JKNtsdxlRYa5Fl9QVw+hThPC/kouTjdsdmt0cVBedzR2mqGKUsSg6nhPcf/qLQJtZVFIauvzC9AtZPwGlZELngtF6T5wKtDdZ5TFHgtMaHumUZ6z8/xD0rBFJp3LljHkeG/6Q8z/hC0RjNPE0vHhvvab2nqWtqo+lLRdc0WKUoy4qm6/4/5WWZ0GWK9U30FC4EsHUuRqrKkjQX3K0fUUVJ3bZUlafrLvTXkfHLlG/LhMo3UX8BOAxDBAbZlFqT5YLd/sDv7/+IHxYiMdrSdj3n4cr1+iQf6z6LsDu7WIvb7cayLFE2Xd/TXy6053P0HvTYNG0E1HXLPI2v7vum/VTDEHKwIbLgLfxe3A82nL2cz1zHmbruGS4h1SWeEWtes3J1g23PyNBqukJZTxJarTRPc1WSFRpp3Is9phXHJAxDKhym0NgkRaY5q7/vtuzvHigPO8r9jkZk9IWkU4KzEnTP85dRKpxzsc91ELlzsQ1VVceOWg2/vWP64SvGn75h/PFrlrffcfv5zWfjef3LG25vv4Vfv+e6eUQnKaeHjxzvH57s+kCrNCuXppgkwe121JstQ5oyC8ksZbRTntNrzaQUc5YzGkMvFd1mS3P/QLvbExj2dGL5V4f/AMYnZ8D0XA7xAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/87fa0f1464ccda5e6b56b7c7c92f18fb/a59e9/http-error.webp 192w,
+/static/87fa0f1464ccda5e6b56b7c7c92f18fb/0ca9f/http-error.webp 384w,
+/static/87fa0f1464ccda5e6b56b7c7c92f18fb/dc9b9/http-error.webp 768w,
+/static/87fa0f1464ccda5e6b56b7c7c92f18fb/c2a7d/http-error.webp 781w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/87fa0f1464ccda5e6b56b7c7c92f18fb/3b721/http-error.png 192w,
+/static/87fa0f1464ccda5e6b56b7c7c92f18fb/66595/http-error.png 384w,
+/static/87fa0f1464ccda5e6b56b7c7c92f18fb/fe486/http-error.png 768w,
+/static/87fa0f1464ccda5e6b56b7c7c92f18fb/e08f9/http-error.png 781w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/87fa0f1464ccda5e6b56b7c7c92f18fb/fe486/http-error.png"
+            alt="http 에럳ㅊ"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>위와 같이 404 에러가 떴다. 우리 팀에서 추측하기로는, vercel로 배포하면 기본적으로 api 요청을 할 때 https로 날리기 때문에 발생한 에러로 생각했다. 백엔드 api는 http이기 때문이다.</p>
+<br />
+<h3 id="meta-태그" style="position:relative;"><a href="#meta-%ED%83%9C%EA%B7%B8" aria-label="meta 태그 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>meta 태그</h3>
+<p>대강 검색해보니 다음과 같은 코드를 <code class="language-text">index.html</code>에 넣어 해결했다는 글들을 보았다. 그래서 시도해봤다.</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span>
+  <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Content-Security-Policy<span class="token punctuation">"</span></span>
+  <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>upgrade-insecure-requests<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre></div>
+<p>위 태그를 삽입하고 vercel로 다시 시도했지만 결과는 똑같았다. 뭐가 문제인지 이 때부터는 진짜 모르게 되었다.</p>
+<br />
+<h3 id="netlify-s3" style="position:relative;"><a href="#netlify-s3" aria-label="netlify s3 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>netlify, s3</h3>
+<p>혹시나 해서 netlify에 올려도 동일했고 s3에 올려도 동일했다.(build해서 dist 폴더의 파일들을 s3에 올리면 아예 아무것도 안 떴다…)</p>
+<br />
+<h3 id="ec2" style="position:relative;"><a href="#ec2" aria-label="ec2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ec2</h3>
+<p>이번엔 아예 프론트엔드를 http로 바꾸자는 생각이 들었다. 그래서 시도한 것이 ec2였다. 대강 ec2 서버 시도는 다음과 같이 진행했다.</p>
+<ol>
+<li>ubuntu 서버 생성</li>
+<li>네트워크 설정
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 388px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e9f9ce20b09232f8516711dbed4d9337/5bbd5/ec2-network.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 198.4375%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE2ElEQVR42pWWiW7cOAyG/f6Pt9gFiibZTGbGx/i2ddue/Iufspwm2aatAUG+RPH4SCqz1qLve3Rdh2EY0HW9zHXdwPsAXq+vr+/G2xXvnfM4nS+YZ4XMew9lPbZtk7GuK+73O5ZlgVIK1i/4ePGbNhZhvcsz/6diISzI6qZF1Q0IIcBYC+c9pnmGNgZ5WeB6azHMM8Z5xjBNUMZgnCZcywrtpDCrGZNSmLWWtRklj9MM7YLszBE4QsAwa4R1w/2+Yd3iEG2cwzRNsoH2C5Z1hQ9B5mwYR7xcckw0YRdGTTmKukFRt2i7HnXbyeDm1PByzXEtKvk+KyUKRA2dkxc+eNnF/2A6F96aBt0wYFZa/uM3bqq0kfvkHgrkyPDFRfO2+x331zt+5yIBEuVh6AWXfhjQdh36fhCUOAfvD+GfsNnvac3lWkApjYwmEhsGY13WOK9xnucZxoVPmmzrKkKWLQokbkpr4Tar2xZF08tL+oaRol85rnku2IzEQilBh36jJS95IdhQEJGhH6lcZoyRH7TzoPl8SWG8H5WGD28o8du6a0ftGbTZOHm2PlqZMc0en1/QjgpheYsyNyrrBu0wQRHqcRIB1Ij+zqlhP2AyUVAiJLPWgSxaZ4+XhH02Fn/nNf56KfBQdZKGNDvhQhMJetjXUEta9VNsCMp5sriMGje7/BSTd7UCIDYhptEwYBzHfZ7kfvHubYMvqg01y4tS3CECZ23lpai/z3QFy5Fbts/YbKsgkrBhoLp+kGBmzNOP2NAfHHlZ4spc1ebAg4sk/wUb4qKlAlnvZH3GH1nCCHDChrXOOYd+VrC705PjE6fMYa4lbnyfclyqzdPp/IaNj9hYa1DVDfpxhtFKkIlCjPj45XyRKlXUvQhOnGaJfKLyEZvHqsVDXuFU9wIyBRKdqGFEiAqpvbi6r7BhKL73Gk+dQm4W/O6VMaICLc0huKx5xsR+YmNOU2OtjUTz/6oNzZUoW7dzqLQsoiBN9Z0TgX3XoxtGKUt8JgmpukjJ32KdpFJldZPsydq+x6VqRBB3Yjo5YXFBWVUouxHWhyOSFES/XfICo3ZHpX4XlLZtpcxTs9RTeE/+pJLs5cywCi3hyGUBfG9oR3Fg2p0uOQbtjsIqzDmHqm4xzgbORrDpktRrTqcTHp9PqAcl61KDy4hCUVWCROp2UkyVxmNR4+Fa4rlq0PU96J5+iJhUtxp108gztWe2cO2X2HxrZnyvxz/HxjCFdpM4UsSt828ptyyfzjdp5jdmD90kAkm93oVG/mwsaTxE9bGs+b37pQ7InF7ve/kKQcoXWc26hA2b9Y4N2eQ9san6SSIprWGngDXzfC0kkCnC6fhyYCP5vC/QYq4T4PWOSJoTjwzMup9pDmyYy0y5c15iNF64SuHnR2LDrraGyKLbiy+JYIuNWnqsa1wjXU8OPnkubCVs5ECkFJ7KiM2/ZS01kz2c6FAg19zq5lijf4XN+gr8U4/4dhtwUeH3sVlYVJlSkh1eApJmI6dbJ/4zxu5Y2UMrm+bkDpq8EJH6Jiaczxc8n04ycxRFIfgQm3h4ioNRZoHgNwZzmuYjYFk6ekgk92ZE7eyu9ZaOdB/Gj+85r3uTyyj9+XTG6eWCa16ICZ+b+a/HcT5M2iUfUW2pOsyEPxzE5j/IrR4AvcOkzQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/e9f9ce20b09232f8516711dbed4d9337/a59e9/ec2-network.webp 192w,
+/static/e9f9ce20b09232f8516711dbed4d9337/0ca9f/ec2-network.webp 384w,
+/static/e9f9ce20b09232f8516711dbed4d9337/cf1ce/ec2-network.webp 388w"
+              sizes="(max-width: 388px) 100vw, 388px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/e9f9ce20b09232f8516711dbed4d9337/3b721/ec2-network.png 192w,
+/static/e9f9ce20b09232f8516711dbed4d9337/66595/ec2-network.png 384w,
+/static/e9f9ce20b09232f8516711dbed4d9337/5bbd5/ec2-network.png 388w"
+            sizes="(max-width: 388px) 100vw, 388px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/e9f9ce20b09232f8516711dbed4d9337/5bbd5/ec2-network.png"
+            alt="ec2 네트워크 설저"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></li>
+<li>서버 접속해서 배포할 레포 <code class="language-text">git clone</code></li>
+<li>다음 명령어 입력
+<code class="language-text">sudo apt-get update</code>
+<code class="language-text">sudo apt-get install curl</code>
+<code class="language-text">curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash --</code>
+<code class="language-text">sudo apt-get install -y nodejs</code></li>
+<li>해당 폴더로 접속해서 <code class="language-text">npm install</code></li>
+<li><code class="language-text">npm run build</code></li>
+</ol>
+<p>근데 여기서 문제가 발생했다. (여기까지 오는데에도 좀 헤맸다. ㅎㅎㅎ)
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0d80b3d738db8af368d3862f8206f5b1/ed72c/ec2-limit.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.6875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA70lEQVR42pWS246DMAxEE3IBQgJkV/3/T51qrE4bVW23+zDKhfh4bOyO3vFz+UVpBS44+MnDOw/vH3LOfa9cG9I2I5SAVBPiEhHjQyklhBC+B+6todWGnLJpnmfknA1Eca+zvo3ine5pwMVbEEv9V2nvtK4raq3guizLvUSKGV/tPwJba+i9Y9s2lFJMgksqS9CPQLo7z9NADBZU4DGB+iawfhrX+zTQ4XEcVraCqdHxc7LRseDTNJncvu/mkEDBKQIF1l5AvqXodnRq7SCQ4gOCCOeqREwygulMI6Q2qM/cW8kMZuZXszaebc7+GJsrPyTp1AcYMd4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/0d80b3d738db8af368d3862f8206f5b1/a59e9/ec2-limit.webp 192w,
+/static/0d80b3d738db8af368d3862f8206f5b1/0ca9f/ec2-limit.webp 384w,
+/static/0d80b3d738db8af368d3862f8206f5b1/dc9b9/ec2-limit.webp 768w,
+/static/0d80b3d738db8af368d3862f8206f5b1/e2c2f/ec2-limit.webp 1152w,
+/static/0d80b3d738db8af368d3862f8206f5b1/f3efb/ec2-limit.webp 1536w,
+/static/0d80b3d738db8af368d3862f8206f5b1/e8553/ec2-limit.webp 1944w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/0d80b3d738db8af368d3862f8206f5b1/3b721/ec2-limit.png 192w,
+/static/0d80b3d738db8af368d3862f8206f5b1/66595/ec2-limit.png 384w,
+/static/0d80b3d738db8af368d3862f8206f5b1/fe486/ec2-limit.png 768w,
+/static/0d80b3d738db8af368d3862f8206f5b1/d2d74/ec2-limit.png 1152w,
+/static/0d80b3d738db8af368d3862f8206f5b1/e8464/ec2-limit.png 1536w,
+/static/0d80b3d738db8af368d3862f8206f5b1/ed72c/ec2-limit.png 1944w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/0d80b3d738db8af368d3862f8206f5b1/fe486/ec2-limit.png"
+            alt="ec2 메모리 제한"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span>
+대강 해석하기론 힙을 다써서 꺼져버린 것 같다. 프리 티어 서버의 한계인가… 그래서 다른 방법을 생각해낸 것이 있다.</p>
+<p>로컬에서 npm run build를 한 후 dist를 .gitignore 파일에서 제거하여 빌드된 dist를 그대로 레포에 올려버리는 것이다. 다음 순서로 진행했다.</p>
+<ol>
+<li>로컬 레포에서 npm run build</li>
+<li>.gitignore 파일에서 dist 제거</li>
+<li>로컬 레포로 push</li>
+<li>ec2에서 git pull origin 해당 브랜치</li>
+<li>npm run preview</li>
+<li><code class="language-text">ec2 public ip</code>:4173 접속, 안되면 :80으로도 접속</li>
+</ol>
+<p><a href="https://vitejs-kr.github.io/guide/static-deploy.html#deploying-a-static-site" target="_blank" rel="nofollow">preview가 dist 폴더를 돌리는 것</a>으로 알고 있어 혹시나 이렇게 해봤는데 역시나 안된다. ㅎㅎㅎㅎㅎㅎ 설마해서 dev 서버 돌려도(5173) 접속이 안된다.</p>
+<ol>
+<li>npm run dev</li>
+<li><code class="language-text">ec2 public ip</code>:5173 접속</li>
+</ol>
+<p>안된다! ec2가 힘들 걸 예상은 했는데 막상 안되니까 허무하다… 아무래도 내가 서버를 제대로 못 돌리고 있는 것 같다.</p>
+<h3 id="netlify" style="position:relative;"><a href="#netlify" aria-label="netlify permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>netlify</h3>
+<p>마지막으로 본 <a href="https://answers.netlify.com/t/how-to-send-http-request-in-netlify-app/40604/8" target="_blank" rel="nofollow">한 아티클</a>에서 다음 방법을 발견했다. 그래서 다시 netlify로 돌아오게 되었다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4cc9731b98b19e0273d4d38eb3b82f3f/f31ea/netlify-rewrite.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.041666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACDElEQVR42m2TW0/bQBBG89zHXqAFEhIIJBAnvsSx14kdJ8EOCc5FpQKERH9ALxBurYAC4gGpP/tUu6a0qvpwNLM7O6P5ZnczZx8/cTQ5olyPKFZ8Xi5UeJOtPfN6qfpf/o5Lu7QmWFixyewnh4z7e+jeDpY3pN5KMMRAobvbmM0dbH+E1dzBCSZqr+GPqTeTNC6GKlZt9JlfNsi8mCuRLQnC/j5Oe0J3eEinf0A72iOI9ujEB3QHh4jOlIrVQ7MjtHpE2eiyYXap2jEVa4ui5qcF3+ZNCmWBG45p+iO8IGGz1UULemh+Dy3cwuuMCMIpdjhCs0I0q0O1npKuQ3S7R26tQWYup5NbdzHFANMdUGvE6G5fUXNj8huCxRVLHV6SFG2yxdT+9rNP/ruC+aeg4U9xgjEinCCiXbz4AyJ6jxvt4oQTGv4IEU4xnPipw27a4RNynU07NMitOxjutroU3eljeAOF1RxiNoc0grGaX2HDI18WLK87LJckLvmSq3xpFwoWmfmcTnbNoSoSJdtuJQp5k6bYpmb3sESM4Wyxabafu6pYkpBNo61mKH0pPfNqsaoSTy4fmF3ec/rtnuPzH8wu7vgyu+bzyXe+nl5xcnbN7OKG2fmNssenV5xd3nJ1+8j13SO3Dz9VHTVDKcVuyfeWUNZDJUlKKyikzFTqv8g8+RlWKy31bBZX6/wCAD9M/ou/BM4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/4cc9731b98b19e0273d4d38eb3b82f3f/a59e9/netlify-rewrite.webp 192w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/0ca9f/netlify-rewrite.webp 384w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/dc9b9/netlify-rewrite.webp 768w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/e2c2f/netlify-rewrite.webp 1152w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/f3efb/netlify-rewrite.webp 1536w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/8cb6d/netlify-rewrite.webp 1576w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/4cc9731b98b19e0273d4d38eb3b82f3f/3b721/netlify-rewrite.png 192w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/66595/netlify-rewrite.png 384w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/fe486/netlify-rewrite.png 768w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/d2d74/netlify-rewrite.png 1152w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/e8464/netlify-rewrite.png 1536w,
+/static/4cc9731b98b19e0273d4d38eb3b82f3f/f31ea/netlify-rewrite.png 1576w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/4cc9731b98b19e0273d4d38eb3b82f3f/fe486/netlify-rewrite.png"
+            alt="api rewrite"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>이것만 하고 그냥 자야겠다라는 생각으로 시도했다. 위 방법을 시도하기 위해서 vite에서는 좀 다르게 해줘야 한다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/54138a53648b08c1283c7f508c274416/15118/netlify-option-for-rewrite.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35.416666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABFUlEQVR42o2R60rEMBCF+/5voOD/BR9IkUXU3XabNLe2SZsmmRxJ9iIiigc+hgTOzMmksc5hnmdclXPGZB2E0hitw7oFMCFxPPVoewbGByilYcyIRHTzXGkGIfH0/IK2O8FvEUSEXijsP1rsDx2OXILpscL1BB8i/lKz+g3jOKPUEBOIMmxJKCSkVIjxe4OSogz9jSaEAGstUkpnA2UYY8AYr/dF5WmV9GXMMf6gNlzWFUqfd6KdRSSC9x5uWW7pSqr/qilGbQzGacIWQp0ipELPGPy21TMbhrpjzjl6IaHfX0G7e9Djw420u4M7vKGZra0N6fJjpU7zXFOv3oNyBh8GCCkhlarDvHMg1iFdIF5qi7gu+AQGjBxl3Z7m+gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/54138a53648b08c1283c7f508c274416/a59e9/netlify-option-for-rewrite.webp 192w,
+/static/54138a53648b08c1283c7f508c274416/0ca9f/netlify-option-for-rewrite.webp 384w,
+/static/54138a53648b08c1283c7f508c274416/dc9b9/netlify-option-for-rewrite.webp 768w,
+/static/54138a53648b08c1283c7f508c274416/e2c2f/netlify-option-for-rewrite.webp 1152w,
+/static/54138a53648b08c1283c7f508c274416/f3efb/netlify-option-for-rewrite.webp 1536w,
+/static/54138a53648b08c1283c7f508c274416/80409/netlify-option-for-rewrite.webp 2390w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/54138a53648b08c1283c7f508c274416/3b721/netlify-option-for-rewrite.png 192w,
+/static/54138a53648b08c1283c7f508c274416/66595/netlify-option-for-rewrite.png 384w,
+/static/54138a53648b08c1283c7f508c274416/fe486/netlify-option-for-rewrite.png 768w,
+/static/54138a53648b08c1283c7f508c274416/d2d74/netlify-option-for-rewrite.png 1152w,
+/static/54138a53648b08c1283c7f508c274416/e8464/netlify-option-for-rewrite.png 1536w,
+/static/54138a53648b08c1283c7f508c274416/15118/netlify-option-for-rewrite.png 2390w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/54138a53648b08c1283c7f508c274416/fe486/netlify-option-for-rewrite.png"
+            alt="rewrite를 위해 netlify 설정 변경하기"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>redirects 파일을 루트 디렉토리에 만들어도, vite 환경에서는 build를 통해 redirects 파일이 dist 폴더로 들어가지 않기 때문에 위와 같이 해주었다.(빨간색 네모는 api end point) 원래는 package.json의 scripts에다가 작성했었는데 팀원의 조언 덕분에 위와 같이 작성하여 코드 상에서도 api end point를 숨길 수 있게 되었다.</p>
+<p>추가로 새로고침 시 404 페이지가 뜨는 것을 방지하기 위해 netlify.toml 파일을 만들어 다음과 같이 코드를 작성했다.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200</code></pre></div>
+<p>그 다음에 api 요청을 보낼 때 모두 api라는 단어를 다음과 같이 붙여주었다. 인스턴스에서 baseURL에 붙여주면 될 것 같았는데 그건 이상하게 안 먹혔다… 그래서 다음과 같이 그냥 일단 다 노가다로 작성했다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7dc40a919820b7882f2fcf64490802cf/98ef1/api-urls-constant.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52.60416666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABiElEQVR42o2S2W7bMBRE9R22REq2REoiRVrWanlrU6TrS577//9xishOizRx4IeDIUFgcGd4g3E4o0rPqvAkriUpHOlaIkREFIlZhRB3ExR1Q9Xu0InEqzVOp8QyJgyfDS9mL3qXoe/3nJ5+473n3Hoexy2dM8RSIl+Z3WcaqNxQ1i25q8nSlCrPsFpRqJQkiT+c7r23wHcTSpdIGSOikERExCKadRVLpJRz/H+EM7fqCGwzsHv8NdMOI9PxzDDuGPdHNs5Sm3yetrxitEJnGULId00DUxmm0579+UA7TdjhiB9P5N6jNw6dlzS2YHAXNb7B1B2rVBFF4dvIdjvQP/yg/fSV7vM3+i8/sZVj5wqmjWX0hlPjOG0dtSkQUl7XSdyI7Fu0cchIXPpZLgiXy7mvxTJkGYYsnrmeX/p74U1k1++Zvj/h+wP14QHrN3NvrS3oq3KesKtKtiYnT9ekq+TVOkX/R86LimLToK3DbHvKukOla6zOMDqjyhUuV3/vRZbOP39rnf4AIV87rRiusoMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/7dc40a919820b7882f2fcf64490802cf/a59e9/api-urls-constant.webp 192w,
+/static/7dc40a919820b7882f2fcf64490802cf/0ca9f/api-urls-constant.webp 384w,
+/static/7dc40a919820b7882f2fcf64490802cf/dc9b9/api-urls-constant.webp 768w,
+/static/7dc40a919820b7882f2fcf64490802cf/e2c2f/api-urls-constant.webp 1152w,
+/static/7dc40a919820b7882f2fcf64490802cf/2e958/api-urls-constant.webp 1226w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/7dc40a919820b7882f2fcf64490802cf/3b721/api-urls-constant.png 192w,
+/static/7dc40a919820b7882f2fcf64490802cf/66595/api-urls-constant.png 384w,
+/static/7dc40a919820b7882f2fcf64490802cf/fe486/api-urls-constant.png 768w,
+/static/7dc40a919820b7882f2fcf64490802cf/d2d74/api-urls-constant.png 1152w,
+/static/7dc40a919820b7882f2fcf64490802cf/98ef1/api-urls-constant.png 1226w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/7dc40a919820b7882f2fcf64490802cf/fe486/api-urls-constant.png"
+            alt="rewrite를 위한 api urls 상수"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>이러고 배포하니까 된다! 지금까지 확인한 바로는 네트워크 요청 시 api end point도 잘 숨겨진 것 같다. 기능적으로 완성은 아주 아주 덜 되었지만 그래도 배포가 되어서 다행이다…</p>
+<p>하지만 개발 서버에서는 동작하지 않는다. api라는 이름이 앞에 붙어버리기 때문이다. 따라서 배포를 위해 deploy라는 이름으로 브랜치를 따로 파게 되었다.</p>
+<br /></div><style data-emotion="css 10cza3q">.css-10cza3q{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;margin:4rem 0;}</style><div class="css-10cza3q e1e3k7ll5"><style data-emotion="css 17sm3fv">.css-17sm3fv{-webkit-flex:1;-ms-flex:1;flex:1;text-align:start;}</style><div class="css-17sm3fv e1e3k7ll3"></div><style data-emotion="css oy1v2r">.css-oy1v2r{-webkit-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:end;}</style><div class="css-oy1v2r e1e3k7ll2"><style data-emotion="css 26en7y">.css-26en7y{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:0.5rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><a class="css-26en7y e1e3k7ll1" href="/how-to-setup-eslint-stylelint-prettier-husky-and-lint-staged-with-a-nextjs-and-typescript-project/"><style data-emotion="css p5tmle">.css-p5tmle{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;gap:0.5rem;}</style><div class="css-p5tmle e1e3k7ll0"><span style="font-size:12px;color:#757575">Next</span><div>Nextjs, TypeScript 프로젝트에 ESlint, Stylelint, Prettier, Husky, Lint-Staged, nvmrc 설정하기</div></div><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg></a></div></div><div></div><style data-emotion="css fmunkh">.css-fmunkh{position:absolute;top:0;left:768px;height:100%;padding-left:4rem;}@media (max-width: 1400px){.css-fmunkh{display:none;}}</style><aside class="css-fmunkh e1w0yw541"><style data-emotion="css 1s5ilwz">.css-1s5ilwz{position:-webkit-sticky;position:sticky;top:6rem;width:240px;overflow:hidden;font-size:0.8rem;}.css-1s5ilwz p{margin:0;}.css-1s5ilwz a{display:block;padding:0.5rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;border-radius:4px;-webkit-transition:all 0.1s ease-out;transition:all 0.1s ease-out;}.css-1s5ilwz a:hover{background-color:#badcff;}.css-1s5ilwz ul:first-child{border-left:none;}.css-1s5ilwz ul{margin-left:0.5rem;padding:0 0.5rem;list-style:none;border-left:2px solid #e2e5e6;}</style><nav class="css-1s5ilwz e1w0yw540"><ul>
+<li>
+<p><a href="#%EC%85%8B%ED%8C%85">셋팅</a></p>
+<ul>
+<li><a href="#react">React</a></li>
+<li><a href="#vite">Vite</a></li>
+<li><a href="#typescript">TypeScript</a></li>
+<li><a href="#emotion">Emotion</a></li>
+<li><a href="#axios">Axios</a></li>
+<li><a href="#swr">SWR</a></li>
+<li><a href="#%ED%8F%AC%EB%A7%B7%ED%8C%85-%ED%88%B4">포맷팅 툴</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#git-%EC%A0%84%EB%9E%B5">Git 전략</a></p>
+</li>
+<li>
+<p><a href="#%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0">코드 리뷰</a></p>
+</li>
+<li>
+<p><a href="#%EB%AC%B8%EC%A0%9C%EB%93%A4">문제들</a></p>
+<ul>
+<li><a href="#emotion-normalize-%EC%A0%81%EC%9A%A9-%EC%8B%9C-%EC%B6%9C%EB%A0%A5%EB%90%98%EB%8A%94-%EA%B2%BD%EA%B3%A0-%EB%AC%B8%EA%B5%AC">emotion-normalize 적용 시 출력되는 경고 문구</a></li>
+<li><a href="#%ED%8C%80%EC%9B%90-%EA%B0%84-node-%EB%B2%84%EC%A0%84-%EB%B6%88%EC%9D%BC%EC%B9%98-%EB%AC%B8%EC%A0%9C">팀원 간 node 버전 불일치 문제</a></li>
+<li><a href="#typescript-1">TypeScript</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EB%B0%B0%ED%8F%AC">배포</a></p>
+<ul>
+<li><a href="#vercel">vercel</a></li>
+<li><a href="#meta-%ED%83%9C%EA%B7%B8">meta 태그</a></li>
+<li><a href="#netlify-s3">netlify, s3</a></li>
+<li><a href="#ec2">ec2</a></li>
+<li><a href="#netlify">netlify</a></li>
+</ul>
+</li>
+</ul></nav></aside></div></main><style data-emotion="css 1x6a0ri">.css-1x6a0ri{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:100%;height:6rem;margin-top:auto;color:#0975ea;font-size:0.75rem;background-color:#e4f1ff;}</style><footer class="css-1x6a0ri ecav7ff0">© 2023 신승준, Powered by Gatsby.</footer><style data-emotion="css 1f4580j">.css-1f4580j{position:fixed;right:3rem;bottom:3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;width:3rem;height:3rem;background-color:#e4f1ff;border-radius:50%;box-shadow:3px 3px 5px 0 rgba(82,82,82,0.75);visibility:hidden;cursor:pointer;opacity:0;-webkit-transition:all 0.15s ease-out;transition:all 0.15s ease-out;}.css-1f4580j:hover{-webkit-transform:scale(1.05);-moz-transform:scale(1.05);-ms-transform:scale(1.05);transform:scale(1.05);}</style><div class="css-1f4580j e36r2e91"><style data-emotion="css 11v5qdi">.css-11v5qdi{width:1.5rem;height:1.5rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="css-11v5qdi e36r2e90" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path></svg></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-91F94BS03N"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-91F94BS03N', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/programmers-devcourse-frontend-project-retrospect/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-08885e25378ee6de1787.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-ff7f72c2c70e1e665f4e.js\"],\"component---src-pages-about-tsx\":[\"/component---src-pages-about-tsx-93c4dae3048801139e18.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9944331bc6e6df3ef421.js\"],\"component---src-pages-posts-tsx\":[\"/component---src-pages-posts-tsx-248cd5c6dda76ae031c8.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-fdbf6d0c900f9e0c758c.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="cc49e596048a496932d4";</script><script src="/webpack-runtime-06738b36c91ad504d9b0.js" async></script><script src="/framework-2e8bccb64aab9145259b.js" async></script><script src="/app-08885e25378ee6de1787.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
