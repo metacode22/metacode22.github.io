@@ -59,7 +59,7 @@ const Layout = ({ title, description, url, image, children }: Props) => {
 
 export default Layout;
 
-const Container = styled.main`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -69,7 +69,7 @@ const Container = styled.main`
  * To Do
  * media, 반응형 디자인 작성
  */
-const ContentContainer = styled.div`
+const ContentContainer = styled.main`
   width: 100%;
   max-width: 768px;
   margin: 0 auto 6rem auto;
