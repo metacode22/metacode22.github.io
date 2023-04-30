@@ -1,5 +1,5 @@
 ---
-date: '2023-04-30'
+date: '2023-04-29'
 title: '[React 공식 문서 타파하기] Your First Component'
 summary: 'React에서 컴포넌트는 어떻게 만들 수 있는지 알아봅니다.'
 thumbnail: './react-logo.png'

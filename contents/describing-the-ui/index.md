@@ -1,5 +1,5 @@
 ---
-date: '2023-04-29'
+date: '2023-04-28'
 title: '[React 공식 문서 타파하기] Describing the UI'
 summary: 'React에서는 UI를 어떻게 표현하는지 간략하게 알아봅니다.'
 thumbnail: './react-logo.png'
