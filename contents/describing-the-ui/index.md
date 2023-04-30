@@ -6,8 +6,6 @@ thumbnail: './react-logo.png'
 categories: ['React']
 ---
 
-# Describing the UI
-
 Describing the UI에 해당하는 챕터들이 어떤 내용들을 담고 있는지 간력하게 말해주는 아티클이다.
 
 **React는 UI를 렌더링하기 위한 JavaScript 라이브러리이다.** 이 때 UI는 버튼이나 텍스트, 이미지와 같은 작은 단위들로부터 만들어진다. React는 이것들을 재사용 가능하고 중첩시킬 수 있는 컴포넌트를 만들 수 있게 해준다. 웹부터 모바일 앱까지 화면의 모든 것들을 컴포넌트로 쪼갤 수 있다.

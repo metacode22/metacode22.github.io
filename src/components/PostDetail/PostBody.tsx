@@ -75,7 +75,7 @@ const MarkdownRenderer = styled.div`
     margin-top: 0rem;
     margin-bottom: 0rem;
     margin-left: 1rem;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 
   li {
