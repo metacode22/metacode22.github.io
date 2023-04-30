@@ -155,8 +155,9 @@ export default KakaoMap;
 
 카카오 Maps API에서는 생성된 kakao map 객체를 삭제할 수 있는 메서드가 존재하지 않는다. 따라서 useEffect문에서 unmount할 때, 즉 return문에다가 기존 kakao map 객체를 삭제하는 코드를 삽입할 수 없다. 그렇기 때문에 kakao map 객체는 mount될 때에만 딱 1번 생성되어야 한다. 하지만 내가 의존성 배열에 빈 배열이 아니라 값이 들어간 배열을 작성했기 때문에, 그 값이 변하면 kakao.maps.load의 callback 함수에서 kakao map 객체를 다시 생성했고 이로 인해 여러 카카오맵이 화면 상에 보이게 되어 맵들이 겹치게 보이는 현상이 발생했던 것이다. 의존성 배열을 비움으로써 해당 현상은 말끔히 해결할 수 있었다.
 
-<div style="display: flex; justify-content: center;">
-  <img src='./kakao-map-overlap.gif' alt='채팅방 화면' />
+<div style='display: flex; justify-content: center;'>
+  <video src='./kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  </video>
 </div>
 
 카카오 Maps API 사용 경험은 정말 좋았다. 공식 문서도 깔끔했고 한국 전용이다보니 한글로 된 아티클들도 많아서 참고하기 편했기 때문이다. 하지만 다음에 다른 프로젝트를 할 때에는 구글 Maps API를 써서 더 많은 기능을 제공해보고 싶기도 하다.
@@ -172,7 +173,8 @@ export default KakaoMap;
 프론트에서 채팅을 구현한 흐름을 설명하자면, 먼저 해당 밥모임에 대한 채팅방 페이지로 이동한다. 그러면 밥모임 고유 id를 바탕으로 채팅방을 생성하게 된다. 즉 밥모임 고유 id가 채팅 room id가 되는 셈이다. 들어가는 순간 데이터베이스에 저장된 기존의 메세지 이력들을 들고와 렌더링 시킨다. 이 때 조금 커스텀 한 부분은 날짜이다. 카카오톡을 참고하여 커스텀하였는데, 같은 날짜에 작성된 메세지들의 경우 날짜는 1번만 출력될 수 있게 하였다. 즉 다음과 같이 채팅 화면이 나올 수 있도록 구현했다.
 
 <div style="display: flex; justify-content: center;">
-  <img src='./chat.gif' alt='채팅방 화면' />
+  <video src='./chat_AdobeExpress.mp4' width='60%' controls>
+  </video>
 </div>
 
 어쨋든, 그렇게 기존의 메세지들을 데이터베이스로부터 가지고 와서 렌더링을 하면서 소켓 서버와 연결한다. connect가 정상적으로 이뤄지면 subscribe를 하게 된다. 이제 구독(subscribe)할테니 발행(publish)을 하면 나한테도 데이터를 날려달라는 것이다. 이렇게 구현하면 채팅방에 들어온 다른 사람들이 메세지를 보내면, 즉 publish(send)하면 나는 그 데이터를 즉각적으로 받아서 기존의 state에 더하면 해당 메세지를 화면에 보여줄 수 있다. 나도 보낼 때 send 메서드를 사용하면 다른 사람들의 채팅방 화면에 나의 메세지가 출력되게 된다.
@@ -304,8 +306,9 @@ Recoil에 대한 만족도는 아직 높지 않은 것 같다. 상태 관리를 
 
 마주한 에러는 다음과 같다.
 
-<div>
-  <img width='100%' src='./recoil-error.gif' alt='recoil로 kakao map 객체를 관리할 때 생기는 에러' />
+<div style='display: flex; justify-content: center;'>
+  <video src='./kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  </video>
 </div>
 
 Cannot add property 0, object is not extensible라는 에러가 계속해서 뜨는데 read only 객체에 속성을 추가하려고 할 때 뜨는 에러이다. 왜 저렇게 깨지는지, 드래그할 때마다 에러 숫자가 늘어나는지는 확인하지 못했다. 허나 kakao map 객체가 read only라는 것은 type 코드를 타고 들어가면서 확인할 수 있었는데 지금은 찾을 수가 없다...
