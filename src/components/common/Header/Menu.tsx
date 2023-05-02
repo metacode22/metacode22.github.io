@@ -15,7 +15,7 @@ const Menu = () => {
       {/* <DarkModeSwitch /> */}
       <StyledLink to={ROUTES.HOME}>Home</StyledLink>
       <StyledLink to={ROUTES.POSTS}>Posts</StyledLink>
-      <StyledLink to={ROUTES.ABOUT}>About</StyledLink>
+      {/* <StyledLink to={ROUTES.ABOUT}>About</StyledLink> */}
     </Container>
   );
 };
