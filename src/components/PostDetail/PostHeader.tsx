@@ -35,9 +35,7 @@ const PostHeader = ({
       <CategoriesCreatedAtContainer>
         <CategoriesAndTimeToReadContainer>
           {categories.map(category => (
-            <CategoryListItem category={category} key={category}>
-              {category}
-            </CategoryListItem>
+            <CategoryListItem category={category} key={category} />
           ))}
           <TimeToRead>약 {timeToRead}분</TimeToRead>
         </CategoriesAndTimeToReadContainer>

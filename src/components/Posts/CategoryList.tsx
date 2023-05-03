@@ -18,10 +18,10 @@ const CategoryList = ({
       {Object.entries(categoryList).map(([name, count]) => (
         <CategoryListItem
           active={selectedCategory === name}
+          innerText={`${name} ${count}`}
           category={name}
-          key={name}>
-          {name} {count}
-        </CategoryListItem>
+          key={name}
+        />
       ))}
     </Container>
   );

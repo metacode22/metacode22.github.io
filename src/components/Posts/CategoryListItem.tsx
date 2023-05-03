@@ -6,8 +6,8 @@ import { QUERIES, ROUTES } from 'utils/constants/routes';
 
 type Props = {
   active?: boolean;
+  innerText?: string;
   category: string;
-  children: ReactNode;
 };
 
 type GatsbyLinkProps = {
@@ -16,20 +16,21 @@ type GatsbyLinkProps = {
   children: ReactNode;
 };
 
-const CategoryListItem = ({ active = false, category, children }: Props) => {
+const CategoryListItem = ({ active = false, category, innerText }: Props) => {
   return (
-    <Container
+    <StyledLink
       active={active}
+      aria-label={`${innerText || category} 카테고리`}
       to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${encodeURI(category)}`}>
-      {children}
-    </Container>
+      {innerText || category}
+    </StyledLink>
   );
 };
 
 export default CategoryListItem;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Container = styled(({ active, ...props }: GatsbyLinkProps) => (
+const StyledLink = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<{ active: boolean }>`
   z-index: 9;

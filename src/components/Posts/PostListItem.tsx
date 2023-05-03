@@ -35,9 +35,7 @@ const PostListItem = ({
           {categories
             .filter(category => (isFeatured ? category !== 'Featured' : true))
             .map(category => (
-              <CategoryListItem key={category} category={category}>
-                {category}
-              </CategoryListItem>
+              <CategoryListItem key={category} category={category} />
             ))}
         </CategoriesContainer>
         <Title onClick={handleClick}>{title}</Title>
