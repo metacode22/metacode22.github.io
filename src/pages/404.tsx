@@ -11,7 +11,7 @@ const NotFound = () => {
       </Helmet>
       <Container>
         <h1>Not Found. 404 Error.</h1>
-        <GoHomeButton to={ROUTES.HOME}>Home</GoHomeButton>
+        <StyledLink to={ROUTES.HOME}>Home</StyledLink>
       </Container>
     </>
   );
@@ -27,7 +27,7 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const GoHomeButton = styled(Link)`
+const StyledLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
