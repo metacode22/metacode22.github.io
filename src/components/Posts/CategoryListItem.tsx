@@ -18,17 +18,26 @@ type GatsbyLinkProps = {
 
 const CategoryListItem = ({ active = false, category, innerText }: Props) => {
   return (
-    <StyledLink
-      active={active}
-      aria-checked={active}
-      aria-label={`${innerText || category} 카테고리`}
-      to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${encodeURI(category)}`}>
-      {innerText || category}
-    </StyledLink>
+    <Container role='checkbox' aria-checked={active}>
+      <StyledLink
+        active={active}
+        aria-label={`${innerText || category} 카테고리`}
+        to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${encodeURI(category)}`}>
+        {innerText || category}
+      </StyledLink>
+    </Container>
   );
 };
 
 export default CategoryListItem;
+
+const Container = styled.span`
+  &:first-of-type {
+    margin: 0.25rem 0.25rem 0.25rem 0;
+  }
+
+  margin: 0.25rem;
+`;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledLink = styled(({ active, ...props }: GatsbyLinkProps) => (
@@ -36,7 +45,6 @@ const StyledLink = styled(({ active, ...props }: GatsbyLinkProps) => (
 ))<{ active: boolean }>`
   z-index: 9;
   display: inline-block;
-  margin: 0.25rem 0;
   padding: 0.25rem 0.75rem;
   color: ${COLORS.SUB_BOLD};
   font-size: 0.9rem;
