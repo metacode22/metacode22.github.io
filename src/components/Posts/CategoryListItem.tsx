@@ -20,6 +20,7 @@ const CategoryListItem = ({ active = false, category, innerText }: Props) => {
   return (
     <StyledLink
       active={active}
+      aria-checked={active}
       aria-label={`${innerText || category} 카테고리`}
       to={`${ROUTES.POSTS}/?${QUERIES.CATEGORY}=${encodeURI(category)}`}>
       {innerText || category}
