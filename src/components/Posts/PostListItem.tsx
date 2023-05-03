@@ -48,7 +48,8 @@ const PostListItem = ({
       <ThumbnailContainer onClick={handleClick}>
         <Thumbnail
           image={gatsbyImageData}
-          alt='해당 포스트 썸네일 이미지'
+          role='link'
+          alt='썸네일 이미지, 누르면 해당 글로 이동'
           onClick={handleClick}
         />
       </ThumbnailContainer>
