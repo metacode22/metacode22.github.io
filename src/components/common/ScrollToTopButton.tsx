@@ -57,6 +57,7 @@ const Container = styled.button<{ isShow: boolean }>`
   width: 3rem;
   height: 3rem;
   background-color: ${COLORS.SUB};
+  border: none;
   border-radius: 50%;
   box-shadow: 3px 3px 5px 0 ${COLORS.SHADOW};
   visibility: ${({ isShow }) => (isShow ? 'visible' : 'hidden')};

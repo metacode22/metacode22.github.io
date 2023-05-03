@@ -46,11 +46,11 @@ const StyledLink = styled(({ active, ...props }: GatsbyLinkProps) => (
   z-index: 9;
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  color: ${COLORS.SUB_BOLD};
+  color: ${({ active }) => (active ? COLORS.WHITE : COLORS.BLACK)};
   font-size: 0.9rem;
   white-space: nowrap;
   background-color: ${({ active }) =>
-    active ? COLORS.SUB_MIDDLE_BOLD : COLORS.WHITE};
+    active ? COLORS.SUB_BOLD : COLORS.WHITE};
   border: 1px solid ${COLORS.GRAY};
   border-radius: 1rem;
   transform: scale(${({ active }) => (active ? 1.15 : 1)});
@@ -62,8 +62,9 @@ const StyledLink = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 
   &:hover {
-    color: ${COLORS.SUB_BOLD};
-    background-color: ${COLORS.SUB_MIDDLE_BOLD};
+    color: ${({ active }) => (active ? COLORS.WHITE : COLORS.BLACK)};
+    background-color: ${({ active }) =>
+      active ? COLORS.SUB_BOLD : COLORS.SUB_MIDDLE_BOLD};
   }
 
   @media (max-width: 768px) {
