@@ -36,7 +36,10 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <Container onClick={handleClick} isShow={isShow}>
+    <Container
+      onClick={handleClick}
+      isShow={isShow}
+      aria-label='스크롤을 맨 위로 올리는'>
       <StyledFaArrowUp />
     </Container>
   );
@@ -44,7 +47,7 @@ const ScrollToTopButton = () => {
 
 export default ScrollToTopButton;
 
-const Container = styled.div<{ isShow: boolean }>`
+const Container = styled.button<{ isShow: boolean }>`
   position: fixed;
   right: 3rem;
   bottom: 3rem;
