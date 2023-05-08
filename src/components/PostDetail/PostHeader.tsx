@@ -11,13 +11,6 @@ type Props = {
   timeToRead: number;
 };
 
-/**
- * To Do
- * 제목            |            조회수
- * 카테고리  |  time to read  |  날짜
- *
- * ViewCount 구현 할까 말까...
- */
 const PostHeader = ({
   title,
   date,

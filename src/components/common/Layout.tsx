@@ -65,10 +65,6 @@ const Container = styled.div`
   min-height: 100vh;
 `;
 
-/**
- * To Do
- * media, 반응형 디자인 작성
- */
 const ContentContainer = styled.main`
   width: 100%;
   max-width: 768px;
