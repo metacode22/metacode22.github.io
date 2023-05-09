@@ -3,6 +3,7 @@ import { navigate } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { Frontmatter } from 'types/Post';
 import COLORS from 'utils/constants/colors';
+import { adjustTimeToReadByRatio } from 'utils/timeToRead';
 
 import CategoryListItem from './CategoryListItem';
 
@@ -42,7 +43,7 @@ const PostListItem = ({
         <Description>{summary}</Description>
         <CreatedAtAndTimeToReadContainer>
           <CreatedAt>{date}</CreatedAt>
-          <TimeToRead>약 {timeToRead}분</TimeToRead>
+          <TimeToRead>약 {adjustTimeToReadByRatio(timeToRead)}분</TimeToRead>
         </CreatedAtAndTimeToReadContainer>
       </TextInfoContainer>
       <ThumbnailContainer onClick={handleClick}>
