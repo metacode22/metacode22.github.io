@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import CategoryListItem from 'components/Posts/CategoryListItem';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import COLORS from 'utils/constants/colors';
+import { adjustTimeToReadByRatio } from 'utils/timeToRead';
 
 type Props = {
   title: string;
@@ -10,11 +11,6 @@ type Props = {
   thumbnail: IGatsbyImageData;
   timeToRead: number;
 };
-
-const TIME_TO_READ_RATIO_TO_ADJUST = 1.5;
-
-const adjustTimeToReadByRatio = (timeToRead: number, ratio: number) =>
-  Math.floor(timeToRead * ratio);
 
 const PostHeader = ({
   title,
@@ -35,11 +31,7 @@ const PostHeader = ({
           {categories.map(category => (
             <CategoryListItem category={category} key={category} />
           ))}
-          <TimeToRead>
-            약{' '}
-            {adjustTimeToReadByRatio(timeToRead, TIME_TO_READ_RATIO_TO_ADJUST)}
-            분
-          </TimeToRead>
+          <TimeToRead>약 {adjustTimeToReadByRatio(timeToRead)}분</TimeToRead>
         </CategoriesAndTimeToReadContainer>
         <CreatedAt>{date}</CreatedAt>
       </CategoriesCreatedAtContainer>
