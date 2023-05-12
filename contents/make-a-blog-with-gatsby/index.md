@@ -1,7 +1,7 @@
 ---
 date: '2023-03-30'
 title: 'Gatsby와 함께 나만의 블로그 만들기'
-summary: ''
+summary: 'Gatsby로 개인 블로그를 만들었습니다. 그 과정을 회고해보았습니다.'
 thumbnail: './gatsby-logo.png'
 categories: ['Featured', 'GatsbyJS', '회고', '블로그']
 ---
