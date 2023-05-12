@@ -156,7 +156,7 @@ export default KakaoMap;
 카카오 Maps API에서는 생성된 kakao map 객체를 삭제할 수 있는 메서드가 존재하지 않는다. 따라서 useEffect문에서 unmount할 때, 즉 return문에다가 기존 kakao map 객체를 삭제하는 코드를 삽입할 수 없다. 그렇기 때문에 kakao map 객체는 mount될 때에만 딱 1번 생성되어야 한다. 하지만 내가 의존성 배열에 빈 배열이 아니라 값이 들어간 배열을 작성했기 때문에, 그 값이 변하면 kakao.maps.load의 callback 함수에서 kakao map 객체를 다시 생성했고 이로 인해 여러 카카오맵이 화면 상에 보이게 되어 맵들이 겹치게 보이는 현상이 발생했던 것이다. 의존성 배열을 비움으로써 해당 현상은 말끔히 해결할 수 있었다.
 
 <div style='display: flex; justify-content: center;'>
-  <video src='./kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  <video src='./kakao-map-overlap.mp4' width='50%' controls>
   </video>
 </div>
 
@@ -173,7 +173,7 @@ export default KakaoMap;
 프론트에서 채팅을 구현한 흐름을 설명하자면, 먼저 해당 밥모임에 대한 채팅방 페이지로 이동한다. 그러면 밥모임 고유 id를 바탕으로 채팅방을 생성하게 된다. 즉 밥모임 고유 id가 채팅 room id가 되는 셈이다. 들어가는 순간 데이터베이스에 저장된 기존의 메세지 이력들을 들고와 렌더링 시킨다. 이 때 조금 커스텀 한 부분은 날짜이다. 카카오톡을 참고하여 커스텀하였는데, 같은 날짜에 작성된 메세지들의 경우 날짜는 1번만 출력될 수 있게 하였다. 즉 다음과 같이 채팅 화면이 나올 수 있도록 구현했다.
 
 <div style="display: flex; justify-content: center;">
-  <video src='./chat_AdobeExpress.mp4' width='60%' controls>
+  <video src='./chat.mp4' width='60%' controls>
   </video>
 </div>
 
@@ -307,7 +307,7 @@ Recoil에 대한 만족도는 아직 높지 않은 것 같다. 상태 관리를 
 마주한 에러는 다음과 같다.
 
 <div style='display: flex; justify-content: center;'>
-  <video src='./kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  <video src='./recoil-error.mp4' width='100%' controls>
   </video>
 </div>
 

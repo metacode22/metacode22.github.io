@@ -76,6 +76,11 @@ const onTouchEnd = () => {
 
 > delay 시간을 0으로 설정해도(2번 째 인자인 delay 시간을 따로 설정하지 않으면 기본값으로 0이 들어간다) 바로 실행되는 것이 아니라 Web APIs로 들어간다는 것을 유의하자. setTimeout은 timer가 종료되고 나서 task queue에 들어가 call stack이 빌 때까지 기다린다. call stack이 비어야 비로소 task queue에서 기다리는 setTimeout의 콜백 함수가 call stack으로 들어가 실행될 수 있다.
 
+<div style='display: flex; justify-content: center;'>
+  <video src='./bug-fixed.mp4' width='50%' controls>
+  </video>
+</div>
+
 ### 정리
 
 그리고 로직을 정리하자면 다음과 같다.
