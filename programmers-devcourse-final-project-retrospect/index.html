@@ -258,7 +258,7 @@
 <p>두 번째는 카카오맵이 중복 생성되어 사용자가 맵을 이동시키거나 확대/축소할 때 카카오맵이 겹치게 보이는 현상이었다. 이는 단순히 내가 의존성 배열을 잘못 작성하였기 때문에 벌어진 일이었다. eslint가 알아서 의존성 배열에 넣을 것들을 추천해주는데 당연히 이게 맞겠지~ 하면서 안일하게 생각했기 때문이다.</p>
 <p>카카오 Maps API에서는 생성된 kakao map 객체를 삭제할 수 있는 메서드가 존재하지 않는다. 따라서 useEffect문에서 unmount할 때, 즉 return문에다가 기존 kakao map 객체를 삭제하는 코드를 삽입할 수 없다. 그렇기 때문에 kakao map 객체는 mount될 때에만 딱 1번 생성되어야 한다. 하지만 내가 의존성 배열에 빈 배열이 아니라 값이 들어간 배열을 작성했기 때문에, 그 값이 변하면 kakao.maps.load의 callback 함수에서 kakao map 객체를 다시 생성했고 이로 인해 여러 카카오맵이 화면 상에 보이게 되어 맵들이 겹치게 보이는 현상이 발생했던 것이다. 의존성 배열을 비움으로써 해당 현상은 말끔히 해결할 수 있었다.</p>
 <div style='display: flex; justify-content: center;'>
-  <video src='/e8994c7b2d33ce226bdfb6e9fa9df402/kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  <video src='./kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
   </video>
 </div>
 <p>카카오 Maps API 사용 경험은 정말 좋았다. 공식 문서도 깔끔했고 한국 전용이다보니 한글로 된 아티클들도 많아서 참고하기 편했기 때문이다. 하지만 다음에 다른 프로젝트를 할 때에는 구글 Maps API를 써서 더 많은 기능을 제공해보고 싶기도 하다.</p>
@@ -368,7 +368,7 @@
 <p>Recoil에 대한 만족도는 아직 높지 않은 것 같다. 상태 관리를 위해 React에서 기본으로 제공하는 Context API 대신 Recoil을 사용한 이유는 불필요한 재렌더링을 막고 코드양 또한 줄이기 위해서였다. 허나 kakao map 객체를 atom으로 관리하는 과정에서 마주한 에러로 인해 Context API와 Recoil을 같이 쓰게 되었다.</p>
 <p>마주한 에러는 다음과 같다.</p>
 <div style='display: flex; justify-content: center;'>
-  <video src='/e8994c7b2d33ce226bdfb6e9fa9df402/kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
+  <video src='./kakao-map-overlap_AdobeExpress.mp4' width='50%' controls>
   </video>
 </div>
 <p>Cannot add property 0, object is not extensible라는 에러가 계속해서 뜨는데 read only 객체에 속성을 추가하려고 할 때 뜨는 에러이다. 왜 저렇게 깨지는지, 드래그할 때마다 에러 숫자가 늘어나는지는 확인하지 못했다. 허나 kakao map 객체가 read only라는 것은 type 코드를 타고 들어가면서 확인할 수 있었는데 지금은 찾을 수가 없다…</p>
