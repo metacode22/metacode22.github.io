@@ -8,6 +8,11 @@ categories: ['Featured', '버그 해결']
 
 ## 개요
 
+<div style='display: flex; justify-content: center;'>
+  <video src='./bug-that-occur-when-using-mouse-and-click-events-together-in-carousel.mp4' width='50%' controls>
+  </video>
+</div>
+
 모 기업의 과제를 수행하면서 [Swiper](https://swiperjs.com/demos#default)처럼 Carousel을 직접 구현해야 하는 상황이 생겼었다. Carousel은 [유튜브 동영상](https://www.youtube.com/watch?v=V0dfhBc2lj8)을 보면서 어느 정도 커스텀을 거쳐 완성시킬 수 있었다.
 
 문제는 Carousel 안의 카드를 클릭 시 그 카드가 실제로 위치한 곳으로 이동시켜야 하는 요구사항에서 발생했다. 이로 인해 Carousel의 카드를 넘기기 위해 심은 mousedown, mousemove, mouseup 이벤트와 함께 click 이벤트가 카드에 심어졌다. 이로 인해 PC 환경에서 버그가 발생했다. 카드를 넘기기 위해 드래그를 하면, 카드를 넘기는 것 뿐만 아니라 카드 위치로 화면이 이동하는 기능까지 같이 동작하는 것이었다.
@@ -95,8 +100,6 @@ const onTouchEnd = () => {
 이벤트 루프의 동작 과정을 이해만 하고 있었는데 여기서 이렇게 실제로 써보게 될 줄 몰랐다. 자바스크립트와 브라우저의 개념에 대해 왜 알아야 하는지 체감하게 되었다.
 
 ## 참고
-
-말로 주절주절해서 이해가 안되실 것 같아 조금이라도 이해하실 수 있도록 코드를 공개하고 싶지만, 과제 자체가 비공개라 공유가 어려울 것 같습니다.
 
 [Swiper](https://swiperjs.com/demos#default)
 
