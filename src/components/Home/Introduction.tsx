@@ -17,7 +17,7 @@ const Introduction = ({ image }: Props) => {
   return (
     <Container>
       <ContentContainer>
-        <IntroductionAvatar image={image} alt='내 얼굴' />
+        <IntroductionAvatar image={image} alt='내 얼굴' loading='eager' />
         <InfoContainer>
           <LinksContainer>
             <ReactIconLink
