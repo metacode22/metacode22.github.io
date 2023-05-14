@@ -11,6 +11,8 @@ type Props = {
   selectedCategory?: string;
 };
 
+const isEager = (order: number) => order < 3;
+
 const PostList = ({
   posts,
   isFeatured = false,
@@ -35,15 +37,19 @@ const PostList = ({
       )}
       <PostListContainer>
         {postListFilteredBySelectedCategory.map(
-          ({
-            node: {
-              timeToRead,
-              id,
-              fields: { slug },
-              frontmatter,
+          (
+            {
+              node: {
+                timeToRead,
+                id,
+                fields: { slug },
+                frontmatter,
+              },
             },
-          }) => (
+            index,
+          ) => (
             <PostListItem
+              eager={isEager(index)}
               key={id}
               link={slug}
               {...frontmatter}

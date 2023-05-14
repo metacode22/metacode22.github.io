@@ -11,6 +11,7 @@ type Props = Frontmatter & {
   link: string;
   isFeatured: boolean;
   timeToRead: number;
+  eager: boolean;
 };
 
 const PostListItem = ({
@@ -24,6 +25,7 @@ const PostListItem = ({
   link,
   isFeatured,
   timeToRead,
+  eager,
 }: Props) => {
   const handleClick = () => {
     navigate(link);
@@ -48,6 +50,7 @@ const PostListItem = ({
       </TextInfoContainer>
       <ThumbnailContainer onClick={handleClick}>
         <Thumbnail
+          loading={eager ? 'eager' : 'lazy'}
           image={gatsbyImageData}
           role='link'
           alt='썸네일 이미지, 누르면 해당 글로 이동'
