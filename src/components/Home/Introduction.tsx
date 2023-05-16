@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaRegAddressCard } from 'react-icons/fa';
 
 import ReactIconLink from './ReactIconLink';
 
@@ -29,6 +29,11 @@ const Introduction = ({ image }: Props) => {
               href='https://www.linkedin.com/in/%EC%8A%B9%EC%A4%80-%EC%8B%A0-73602420a/'
               ariaLabel='LinkedIn'>
               <FaLinkedin />
+            </ReactIconLink>
+            <ReactIconLink
+              href='https://eminent-fork-980.notion.site/571f5d7e751d44e4b9d520716ec24f36'
+              ariaLabel='이력서'>
+              <FaRegAddressCard />
             </ReactIconLink>
           </LinksContainer>
         </InfoContainer>
