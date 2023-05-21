@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { FaGithub, FaLinkedin, FaRegAddressCard } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi';
 
 import StyledReactIconLink from './ReactIconLink';
 
@@ -33,6 +34,11 @@ const Introduction = ({ image }: Props) => {
             href='https://eminent-fork-980.notion.site/571f5d7e751d44e4b9d520716ec24f36'
             tooltipText='이력서'>
             <FaRegAddressCard />
+          </StyledReactIconLink>
+          <StyledReactIconLink
+            isLink={false}
+            tooltipText='alohajune22@gmail.com'>
+            <FiMail />
           </StyledReactIconLink>
         </InfoContainer>
       </ContentContainer>

@@ -3,14 +3,27 @@ import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  href: string;
+  isLink?: boolean;
+  href?: string;
   tooltipText: string;
 };
 
-const StyledReactIconLink = ({ children, href, tooltipText }: Props) => {
+const StyledReactIconLink = ({
+  children,
+  isLink = true,
+  href = '/',
+  tooltipText,
+}: Props) => {
+  const handleClickLink = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    !isLink && event.preventDefault();
+  };
+
   return (
     <Container
       href={href}
+      onClick={handleClickLink}
       target='_blank'
       rel='noopener noreferrer'
       aria-label={tooltipText}
