@@ -187,3 +187,7 @@ const [value, setValue] = useState(() => {
   return 1;
 });
 ```
+
+## 참고
+
+[State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
