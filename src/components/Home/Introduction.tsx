@@ -19,23 +19,21 @@ const Introduction = ({ image }: Props) => {
       <ContentContainer>
         <IntroductionAvatar image={image} alt='내 얼굴' loading='eager' />
         <InfoContainer>
-          <LinksContainer>
-            <StyledReactIconLink
-              href='https://github.com/metacode22'
-              tooltipText='Github'>
-              <FaGithub />
-            </StyledReactIconLink>
-            <StyledReactIconLink
-              href='https://www.linkedin.com/in/%EC%8A%B9%EC%A4%80-%EC%8B%A0-73602420a/'
-              tooltipText='LinkedIn'>
-              <FaLinkedin />
-            </StyledReactIconLink>
-            <StyledReactIconLink
-              href='https://eminent-fork-980.notion.site/571f5d7e751d44e4b9d520716ec24f36'
-              tooltipText='이력서'>
-              <FaRegAddressCard />
-            </StyledReactIconLink>
-          </LinksContainer>
+          <StyledReactIconLink
+            href='https://github.com/metacode22'
+            tooltipText='Github'>
+            <FaGithub />
+          </StyledReactIconLink>
+          <StyledReactIconLink
+            href='https://www.linkedin.com/in/%EC%8A%B9%EC%A4%80-%EC%8B%A0-73602420a/'
+            tooltipText='LinkedIn'>
+            <FaLinkedin />
+          </StyledReactIconLink>
+          <StyledReactIconLink
+            href='https://eminent-fork-980.notion.site/571f5d7e751d44e4b9d520716ec24f36'
+            tooltipText='이력서'>
+            <FaRegAddressCard />
+          </StyledReactIconLink>
         </InfoContainer>
       </ContentContainer>
     </Container>
@@ -68,13 +66,6 @@ const IntroductionAvatar = styled(GatsbyImage)`
 
 const InfoContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 180px;
-`;
-
-const LinksContainer = styled.div`
-  display: flex;
   gap: 1rem;
-  align-items: center;
+  align-self: flex-end;
 `;
