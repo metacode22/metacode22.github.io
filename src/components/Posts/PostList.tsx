@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import { PostItem } from 'types/Post';
 import { ROUTES } from 'utils/constants/routes';
+import { trackEvent } from 'utils/gtag';
 
 import PostListItem from './PostListItem';
 
@@ -27,12 +28,22 @@ const PostList = ({
       selectedCategory !== 'All' ? categories.includes(selectedCategory) : true,
   );
 
+  const handleClickLinkToPostsPage = () => {
+    trackEvent({
+      action: 'click',
+      category: 'link',
+      label: '다른 글 구경하기',
+    });
+  };
+
   return (
     <Container>
       {isFeatured && (
         <PostListHeaderContainer>
           <Title>Featured</Title>
-          <StyledLink to={ROUTES.POSTS}>다른 글 구경하기</StyledLink>
+          <StyledLink to={ROUTES.POSTS} onClick={handleClickLinkToPostsPage}>
+            다른 글 구경하기
+          </StyledLink>
         </PostListHeaderContainer>
       )}
       <PostListContainer>
