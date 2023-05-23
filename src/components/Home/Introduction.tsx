@@ -38,7 +38,7 @@ const Introduction = ({ image }: Props) => {
           <StyledReactIconLink
             isLink={false}
             tooltipText='alohajune22@gmail.com'>
-            <FiMail />
+            <FiMail cursor='default' />
           </StyledReactIconLink>
         </InfoContainer>
       </ContentContainer>

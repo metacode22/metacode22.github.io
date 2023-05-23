@@ -38,7 +38,6 @@ export default StyledReactIconLink;
 const Container = styled.a<{ tooltipText: string }>`
   position: relative;
   font-size: 1.25rem;
-  cursor: pointer;
 
   /* before는 사각형 툴팁 텍스트 박스, after는 삼각형 화살표 */
   ::before,
