@@ -111,6 +111,7 @@ const ThumbnailContainer = styled.div`
   display: flex;
   align-items: center;
   width: 200px;
+  height: 200px;
 `;
 
 const Thumbnail = styled(GatsbyImage)`
