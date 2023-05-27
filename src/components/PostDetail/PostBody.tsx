@@ -13,18 +13,14 @@ const PostBody = forwardRef(
 export default PostBody;
 
 const MarkdownRenderer = styled.div`
-  /* Renderer Style */
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
   padding: 5rem 0;
-
-  /* Markdown Style */
   line-height: 1.75;
   word-break: break-all;
 
-  /* Adjust Heading Element Style */
   h1,
   h2,
   h3 {
@@ -60,7 +56,6 @@ const MarkdownRenderer = styled.div`
     margin-top: 0;
   }
 
-  /* Adjust Quotation Element Style */
   blockquote {
     margin: 30px 0;
     padding: 0 1rem;
@@ -69,7 +64,6 @@ const MarkdownRenderer = styled.div`
     border-left: 2px solid ${COLORS.GRAY};
   }
 
-  /* Adjust List Element Style */
   ol,
   ul {
     margin-top: 0rem;
@@ -82,16 +76,13 @@ const MarkdownRenderer = styled.div`
     font-weight: 300;
   }
 
-  /* Adjust Horizontal Rule style */
   hr {
     margin: 100px 0;
     border: 1px solid #000;
   }
 
-  /* Adjust Link Element Style */
   a {
     color: ${COLORS.SUB_BOLD};
-    /* text-decoration: underline; */
   }
 
   p {
@@ -119,6 +110,7 @@ const MarkdownRenderer = styled.div`
     word-spacing: normal;
     tab-size: 4;
     hyphens: none;
+    border-radius: 0.5rem;
   }
 
   pre[class*='language-']::selection,
@@ -380,7 +372,6 @@ const MarkdownRenderer = styled.div`
     padding: 0.25rem;
     color: ${COLORS.BLACK};
     background-color: ${COLORS.GRAY};
-    border-radius: 0.25rem;
   }
 
   @media (max-width: 768px) {
