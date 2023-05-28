@@ -8,6 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  trailingSlash: 'always',
   siteMetadata: {
     title: 'Dev-Log',
     description: '프론트엔드 개발자 승두니의 이야기',
@@ -19,7 +20,7 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-advanced-sitemap',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sharp',
@@ -97,7 +98,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://metacode22.github.io',
-        sitemap: 'https://metacode22.github.io/sitemap-pages.xml',
+        sitemap: 'https://metacode22.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
