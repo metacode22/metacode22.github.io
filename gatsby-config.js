@@ -8,17 +8,12 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  /**
-   * To Do
-   * 배포 후 siteUrl 등 수정
-   */
   siteMetadata: {
     title: 'Dev-Log',
     description: '프론트엔드 개발자 승두니의 이야기',
     author: 'Shin Seung Jun',
-    // To Do
-    // 배포 후 사이트 url로 바꾸기.
-    siteUrl: 'https://metacode22.github.io/',
+
+    siteUrl: 'https://metacode22.github.io',
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -94,16 +89,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        // To Do
-        // 배포 후 사이트 url로 바꾸기.
-        siteUrl: 'https://metacode22.github.io/',
+        siteUrl: 'https://metacode22.github.io',
         stripQueryString: true,
       },
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        sitemap: 'https://metacode22.github.io/sitemap.xml',
+        host: 'https://metacode22.github.io',
+        sitemap: 'https://metacode22.github.io/sitemap-pages.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
