@@ -70,4 +70,8 @@ const ContentContainer = styled.main`
   max-width: 768px;
   margin: 0 auto 6rem auto;
   margin-top: 4rem;
+
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
 `;

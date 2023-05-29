@@ -375,8 +375,6 @@ const MarkdownRenderer = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0 0.5rem;
-
     img {
       width: 100%;
     }
