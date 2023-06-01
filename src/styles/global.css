@@ -194,7 +194,7 @@ a:hover {
 }
 
 /* Fonts */
-@font-face {
+/* @font-face {
   font-weight: 300;
   font-family: Pretendard;
   font-style: normal;
@@ -241,4 +241,4 @@ a:hover {
   src: url('../fonts/Menlo-Regular.woff2') format('truetype'),
     url('../fonts/Menlo-Regular.woff2') format('woff2');
   font-display: fallback;
-}
+} */
