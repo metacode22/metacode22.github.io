@@ -33,6 +33,9 @@
       "assets/*": ["./assets/*"],
       "components/*": ["./components/*"],
       "hooks/*": ["./hooks/*"],
+      "pages/*": ["./pages/*"],
+      "styles/*": ["./styles/*"],
+      "templates/*": ["./templates/*"],
       "types/*": ["./types/*"],
       "utils/*": ["./utils/*"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
