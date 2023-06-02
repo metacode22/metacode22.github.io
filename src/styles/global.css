@@ -194,51 +194,51 @@ a:hover {
 }
 
 /* Fonts */
-/* @font-face {
+@font-face {
   font-weight: 300;
   font-family: Pretendard;
   font-style: normal;
-  src: url('../fonts/Pretendard-Light.woff2') format('woff2');
-  font-display: fallback;
+  src: url('/fonts/Pretendard-Light.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-weight: 400;
   font-family: Pretendard;
   font-style: normal;
-  src: url('../fonts/Pretendard-Regular.woff2') format('woff2');
-  font-display: fallback;
+  src: url('/fonts/Pretendard-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-weight: 500;
   font-family: Pretendard;
   font-style: normal;
-  src: url('../fonts/Pretendard-Medium.woff2') format('woff2');
-  font-display: fallback;
+  src: url('/fonts/Pretendard-Medium.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-weight: 600;
   font-family: Pretendard;
   font-style: normal;
-  src: url('../fonts/Pretendard-SemiBold.woff2') format('woff2');
-  font-display: fallback;
+  src: url('/fonts/Pretendard-SemiBold.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-weight: 700;
   font-family: Pretendard;
   font-style: normal;
-  src: url('../fonts/Pretendard-Bold.woff2') format('woff2');
-  font-display: fallback;
+  src: url('/fonts/Pretendard-Bold.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-weight: 400;
   font-family: Menlo;
   font-style: normal;
-  src: url('../fonts/Menlo-Regular.woff2') format('truetype'),
-    url('../fonts/Menlo-Regular.woff2') format('woff2');
-  font-display: fallback;
-} */
+  src: url('/fonts/Menlo-Regular.woff2') format('truetype'),
+    url('/fonts/Menlo-Regular.woff2') format('woff2');
+  font-display: swap;
+}
