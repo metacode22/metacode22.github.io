@@ -36,9 +36,10 @@ const Introduction = ({ image }: Props) => {
             <FaRegAddressCard />
           </StyledReactIconLink>
           <StyledReactIconLink
-            isLink={false}
+            mailTo
+            href='alohajune22@gmail.com'
             tooltipText='alohajune22@gmail.com'>
-            <FiMail cursor='default' />
+            <FiMail />
           </StyledReactIconLink>
         </InfoContainer>
       </ContentContainer>

@@ -3,28 +3,21 @@ import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  isLink?: boolean;
   href?: string;
   tooltipText: string;
+  mailTo?: boolean;
 };
 
 const StyledReactIconLink = ({
   children,
-  isLink = true,
   href = '/',
   tooltipText,
+  mailTo = false,
 }: Props) => {
-  const handleClickLink = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  ) => {
-    !isLink && event.preventDefault();
-  };
-
   return (
     <Container
-      href={href}
-      onClick={handleClickLink}
-      target='_blank'
+      href={mailTo ? `mailto:${href}` : href}
+      target={mailTo ? '_self' : '_blank'}
       rel='noopener noreferrer'
       aria-label={tooltipText}
       tooltipText={tooltipText}>
