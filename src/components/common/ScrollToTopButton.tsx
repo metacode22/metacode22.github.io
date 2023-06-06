@@ -27,11 +27,11 @@ const ScrollToTopButton = () => {
       setIsShow(false);
     };
 
-    document.addEventListener('scroll', handleShowScrollToTopButton, {
+    window.addEventListener('scroll', handleShowScrollToTopButton, {
       passive: true,
     });
     return () => {
-      document.removeEventListener('scroll', handleShowScrollToTopButton);
+      window.removeEventListener('scroll', handleShowScrollToTopButton);
     };
   }, []);
 
